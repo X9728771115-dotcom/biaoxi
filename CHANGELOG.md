@@ -2,6 +2,12 @@
 
 版本号描述源码状态，不表示已公开发布或完成设备验收。完整行为和限制见 [功能与边界](docs/features-and-limits.md)。
 
+## v0.5.6-alpha.1 · 首个公开源码试用版 · 2026-10-23
+
+- 基于本地开源候选 2 发布，源码版本仍为 0.5.6；仓库为 [X9728771115-dotcom/biaoxi](https://github.com/X9728771115-dotcom/biaoxi)。
+- 补充中英文获取源码步骤，启用 GitHub 私密漏洞报告；仅提供源码，不提供安装包。
+- 首轮 Ubuntu 24.04 / Node 22 自动检查通过，见 [GitHub Actions 记录](https://github.com/X9728771115-dotcom/biaoxi/actions/runs/39825498631)。测试与真实项目验收边界见 [验证记录](docs/validation.md)。
+
 ## 0.5.6 · 本地开源候选 2
 
 - 同段独立评分逐项提取，识别明确报价公式与固定认证分，合并有证据关联的跨章业绩重述。
