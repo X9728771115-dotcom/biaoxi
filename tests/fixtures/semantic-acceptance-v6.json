@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "description": "全部为手写合成采购条款和人为构造的错误解释，仅用于回归测试；不包含真实项目原文、报告或平台回答。",
+  "cases": [
+    {
+      "id": "tax-social-security-branches",
+      "title": "企业税收社保证明的条件分支",
+      "sourceReferences": [
+        {
+          "documentId": "synthetic-procurement",
+          "blockId": "tax",
+          "page": 2,
+          "quote": "甲省境内注册且适用承诺制的供应商提供承诺函；依法免税或不需要缴纳社会保障资金的提供相应证明；未在甲省缴纳税收和社会保障资金的提供任意一个月缴纳证明。"
+        }
+      ],
+      "modelObservations": {
+        "expert": {
+          "status": "constructed_error_example",
+          "evidence": [
+            {
+              "jsonPointer": "/interpretation",
+              "excerpt": "省外注册供应商一律必须提供普通纳税社保缴纳证明。"
+            }
+          ]
+        }
+      },
+      "origin": "Hand-authored synthetic regression; not an actual model transcript."
+    },
+    {
+      "id": "determination-parallel-authorities",
+      "title": "并列定标主体待澄清",
+      "sourceReferences": [
+        {
+          "documentId": "synthetic-procurement",
+          "blockId": "authority-a",
+          "page": 3,
+          "quote": "采购单位授权评标委员会按照采购文件规定的方式确定中标（成交）供应商。"
+        },
+        {
+          "documentId": "synthetic-procurement",
+          "blockId": "authority-b",
+          "page": 3,
+          "quote": "采购人应当自收到磋商报告之日起7个工作日内，在成交候选人名单中按顺序确定成交人。"
+        }
+      ],
+      "modelObservations": {
+        "quick": {
+          "status": "constructed_error_example",
+          "evidence": [
+            {
+              "jsonPointer": "/interpretation",
+              "excerpt": "采购单位授权磋商小组直接确定成交供应商。"
+            }
+          ]
+        }
+      },
+      "origin": "Hand-authored synthetic regression; not an actual model transcript."
+    },
+    {
+      "id": "performance-scope-date-proof-and-score",
+      "title": "同类业绩材料范围",
+      "sourceReferences": [
+        {
+          "documentId": "synthetic-procurement",
+          "blockId": "performance",
+          "page": 4,
+          "quote": "供应商提供2028年2月1日至今的同类项目合同案例，每份得2分，最高4分。须提供加盖公章合同以及验收报告，时间以合同签订时间为准。"
+        }
+      ],
+      "modelObservations": {
+        "expert": {
+          "status": "constructed_error_example",
+          "evidence": [
+            {
+              "jsonPointer": "/value/reasons/0",
+              "excerpt": "需补充同类桥梁修缮项目合同及验收报告才能取得业绩分。"
+            }
+          ]
+        }
+      },
+      "origin": "Hand-authored synthetic regression; not an actual model transcript."
+    },
+    {
+      "id": "personnel-conditions-no-added-social-proof",
+      "title": "项目经理证书与证明材料",
+      "sourceReferences": [
+        {
+          "documentId": "synthetic-procurement",
+          "blockId": "manager",
+          "page": 5,
+          "quote": "拟派项目经理具备建筑工程专业二级及以上注册建造师证书和有效B类安全生产考核证，在本单位注册且不兼任其他在建项目经理。"
+        }
+      ],
+      "modelObservations": {
+        "expert": {
+          "status": "constructed_error_example",
+          "evidence": [
+            {
+              "jsonPointer": "/findings/0/fields/证明材料",
+              "excerpt": "[\"注册建造师证书\", \"B类安全生产考核证\", \"本单位社保证明\", \"无在建承诺\"]"
+            }
+          ]
+        }
+      },
+      "origin": "Hand-authored synthetic regression; not an actual model transcript."
+    },
+    {
+      "id": "fee-rates-minima-and-no-invented-sanction",
+      "title": "代理服务费的承担与后果边界",
+      "sourceReferences": [
+        {
+          "documentId": "synthetic-procurement",
+          "blockId": "fee",
+          "page": 6,
+          "quote": "代理服务费按成交金额的2%计取，不足3000元按3000元收取，由成交供应商承担。"
+        }
+      ],
+      "modelObservations": {
+        "quick": {
+          "status": "constructed_error_example",
+          "evidence": [
+            {
+              "jsonPointer": "/interpretation",
+              "excerpt": "代理服务费须缴清后方可领取成交通知书，拒不缴纳将承担合同及政府采购法律责任。"
+            }
+          ]
+        }
+      },
+      "origin": "Hand-authored synthetic regression; not an actual model transcript."
+    }
+  ]
+}

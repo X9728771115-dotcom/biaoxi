@@ -1,0 +1,22 @@
+node_modules/
+dist/
+.data/
+candidate-data/
+test-output/
+*.log
+.env
+.env.*
+!.env.example
+!.env.sample
+credential.bin
+*.pem
+.DS_Store
+Thumbs.db
+
+# Obsolete local candidate directory from preparation; never export.
+.candidate-data/
+
+# Optional official-policy originals; never redistribute automatically.
+policy-source-cache/
+assets/policies/official/
+assets/policies/qa/

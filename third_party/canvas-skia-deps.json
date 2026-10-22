@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-23",
+  "canvasRegistryGitHead": "7d19abed029287e7c26b14eaa6e67d560a37d853",
+  "skiaCommit": "95ee33d7ec7791ab9c071675710a14fe6408ae4f",
+  "sourceDeps": "third_party/source-evidence/google_skia/95ee33d7ec7791ab9c071675710a14fe6408ae4f/DEPS.txt",
+  "scope": "Root original notices from exact Google Gitiles mirrors in Skia DEPS; retained conservatively for dependencies enabled in the canvas Skia build script. This is not a complete final-binary SBOM or reconstruction of downstream subdependencies.",
+  "components": [
+    {
+      "name": "brotli",
+      "repository": "https://skia.googlesource.com/external/github.com/google/brotli.git",
+      "commit": "6d03dfbedda1615c4cba1211f8d81735575209c8",
+      "scope": "Skia DEPS source selected by enabled build flags; final prebuilt linkage is not independently reconstructed",
+      "noticeFiles": [
+        {
+          "path": "third_party/native/skia-deps/brotli/6d03dfbedda1615c4cba1211f8d81735575209c8/LICENSE",
+          "sourcePath": "LICENSE",
+          "sourceUrl": "https://skia.googlesource.com/external/github.com/google/brotli.git/+/6d03dfbedda1615c4cba1211f8d81735575209c8/LICENSE?format=TEXT",
+          "gitBlobSha": "33b7cdd2dbaeddce1e35aa1a13f63d71154dc42f",
+          "sha256": "3d180008e36922a4e8daec11c34c7af264fed5962d07924aea928c38e8663c94"
+        }
+      ],
+      "errors": [],
+      "noticeStatus": "EXACT_DEPS_SOURCE_NOTICES"
+    },
+    {
+      "name": "expat",
+      "repository": "https://chromium.googlesource.com/external/github.com/libexpat/libexpat.git",
+      "commit": "6154446fccefbf3ca644894f598969113b0c7bcd",
+      "scope": "Skia DEPS source selected by enabled build flags; final prebuilt linkage is not independently reconstructed",
+      "noticeFiles": [
+        {
+          "path": "third_party/native/skia-deps/expat/6154446fccefbf3ca644894f598969113b0c7bcd/COPYING",
+          "sourcePath": "COPYING",
+          "sourceUrl": "https://chromium.googlesource.com/external/github.com/libexpat/libexpat.git/+/6154446fccefbf3ca644894f598969113b0c7bcd/COPYING?format=TEXT",
+          "gitBlobSha": "c6d184a8aae845ce7bf4d195b214d8244d457f8f",
+          "sha256": "31b15de82aa19a845156169a17a5488bf597e561b2c318d159ed583139b25e87"
+        }
+      ],
+      "errors": [],
+      "noticeStatus": "EXACT_DEPS_SOURCE_NOTICES"
+    },
+    {
+      "name": "freetype",
+      "repository": "https://chromium.googlesource.com/chromium/src/third_party/freetype2.git",
+      "commit": "264b5fbf5b912b39f98d038bf75d39be0a73f21b",
+      "scope": "Skia DEPS source selected by enabled build flags; final prebuilt linkage is not independently reconstructed",
+      "noticeFiles": [
+        {
+          "path": "third_party/native/skia-deps/freetype/264b5fbf5b912b39f98d038bf75d39be0a73f21b/LICENSE.TXT",
+          "sourcePath": "LICENSE.TXT",
+          "sourceUrl": "https://chromium.googlesource.com/chromium/src/third_party/freetype2.git/+/264b5fbf5b912b39f98d038bf75d39be0a73f21b/LICENSE.TXT?format=TEXT",
+          "gitBlobSha": "0f9df2177a47a3e463e45d295afdcc783766836e",
+          "sha256": "bd36c8b474855fa294c2ec5c184544478ef3720aad37d65a6296a4f264fd2d3b"
+        },
+        {
+          "path": "third_party/native/skia-deps/freetype/264b5fbf5b912b39f98d038bf75d39be0a73f21b/docs/FTL.TXT",
+          "sourcePath": "docs/FTL.TXT",
+          "sourceUrl": "https://chromium.googlesource.com/chromium/src/third_party/freetype2.git/+/264b5fbf5b912b39f98d038bf75d39be0a73f21b/docs/FTL.TXT?format=TEXT",
+          "gitBlobSha": "b9e8cbd66ffff526113350953f4a2f4252a92f49",
+          "sha256": "5a5ee54c5001bbad1cdc1a57cc3dd4c42199b2da09d39c7ee41fab002d02967f"
+        }
+      ],
+      "errors": [],
+      "noticeStatus": "EXACT_DEPS_SOURCE_NOTICES",
+      "probeNotes": [
+        "docs/LICENSE.TXT: HTTP Error 404: Not Found"
+      ]
+    },
+    {
+      "name": "harfbuzz",
+      "repository": "https://chromium.googlesource.com/external/github.com/harfbuzz/harfbuzz.git",
+      "commit": "9cb1fee51069b206effb4736e443b038d230789d",
+      "scope": "Skia DEPS source selected by enabled build flags; final prebuilt linkage is not independently reconstructed",
+      "noticeFiles": [
+        {
+          "path": "third_party/native/skia-deps/harfbuzz/9cb1fee51069b206effb4736e443b038d230789d/AUTHORS",
+          "sourcePath": "AUTHORS",
+          "sourceUrl": "https://chromium.googlesource.com/external/github.com/harfbuzz/harfbuzz.git/+/9cb1fee51069b206effb4736e443b038d230789d/AUTHORS?format=TEXT",
+          "gitBlobSha": "83c0c66f99e967fa669854f1837f656a705e6ba0",
+          "sha256": "19bfe8f5ed100636cd24ab0c90a3f71c21d8b02d9ba00719447a0faab364d49f"
+        },
+        {
+          "path": "third_party/native/skia-deps/harfbuzz/9cb1fee51069b206effb4736e443b038d230789d/COPYING",
+          "sourcePath": "COPYING",
+          "sourceUrl": "https://chromium.googlesource.com/external/github.com/harfbuzz/harfbuzz.git/+/9cb1fee51069b206effb4736e443b038d230789d/COPYING?format=TEXT",
+          "gitBlobSha": "1dd917e9f2e72167de69e3b5dadbc4e7db417da1",
+          "sha256": "ba8f810f2455c2f08e2d56bb49b72f37fcf68f1f4fade38977cfd7372050ad64"
+        }
+      ],
+      "errors": [],
+      "noticeStatus": "EXACT_DEPS_SOURCE_NOTICES"
+    },
+    {
+      "name": "highway",
+      "repository": "https://chromium.googlesource.com/external/github.com/google/highway.git",
+      "commit": "457c891775a7397bdb0376bb1031e6e027af1c48",
+      "scope": "Skia DEPS source selected by enabled build flags; final prebuilt linkage is not independently reconstructed",
+      "noticeFiles": [
+        {
+          "path": "third_party/native/skia-deps/highway/457c891775a7397bdb0376bb1031e6e027af1c48/LICENSE",
+          "sourcePath": "LICENSE",
+          "sourceUrl": "https://chromium.googlesource.com/external/github.com/google/highway.git/+/457c891775a7397bdb0376bb1031e6e027af1c48/LICENSE?format=TEXT",
+          "gitBlobSha": "f49a4e16e68b128803cc2dcea614603632b04eac",
+          "sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1"
+        },
+        {
+          "path": "third_party/native/skia-deps/highway/457c891775a7397bdb0376bb1031e6e027af1c48/LICENSE-BSD3",
+          "sourcePath": "LICENSE-BSD3",
+          "sourceUrl": "https://chromium.googlesource.com/external/github.com/google/highway.git/+/457c891775a7397bdb0376bb1031e6e027af1c48/LICENSE-BSD3?format=TEXT",
+          "gitBlobSha": "51d1bd4b412d3796c53935452c27ff251b9586ce",
+          "sha256": "d25e82e26acd42ca3ccc9993622631163425b869b9e16284226d534cff6470f2"
+        }
+      ],
+      "errors": [],
+      "noticeStatus": "EXACT_DEPS_SOURCE_NOTICES"
+    },
+    {
+      "name": "icu",
+      "repository": "https://chromium.googlesource.com/chromium/deps/icu.git",
+      "commit": "d578f2e8b7bd5938e21cfb6bf15c079e0aa5b738",
+      "scope": "Skia DEPS source selected by enabled build flags; final prebuilt linkage is not independently reconstructed",
+      "noticeFiles": [
+        {
+          "path": "third_party/native/skia-deps/icu/d578f2e8b7bd5938e21cfb6bf15c079e0aa5b738/LICENSE",
+          "sourcePath": "LICENSE",
+          "sourceUrl": "https://chromium.googlesource.com/chromium/deps/icu.git/+/d578f2e8b7bd5938e21cfb6bf15c079e0aa5b738/LICENSE?format=TEXT",
+          "gitBlobSha": "5a2eda629500c36c75377c1d693d8b584fcf40e6",
+          "sha256": "e55522d81edc687a341a4411e0776e54ca654e90147f354a90458aaced4116af"
+        },
+        {
+          "path": "third_party/native/skia-deps/icu/d578f2e8b7bd5938e21cfb6bf15c079e0aa5b738/license.html",
+          "sourcePath": "license.html",
+          "sourceUrl": "https://chromium.googlesource.com/chromium/deps/icu.git/+/d578f2e8b7bd5938e21cfb6bf15c079e0aa5b738/license.html?format=TEXT",
+          "gitBlobSha": "24846726670049cb129f1d72a9dd097ded9712d1",
+          "sha256": "c62d7697c03979f5056d28b338fafc7a1152820f7b379adf4a9d88cd37160f96"
+        }
+      ],
+      "errors": [],
+      "noticeStatus": "EXACT_DEPS_SOURCE_NOTICES"
+    },
+    {
+      "name": "libjpeg-turbo",
+      "repository": "https://chromium.googlesource.com/chromium/deps/libjpeg_turbo.git",
+      "commit": "e14cbfaa85529d47f9f55b0f104a579c1061f9ad",
+      "scope": "Skia DEPS source selected by enabled build flags; final prebuilt linkage is not independently reconstructed",
+      "noticeFiles": [
+        {
+          "path": "third_party/native/skia-deps/libjpeg-turbo/e14cbfaa85529d47f9f55b0f104a579c1061f9ad/LICENSE.md",
+          "sourcePath": "LICENSE.md",
+          "sourceUrl": "https://chromium.googlesource.com/chromium/deps/libjpeg_turbo.git/+/e14cbfaa85529d47f9f55b0f104a579c1061f9ad/LICENSE.md?format=TEXT",
+          "gitBlobSha": "a785258bcdaeb20de639c6a060a7e3d5df17ae8f",
+          "sha256": "96f5b328adbb78eeaaec6980d73fd558cb1e4d62560ed615646bc3cf5e532430"
+        },
+        {
+          "path": "third_party/native/skia-deps/libjpeg-turbo/e14cbfaa85529d47f9f55b0f104a579c1061f9ad/README.ijg",
+          "sourcePath": "README.ijg",
+          "sourceUrl": "https://chromium.googlesource.com/chromium/deps/libjpeg_turbo.git/+/e14cbfaa85529d47f9f55b0f104a579c1061f9ad/README.ijg?format=TEXT",
+          "gitBlobSha": "dbf8070cac812bcfd7eb4d407062919f69c777c8",
+          "sha256": "75815e3bf6484201a3c3d17a1bbf10f2e8e3237f84df10a2357ea896db2a81d6"
+        }
+      ],
+      "errors": [],
+      "noticeStatus": "EXACT_DEPS_SOURCE_NOTICES"
+    },
+    {
+      "name": "libjxl",
+      "repository": "https://chromium.googlesource.com/external/gitlab.com/wg1/jpeg-xl.git",
+      "commit": "332feb17d17311c748445f7ee75c4fb55cc38530",
+      "scope": "Skia DEPS source selected by enabled build flags; final prebuilt linkage is not independently reconstructed",
+      "noticeFiles": [
+        {
+          "path": "third_party/source-evidence/libjxl_libjxl/332feb17d17311c748445f7ee75c4fb55cc38530/LICENSE.txt",
+          "sourcePath": "LICENSE",
+          "sha256": "8405932022a556380c2d8c272eff154a923feb197233f348ce5f7334fb0a5ede",
+          "kind": "exact-Skia-DEPS-commit-notice",
+          "sourceCommit": "332feb17d17311c748445f7ee75c4fb55cc38530",
+          "sourceGitBlobSha": "c66034b105f23d108a51b45c846d5b5c194cc229",
+          "sourceUrl": "https://github.com/libjxl/libjxl/blob/332feb17d17311c748445f7ee75c4fb55cc38530/LICENSE"
+        },
+        {
+          "path": "third_party/source-evidence/libjxl_libjxl/332feb17d17311c748445f7ee75c4fb55cc38530/PATENTS.txt",
+          "sourcePath": "PATENTS",
+          "sha256": "91915f8ae056a68a3c5bdf05d9f6f78bb6903e27a8ca3a8434c9e4ac87300575",
+          "kind": "exact-Skia-DEPS-commit-notice",
+          "sourceCommit": "332feb17d17311c748445f7ee75c4fb55cc38530",
+          "sourceGitBlobSha": "c95b8f4105f210ceb06fe638d033d13b24e227a2",
+          "sourceUrl": "https://github.com/libjxl/libjxl/blob/332feb17d17311c748445f7ee75c4fb55cc38530/PATENTS"
+        },
+        {
+          "path": "third_party/source-evidence/libjxl_libjxl/332feb17d17311c748445f7ee75c4fb55cc38530/AUTHORS.txt",
+          "sourcePath": "AUTHORS",
+          "sha256": "00be88a8e3275f8f52a147ecede84c11900fd3180f88478d7cc9f55acabf3a35",
+          "kind": "exact-Skia-DEPS-commit-notice",
+          "sourceCommit": "332feb17d17311c748445f7ee75c4fb55cc38530",
+          "sourceGitBlobSha": "afd884bc79df5ace3141f2083a803092c7c77889",
+          "sourceUrl": "https://github.com/libjxl/libjxl/blob/332feb17d17311c748445f7ee75c4fb55cc38530/AUTHORS"
+        }
+      ],
+      "errors": [],
+      "noticeStatus": "EXACT_DEPS_SOURCE_NOTICES"
+    },
+    {
+      "name": "libpng",
+      "repository": "https://skia.googlesource.com/third_party/libpng.git",
+      "commit": "d5515b5b8be3901aac04e5bd8bd5c89f287bcd33",
+      "scope": "Skia DEPS source selected by enabled build flags; final prebuilt linkage is not independently reconstructed",
+      "noticeFiles": [
+        {
+          "path": "third_party/native/skia-deps/libpng/d5515b5b8be3901aac04e5bd8bd5c89f287bcd33/AUTHORS",
+          "sourcePath": "AUTHORS",
+          "sourceUrl": "https://skia.googlesource.com/third_party/libpng.git/+/d5515b5b8be3901aac04e5bd8bd5c89f287bcd33/AUTHORS?format=TEXT",
+          "gitBlobSha": "8278a447dcc957fe25cce57a8478aeb3ed7af704",
+          "sha256": "0de66f4a30324ff320b82bc0a19364c90063ed8849c8ab7aac06095870591893"
+        },
+        {
+          "path": "third_party/native/skia-deps/libpng/d5515b5b8be3901aac04e5bd8bd5c89f287bcd33/LICENSE",
+          "sourcePath": "LICENSE",
+          "sourceUrl": "https://skia.googlesource.com/third_party/libpng.git/+/d5515b5b8be3901aac04e5bd8bd5c89f287bcd33/LICENSE?format=TEXT",
+          "gitBlobSha": "1b765ae9f96abea77d3d9a88c543e3b5f4725813",
+          "sha256": "bdb0a645ea18c60507d0368379b1ac5474b92255fcc2d115e07486a7672ba526"
+        }
+      ],
+      "errors": [],
+      "noticeStatus": "EXACT_DEPS_SOURCE_NOTICES"
+    },
+    {
+      "name": "libwebp",
+      "repository": "https://chromium.googlesource.com/webm/libwebp.git",
+      "commit": "845d5476a866141ba35ac133f856fa62f0b7445f",
+      "scope": "Skia DEPS source selected by enabled build flags; final prebuilt linkage is not independently reconstructed",
+      "noticeFiles": [
+        {
+          "path": "third_party/native/skia-deps/libwebp/845d5476a866141ba35ac133f856fa62f0b7445f/AUTHORS",
+          "sourcePath": "AUTHORS",
+          "sourceUrl": "https://chromium.googlesource.com/webm/libwebp.git/+/845d5476a866141ba35ac133f856fa62f0b7445f/AUTHORS?format=TEXT",
+          "gitBlobSha": "4cbe9766082eae2ebb251aae2dfbd6d19b5f820f",
+          "sha256": "f9681940f35ab74858ac2717a511fa6237b67f65e99f457c21223e60a851c85a"
+        },
+        {
+          "path": "third_party/native/skia-deps/libwebp/845d5476a866141ba35ac133f856fa62f0b7445f/COPYING",
+          "sourcePath": "COPYING",
+          "sourceUrl": "https://chromium.googlesource.com/webm/libwebp.git/+/845d5476a866141ba35ac133f856fa62f0b7445f/COPYING?format=TEXT",
+          "gitBlobSha": "7a6f99547d4d6b4c5e6d5321acfaeba313e08de3",
+          "sha256": "5aec868f669e384a22372a4e8a1a6cd7d44c64cd451f960ca69cc170d1e13acf"
+        },
+        {
+          "path": "third_party/native/skia-deps/libwebp/845d5476a866141ba35ac133f856fa62f0b7445f/PATENTS",
+          "sourcePath": "PATENTS",
+          "sourceUrl": "https://chromium.googlesource.com/webm/libwebp.git/+/845d5476a866141ba35ac133f856fa62f0b7445f/PATENTS?format=TEXT",
+          "gitBlobSha": "caedf607e95ae4c3dc84d057fddcc301cd0e4863",
+          "sha256": "cc3273e0694ea5896145e0677699b53471b03ea43021ddc50e7923fbb9f5023c"
+        }
+      ],
+      "errors": [],
+      "noticeStatus": "EXACT_DEPS_SOURCE_NOTICES"
+    },
+    {
+      "name": "wuffs",
+      "repository": "https://skia.googlesource.com/external/github.com/google/wuffs-mirror-release-c.git",
+      "commit": "e3f919ccfe3ef542cfc983a82146070258fb57f8",
+      "scope": "Skia DEPS source selected by enabled build flags; final prebuilt linkage is not independently reconstructed",
+      "noticeFiles": [
+        {
+          "path": "third_party/native/skia-deps/wuffs/e3f919ccfe3ef542cfc983a82146070258fb57f8/LICENSE",
+          "sourcePath": "LICENSE",
+          "sourceUrl": "https://skia.googlesource.com/external/github.com/google/wuffs-mirror-release-c.git/+/e3f919ccfe3ef542cfc983a82146070258fb57f8/LICENSE?format=TEXT",
+          "gitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        }
+      ],
+      "errors": [],
+      "noticeStatus": "EXACT_DEPS_SOURCE_NOTICES"
+    },
+    {
+      "name": "zlib",
+      "repository": "https://chromium.googlesource.com/chromium/src/third_party/zlib",
+      "commit": "646b7f569718921d7d4b5b8e22572ff6c76f2596",
+      "scope": "Skia DEPS source selected by enabled build flags; final prebuilt linkage is not independently reconstructed",
+      "noticeFiles": [
+        {
+          "path": "third_party/native/skia-deps/zlib/646b7f569718921d7d4b5b8e22572ff6c76f2596/LICENSE",
+          "sourcePath": "LICENSE",
+          "sourceUrl": "https://chromium.googlesource.com/chromium/src/third_party/zlib/+/646b7f569718921d7d4b5b8e22572ff6c76f2596/LICENSE?format=TEXT",
+          "gitBlobSha": "8aca25d8c7a1336c991a2bc84bc2aa341a920885",
+          "sha256": "e1cfcc55c325b3f78cf55df9664abaa066e2271dffe8213347d9fccdfbac8f2c"
+        }
+      ],
+      "errors": [],
+      "noticeStatus": "EXACT_DEPS_SOURCE_NOTICES"
+    }
+  ],
+  "deliveryStatus": "source-reference-not-bundled",
+  "selectedFreeTypeLicense": "FTL (FreeType License), not the GPL alternative"
+}

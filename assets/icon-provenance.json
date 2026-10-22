@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23",
+  "author": "Biaoxi contributors",
+  "license": "MIT",
+  "licenseFile": "assets/ICON-LICENSE.txt",
+  "source": "assets/icon.svg",
+  "generator": "scripts/generate-icon.mjs",
+  "output": "assets/icon.png",
+  "size": [
+    1024,
+    1024
+  ],
+  "design": "Original hand-authored geometry: a folded paper sheet and three analysis bars on a rounded teal background.",
+  "externalArtwork": false,
+  "externalFonts": false,
+  "renderer": {
+    "name": "@napi-rs/canvas",
+    "version": "1.0.10"
+  },
+  "command": "node scripts/generate-icon.mjs",
+  "checkCommand": "node scripts/generate-icon.mjs --check",
+  "reproducibilityScope": "Same SVG and pinned renderer on the verified platform. Recheck the PNG hash when changing the renderer or platform.",
+  "files": [
+    {
+      "path": "assets/icon.svg",
+      "sha256": "c45466a11b195f4d066d954b247de655dc759bed0dea06ec4a79a8dec3cb0b15"
+    },
+    {
+      "path": "scripts/generate-icon.mjs",
+      "sha256": "2a889bcb07ebee32ea42161e5e317416bda667b079842dcde1899b22e87350ec"
+    },
+    {
+      "path": "assets/icon.png",
+      "sha256": "877bcf6694f3eaa2759100456d6b5add632057078aa1f736bd77f1dd0a015901"
+    },
+    {
+      "path": "assets/ICON-LICENSE.txt",
+      "sha256": "022f793d8aeffebf263cc717924259486fea340f23ecb8b7a3607868e4bb5e63"
+    }
+  ]
+}

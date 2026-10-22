@@ -1,0 +1,555 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-23",
+  "deliveryStatus": "source-reference-only; native addons, OCR WASM/JS runtime and traineddata not bundled",
+  "canvas": {
+    "repository": "Brooooooklyn/canvas",
+    "registryGitHead": "7d19abed029287e7c26b14eaa6e67d560a37d853",
+    "submodules": [
+      {
+        "path": "depot_tools",
+        "mode": "160000",
+        "type": "commit",
+        "sha": "8efa575d754b8703d99b0f827528e45aeaa167aa"
+      },
+      {
+        "path": "skia",
+        "mode": "160000",
+        "type": "commit",
+        "sha": "95ee33d7ec7791ab9c071675710a14fe6408ae4f"
+      }
+    ],
+    "skiaRootLicense": {
+      "path": "third_party/source-evidence/google_skia/95ee33d7ec7791ab9c071675710a14fe6408ae4f/LICENSE.txt",
+      "sourcePath": "LICENSE",
+      "sha256": "5f787c1dee3c56547f09ccc2906ab5f5293c4d8dd6c8654e573216c38e908dbd",
+      "kind": "exact-upstream-notice",
+      "sourceCommit": "95ee33d7ec7791ab9c071675710a14fe6408ae4f",
+      "sourceGitBlobSha": "e32636d5668d51ca7a938ae6cef93c795c656d7c",
+      "sourceUrl": "https://github.com/google/skia/blob/95ee33d7ec7791ab9c071675710a14fe6408ae4f/LICENSE"
+    },
+    "rustInventory": "third_party/canvas-rust-inventory.json",
+    "skiaDepsInventory": "third_party/canvas-skia-deps.json",
+    "binaryRebuild": "NOT_RUN",
+    "remainingBinaryResponsibility": "Confirm final target artifact/component manifest and retain applicable notices. Cargo.lock and DEPS are conservative source inventories, not proof of every final linked component."
+  },
+  "wasm": {
+    "repository": "naptha/tesseract.js-core",
+    "registryGitHead": "acffef2b66eb44a31df297e11d905f4b39001068",
+    "submodules": [
+      {
+        "path": "third_party/giflib",
+        "mode": "160000",
+        "type": "commit",
+        "sha": "fa37672085ce4b3d62c51627ab3c8cf2dda8009a"
+      },
+      {
+        "path": "third_party/leptonica",
+        "mode": "160000",
+        "type": "commit",
+        "sha": "4af068b56a9674da915debea4ed7e1b9885b17e8"
+      },
+      {
+        "path": "third_party/libjpeg",
+        "mode": "160000",
+        "type": "commit",
+        "sha": "6c0fcb8ddee365e7abc4d332662b06900612e923"
+      },
+      {
+        "path": "third_party/libpng",
+        "mode": "160000",
+        "type": "commit",
+        "sha": "a37d4836519517bdce6cb9d956092321eca3e73b"
+      },
+      {
+        "path": "third_party/libtiff",
+        "mode": "160000",
+        "type": "commit",
+        "sha": "b51bb157123264e26d34c09cc673d213aea61fc7"
+      },
+      {
+        "path": "third_party/libwebp",
+        "mode": "160000",
+        "type": "commit",
+        "sha": "20ef03ee351d4ff03fc5ff3ec4804a879d1b9d5c"
+      },
+      {
+        "path": "third_party/openlibm",
+        "mode": "160000",
+        "type": "commit",
+        "sha": "ae2d91698508701c83cab83714d42a1146dccf85"
+      },
+      {
+        "path": "third_party/tesseract",
+        "mode": "160000",
+        "type": "commit",
+        "sha": "2a9c1c49c360462733c386d2a44fcd22c4e21411"
+      },
+      {
+        "path": "third_party/zlib",
+        "mode": "160000",
+        "type": "commit",
+        "sha": "21767c654d31d2dccdde4330529775c6c5fd5389"
+      }
+    ],
+    "binarySources": [
+      {
+        "path": "examples/node/benchmark/benchmark.wasm.js",
+        "sha": "b17d923383a7bb071eb39219816572dff38c90df",
+        "size": 1185
+      },
+      {
+        "path": "examples/node/minimal/index.wasm.js",
+        "sha": "efc036047dd4eb831d7b7942d8950f5f88dcd725",
+        "size": 643
+      },
+      {
+        "path": "tesseract-core-lstm.wasm",
+        "sha": "47323645f711df478ecfdcfca8029073fd206e17",
+        "size": 2855361
+      },
+      {
+        "path": "tesseract-core-lstm.wasm.js",
+        "sha": "57d52b25a1438b086ba0ae8c49e9105957f306b3",
+        "size": 3896484
+      },
+      {
+        "path": "tesseract-core-relaxedsimd-lstm.wasm",
+        "sha": "d0e11847261b71f63e038e7c13f4ed8066d74eb2",
+        "size": 2862266
+      },
+      {
+        "path": "tesseract-core-relaxedsimd-lstm.wasm.js",
+        "sha": "dbc88c372a923875187d611d527774f169d47561",
+        "size": 3905767
+      },
+      {
+        "path": "tesseract-core-relaxedsimd.wasm",
+        "sha": "d9295ca6ea7a806c6c507b53f6e23042ae68760e",
+        "size": 3456075
+      },
+      {
+        "path": "tesseract-core-relaxedsimd.wasm.js",
+        "sha": "bbd990f034c19c27fe0094c3cbbbc4b229f35713",
+        "size": 4697227
+      },
+      {
+        "path": "tesseract-core-simd-lstm.wasm",
+        "sha": "d32a8b0d49cf2b831f8352e956e68bda8022500f",
+        "size": 2857601
+      },
+      {
+        "path": "tesseract-core-simd-lstm.wasm.js",
+        "sha": "c831ffec0db84e022ec5be2cdf1d4e4ae797d593",
+        "size": 3899472
+      },
+      {
+        "path": "tesseract-core-simd.wasm",
+        "sha": "26fd0af4c9842e8dafd99be3870df4b890eae565",
+        "size": 3451410
+      },
+      {
+        "path": "tesseract-core-simd.wasm.js",
+        "sha": "891c26d55ad844a9b8dffc1e8d4ed057d420139a",
+        "size": 4690932
+      },
+      {
+        "path": "tesseract-core.wasm",
+        "sha": "9a80423c827bde6a3e643e8bce9beb794170c254",
+        "size": 3449168
+      },
+      {
+        "path": "tesseract-core.wasm.js",
+        "sha": "b869abc882b861ac9103528d60ba7fbd23eb23eb",
+        "size": 4687944
+      }
+    ],
+    "version": "7.0.0",
+    "publishedFilesVerified": [
+      {
+        "file": "tesseract-core-lstm.wasm",
+        "sourceGitBlobSha": "47323645f711df478ecfdcfca8029073fd206e17",
+        "sha256": "66b17df6e20c5329a17ffa9c202a47eaa3e32500b253d4c7f38e7f2bc01457c3",
+        "size": 2855361,
+        "matchesRegistryGitHeadSource": true
+      },
+      {
+        "file": "tesseract-core-lstm.wasm.js",
+        "sourceGitBlobSha": "57d52b25a1438b086ba0ae8c49e9105957f306b3",
+        "sha256": "eef5f8b2f8e20e150680b20adaec4a60babafee3adbe8a94583c81fee46e8680",
+        "size": 3896484,
+        "matchesRegistryGitHeadSource": true
+      },
+      {
+        "file": "tesseract-core-relaxedsimd-lstm.wasm",
+        "sourceGitBlobSha": "d0e11847261b71f63e038e7c13f4ed8066d74eb2",
+        "sha256": "7985c92d4c64e7267d24cadffe1b2a1da6bf8aa55fdcaf953fe94fe122a24545",
+        "size": 2862266,
+        "matchesRegistryGitHeadSource": true
+      },
+      {
+        "file": "tesseract-core-relaxedsimd-lstm.wasm.js",
+        "sourceGitBlobSha": "dbc88c372a923875187d611d527774f169d47561",
+        "sha256": "861a536cf9ef8e63cb644d57bab39c388f37f7d6b6f60024b741c5f6b39a59b3",
+        "size": 3905767,
+        "matchesRegistryGitHeadSource": true
+      },
+      {
+        "file": "tesseract-core-relaxedsimd.wasm",
+        "sourceGitBlobSha": "d9295ca6ea7a806c6c507b53f6e23042ae68760e",
+        "sha256": "45f8c9b516df326b6ae6b493ed3a6289df5cbd10490e7b6ff8bf5b12ea42d1da",
+        "size": 3456075,
+        "matchesRegistryGitHeadSource": true
+      },
+      {
+        "file": "tesseract-core-relaxedsimd.wasm.js",
+        "sourceGitBlobSha": "bbd990f034c19c27fe0094c3cbbbc4b229f35713",
+        "sha256": "843074aa5bad1cc6421b74a86201768ced9f244795e4d81435435a61a40ce535",
+        "size": 4697227,
+        "matchesRegistryGitHeadSource": true
+      },
+      {
+        "file": "tesseract-core-simd-lstm.wasm",
+        "sourceGitBlobSha": "d32a8b0d49cf2b831f8352e956e68bda8022500f",
+        "sha256": "34e8d50cac216427d86bf397d610fdd9f49492539bbcdfbfccc4eda20c810bea",
+        "size": 2857601,
+        "matchesRegistryGitHeadSource": true
+      },
+      {
+        "file": "tesseract-core-simd-lstm.wasm.js",
+        "sourceGitBlobSha": "c831ffec0db84e022ec5be2cdf1d4e4ae797d593",
+        "sha256": "c58b46a4c796c0b8afccf77591d5b875b6896b45d402bbce8caa6f5362447b38",
+        "size": 3899472,
+        "matchesRegistryGitHeadSource": true
+      },
+      {
+        "file": "tesseract-core-simd.wasm",
+        "sourceGitBlobSha": "26fd0af4c9842e8dafd99be3870df4b890eae565",
+        "sha256": "7d237a13edfeb0fa2f104744fccde0a00e0c076c3e23b7a8fc7af75ec9af2c3e",
+        "size": 3451410,
+        "matchesRegistryGitHeadSource": true
+      },
+      {
+        "file": "tesseract-core-simd.wasm.js",
+        "sourceGitBlobSha": "891c26d55ad844a9b8dffc1e8d4ed057d420139a",
+        "sha256": "6b61ef4e911b5cf57e656bbfe983d6e2b3711a02dd164154ddda064566e8e09d",
+        "size": 4690932,
+        "matchesRegistryGitHeadSource": true
+      },
+      {
+        "file": "tesseract-core.wasm",
+        "sourceGitBlobSha": "9a80423c827bde6a3e643e8bce9beb794170c254",
+        "sha256": "c7f5ace62ac0ad065e71e9c6725f1d7cdf82e7eda8fba532cbb9563964da7098",
+        "size": 3449168,
+        "matchesRegistryGitHeadSource": true
+      },
+      {
+        "file": "tesseract-core.wasm.js",
+        "sourceGitBlobSha": "b869abc882b861ac9103528d60ba7fbd23eb23eb",
+        "sha256": "0bc6ce3e5fbbd0cd89706cf2fd70960e3372f4f01ee24265b26990808aaeb286",
+        "size": 4687944,
+        "matchesRegistryGitHeadSource": true
+      }
+    ],
+    "components": [
+      {
+        "name": "leptonica",
+        "repository": "DanBloomberg/leptonica",
+        "commit": "4af068b56a9674da915debea4ed7e1b9885b17e8",
+        "noticeFiles": [
+          {
+            "path": "third_party/source-evidence/DanBloomberg_leptonica/4af068b56a9674da915debea4ed7e1b9885b17e8/leptonica-license.txt.txt",
+            "sourcePath": "leptonica-license.txt",
+            "sha256": "87829abb5bbb00b55a107365da89e9a33f86c4250169e5a1e5588505be7d5806",
+            "kind": "exact-upstream-notice",
+            "sourceCommit": "4af068b56a9674da915debea4ed7e1b9885b17e8",
+            "sourceGitBlobSha": "73d44c601c0746534128804c3fb0b93772897f82",
+            "sourceUrl": "https://github.com/DanBloomberg/leptonica/blob/4af068b56a9674da915debea4ed7e1b9885b17e8/leptonica-license.txt"
+          }
+        ]
+      },
+      {
+        "name": "giflib",
+        "repository": "mirrorer/giflib",
+        "commit": "fa37672085ce4b3d62c51627ab3c8cf2dda8009a",
+        "noticeFiles": [
+          {
+            "path": "third_party/source-evidence/mirrorer_giflib/fa37672085ce4b3d62c51627ab3c8cf2dda8009a/COPYING.txt",
+            "sourcePath": "COPYING",
+            "sha256": "0c9b7990ecdca88b676db232c226548ac408b279f550d424d996f0d83591dd8e",
+            "kind": "exact-upstream-notice",
+            "sourceCommit": "fa37672085ce4b3d62c51627ab3c8cf2dda8009a",
+            "sourceGitBlobSha": "b9c0b50126076f30f0f9db7e940eac64e60febd6",
+            "sourceUrl": "https://github.com/mirrorer/giflib/blob/fa37672085ce4b3d62c51627ab3c8cf2dda8009a/COPYING"
+          }
+        ]
+      },
+      {
+        "name": "libjpeg",
+        "repository": "LuaDist/libjpeg",
+        "commit": "6c0fcb8ddee365e7abc4d332662b06900612e923",
+        "noticeFiles": [
+          {
+            "path": "third_party/source-evidence/LuaDist_libjpeg/6c0fcb8ddee365e7abc4d332662b06900612e923/README.txt",
+            "sourcePath": "README",
+            "sha256": "c791da525733040e622ed257c7b096b8f5191b332604ead0c6bc2b54cbd8e0d1",
+            "kind": "exact-upstream-notice",
+            "sourceCommit": "6c0fcb8ddee365e7abc4d332662b06900612e923",
+            "sourceGitBlobSha": "014ad3017424327607d157a1a33307294d754aeb",
+            "sourceUrl": "https://github.com/LuaDist/libjpeg/blob/6c0fcb8ddee365e7abc4d332662b06900612e923/README"
+          }
+        ]
+      },
+      {
+        "name": "libpng",
+        "repository": "pnggroup/libpng",
+        "commit": "a37d4836519517bdce6cb9d956092321eca3e73b",
+        "noticeFiles": [
+          {
+            "path": "third_party/source-evidence/pnggroup_libpng/a37d4836519517bdce6cb9d956092321eca3e73b/LICENSE.txt",
+            "sourcePath": "LICENSE",
+            "sha256": "33ba4e187d8b0c8d7ab2bc2e522bb095219e03089e9aa0122b4fb9eb2b7de82b",
+            "kind": "exact-upstream-notice",
+            "sourceCommit": "a37d4836519517bdce6cb9d956092321eca3e73b",
+            "sourceGitBlobSha": "93fe2348627df3d44f878a141818f148791928e2",
+            "sourceUrl": "https://github.com/pnggroup/libpng/blob/a37d4836519517bdce6cb9d956092321eca3e73b/LICENSE"
+          }
+        ]
+      },
+      {
+        "name": "libtiff",
+        "repository": "libsdl-org/libtiff",
+        "commit": "b51bb157123264e26d34c09cc673d213aea61fc7",
+        "noticeFiles": [
+          {
+            "path": "third_party/source-evidence/libsdl-org_libtiff/b51bb157123264e26d34c09cc673d213aea61fc7/COPYRIGHT.txt",
+            "sourcePath": "COPYRIGHT",
+            "sha256": "fbd6fed7938541d2c809c0826225fc85e551fdbfa8732b10f0c87e0847acafd7",
+            "kind": "exact-upstream-notice",
+            "sourceCommit": "b51bb157123264e26d34c09cc673d213aea61fc7",
+            "sourceGitBlobSha": "8282186151e224ac83d9990805062ff7b8effa00",
+            "sourceUrl": "https://github.com/libsdl-org/libtiff/blob/b51bb157123264e26d34c09cc673d213aea61fc7/COPYRIGHT"
+          }
+        ],
+        "canonicalRepository": "https://gitlab.com/libtiff/libtiff.git",
+        "retrievalNote": "GitHub mirror at the identical commit recorded by the canonical submodule pointer."
+      },
+      {
+        "name": "libwebp",
+        "repository": "webmproject/libwebp",
+        "commit": "20ef03ee351d4ff03fc5ff3ec4804a879d1b9d5c",
+        "noticeFiles": [
+          {
+            "path": "third_party/source-evidence/webmproject_libwebp/20ef03ee351d4ff03fc5ff3ec4804a879d1b9d5c/COPYING.txt",
+            "sourcePath": "COPYING",
+            "sha256": "5aec868f669e384a22372a4e8a1a6cd7d44c64cd451f960ca69cc170d1e13acf",
+            "kind": "exact-upstream-notice",
+            "sourceCommit": "20ef03ee351d4ff03fc5ff3ec4804a879d1b9d5c",
+            "sourceGitBlobSha": "7a6f99547d4d6b4c5e6d5321acfaeba313e08de3",
+            "sourceUrl": "https://github.com/webmproject/libwebp/blob/20ef03ee351d4ff03fc5ff3ec4804a879d1b9d5c/COPYING"
+          },
+          {
+            "path": "third_party/source-evidence/webmproject_libwebp/20ef03ee351d4ff03fc5ff3ec4804a879d1b9d5c/PATENTS.txt",
+            "sourcePath": "PATENTS",
+            "sha256": "cc3273e0694ea5896145e0677699b53471b03ea43021ddc50e7923fbb9f5023c",
+            "kind": "exact-upstream-notice",
+            "sourceCommit": "20ef03ee351d4ff03fc5ff3ec4804a879d1b9d5c",
+            "sourceGitBlobSha": "caedf607e95ae4c3dc84d057fddcc301cd0e4863",
+            "sourceUrl": "https://github.com/webmproject/libwebp/blob/20ef03ee351d4ff03fc5ff3ec4804a879d1b9d5c/PATENTS"
+          }
+        ]
+      },
+      {
+        "name": "openlibm",
+        "repository": "JuliaMath/openlibm",
+        "commit": "ae2d91698508701c83cab83714d42a1146dccf85",
+        "noticeFiles": [
+          {
+            "path": "third_party/source-evidence/JuliaMath_openlibm/ae2d91698508701c83cab83714d42a1146dccf85/LICENSE.md.txt",
+            "sourcePath": "LICENSE.md",
+            "sha256": "b1843fbf5b03f519a5f0a44fce751bdd1022ae7148614923f9d6293e17a18b17",
+            "kind": "exact-upstream-notice",
+            "sourceCommit": "ae2d91698508701c83cab83714d42a1146dccf85",
+            "sourceGitBlobSha": "d76019ef1d1e038a7d43b3389cdb23789896651d",
+            "sourceUrl": "https://github.com/JuliaMath/openlibm/blob/ae2d91698508701c83cab83714d42a1146dccf85/LICENSE.md"
+          }
+        ],
+        "scopeNote": "Exact license distinguishes runtime MIT/BSD/ISC/FDLIBM from LGPL test files. Retained build script requests install-static; the existence of LGPL tests is not treated as a GPL-only runtime dependency."
+      },
+      {
+        "name": "tesseract",
+        "repository": "Balearica/tesseract",
+        "commit": "2a9c1c49c360462733c386d2a44fcd22c4e21411",
+        "noticeFiles": [
+          {
+            "path": "third_party/source-evidence/Balearica_tesseract/2a9c1c49c360462733c386d2a44fcd22c4e21411/LICENSE.txt",
+            "sourcePath": "LICENSE",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+            "kind": "exact-upstream-notice",
+            "sourceCommit": "2a9c1c49c360462733c386d2a44fcd22c4e21411",
+            "sourceGitBlobSha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+            "sourceUrl": "https://github.com/Balearica/tesseract/blob/2a9c1c49c360462733c386d2a44fcd22c4e21411/LICENSE"
+          }
+        ]
+      },
+      {
+        "name": "zlib",
+        "repository": "madler/zlib",
+        "commit": "21767c654d31d2dccdde4330529775c6c5fd5389",
+        "noticeFiles": [
+          {
+            "path": "third_party/source-evidence/madler_zlib/21767c654d31d2dccdde4330529775c6c5fd5389/zlib.h.txt",
+            "sourcePath": "zlib.h",
+            "sha256": "045cf777c6c9109b28ddcf3a413c5ca15e39fc513c13ef87bd9a3132a59d1b51",
+            "kind": "exact-upstream-notice",
+            "sourceCommit": "21767c654d31d2dccdde4330529775c6c5fd5389",
+            "sourceGitBlobSha": "4a98e38bf34c82def9f9bf77ced2a618899f8d11",
+            "sourceUrl": "https://github.com/madler/zlib/blob/21767c654d31d2dccdde4330529775c6c5fd5389/zlib.h"
+          }
+        ]
+      }
+    ],
+    "sourceBuildReproduction": "NOT_RUN; exact published binary/wrapper Git blobs verified instead"
+  },
+  "traineddata": {
+    "repository": "naptha/tessdata",
+    "registryGitHead": "b86746569320a6103cea84cc2b8d9ee74f0f45d3",
+    "submodules": [
+      {
+        "path": "tesseract-ocr/tessdata",
+        "mode": "160000",
+        "type": "commit",
+        "sha": "277725be3b123d384af6f1ce237fc274421e502b"
+      },
+      {
+        "path": "tesseract-ocr/tessdata_best",
+        "mode": "160000",
+        "type": "commit",
+        "sha": "e9f15884bc503cf905c8a1dbbc9cb14458152628"
+      },
+      {
+        "path": "tesseract-ocr/tessdata_fast",
+        "mode": "160000",
+        "type": "commit",
+        "sha": "b893ed3917f4eb4f3f08a79b1b58fe95097a7473"
+      }
+    ],
+    "sourceFiles": [
+      {
+        "path": "4.0.0/chi_sim.traineddata.gz",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ed6d91a34f1b14ec501e09b9ca070f75b8c08dfc",
+        "size": 20159757,
+        "url": "https://api.github.com/repos/naptha/tessdata/git/blobs/ed6d91a34f1b14ec501e09b9ca070f75b8c08dfc"
+      },
+      {
+        "path": "4.0.0/eng.traineddata.gz",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e83c1267675ff3a6641b110002363782db7a1885",
+        "size": 10923060,
+        "url": "https://api.github.com/repos/naptha/tessdata/git/blobs/e83c1267675ff3a6641b110002363782db7a1885"
+      },
+      {
+        "path": "4.0.0_best_int/chi_sim.traineddata.gz",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7defede2087a726a0f01a8f9b3b9c092c12160cc",
+        "size": 1718768,
+        "url": "https://api.github.com/repos/naptha/tessdata/git/blobs/7defede2087a726a0f01a8f9b3b9c092c12160cc"
+      },
+      {
+        "path": "4.0.0_best_int/eng.traineddata.gz",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "730a6a59010b9440e38dd85f9fe6b6bf0637e6eb",
+        "size": 2952873,
+        "url": "https://api.github.com/repos/naptha/tessdata/git/blobs/730a6a59010b9440e38dd85f9fe6b6bf0637e6eb"
+      }
+    ],
+    "files": [
+      {
+        "package": "@tesseract.js-data/chi_sim",
+        "packageVersion": "1.0.0",
+        "localPath": "node_modules/@tesseract.js-data/chi_sim/4.0.0/chi_sim.traineddata.gz",
+        "upstreamPath": "4.0.0/chi_sim.traineddata.gz",
+        "gitBlobSha": "ed6d91a34f1b14ec501e09b9ca070f75b8c08dfc",
+        "sha256": "59388039851e4d1293d729c183fd8c1fa9bbbb959eed996e945024671e68c1d6",
+        "size": 20159757,
+        "upstreamRepository": "naptha/tessdata",
+        "upstreamCommit": "b86746569320a6103cea84cc2b8d9ee74f0f45d3",
+        "upstreamFileGitBlobVerified": true,
+        "sourceUrl": "https://github.com/naptha/tessdata/blob/b86746569320a6103cea84cc2b8d9ee74f0f45d3/4.0.0/chi_sim.traineddata.gz",
+        "uncompressedModelGitBlob": "eeb66cfbd9c02b170a6aeeece673910793d8d8c4",
+        "uncompressedModelSourceRepository": "tesseract-ocr/tessdata",
+        "uncompressedModelSourceCommit": "277725be3b123d384af6f1ce237fc274421e502b"
+      },
+      {
+        "package": "@tesseract.js-data/chi_sim",
+        "packageVersion": "1.0.0",
+        "localPath": "node_modules/@tesseract.js-data/chi_sim/4.0.0_best_int/chi_sim.traineddata.gz",
+        "upstreamPath": "4.0.0_best_int/chi_sim.traineddata.gz",
+        "gitBlobSha": "7defede2087a726a0f01a8f9b3b9c092c12160cc",
+        "sha256": "b8a23f10c7de500891eb458a8adc9cc58ab7f242f08b7d149f5e9aea4ad5db7c",
+        "size": 1718768,
+        "upstreamRepository": "naptha/tessdata",
+        "upstreamCommit": "b86746569320a6103cea84cc2b8d9ee74f0f45d3",
+        "upstreamFileGitBlobVerified": true,
+        "sourceUrl": "https://github.com/naptha/tessdata/blob/b86746569320a6103cea84cc2b8d9ee74f0f45d3/4.0.0_best_int/chi_sim.traineddata.gz",
+        "transformation": "Exact final gzip blob verified at naptha commit. Its retained integerization script documents combine_tessdata -c from tessdata_best; integerization was not rerun."
+      },
+      {
+        "package": "@tesseract.js-data/eng",
+        "packageVersion": "1.0.0",
+        "localPath": "node_modules/@tesseract.js-data/eng/4.0.0/eng.traineddata.gz",
+        "upstreamPath": "4.0.0/eng.traineddata.gz",
+        "gitBlobSha": "e83c1267675ff3a6641b110002363782db7a1885",
+        "sha256": "ed350f3752f81ee8f38769edc14d92d997dababe23b565c59879372cc46a2468",
+        "size": 10923060,
+        "upstreamRepository": "naptha/tessdata",
+        "upstreamCommit": "b86746569320a6103cea84cc2b8d9ee74f0f45d3",
+        "upstreamFileGitBlobVerified": true,
+        "sourceUrl": "https://github.com/naptha/tessdata/blob/b86746569320a6103cea84cc2b8d9ee74f0f45d3/4.0.0/eng.traineddata.gz",
+        "uncompressedModelGitBlob": "f4744c201359d02ced6914c77f0de68ee9bbdd74",
+        "uncompressedModelSourceRepository": "tesseract-ocr/tessdata",
+        "uncompressedModelSourceCommit": "277725be3b123d384af6f1ce237fc274421e502b"
+      },
+      {
+        "package": "@tesseract.js-data/eng",
+        "packageVersion": "1.0.0",
+        "localPath": "node_modules/@tesseract.js-data/eng/4.0.0_best_int/eng.traineddata.gz",
+        "upstreamPath": "4.0.0_best_int/eng.traineddata.gz",
+        "gitBlobSha": "730a6a59010b9440e38dd85f9fe6b6bf0637e6eb",
+        "sha256": "45b4cb346724ac1774f1c36f42f182b887bcdb28ebe63e6fff90ac41f3fcff91",
+        "size": 2952873,
+        "upstreamRepository": "naptha/tessdata",
+        "upstreamCommit": "b86746569320a6103cea84cc2b8d9ee74f0f45d3",
+        "upstreamFileGitBlobVerified": true,
+        "sourceUrl": "https://github.com/naptha/tessdata/blob/b86746569320a6103cea84cc2b8d9ee74f0f45d3/4.0.0_best_int/eng.traineddata.gz",
+        "transformation": "Exact final gzip blob verified at naptha commit. Its retained integerization script documents combine_tessdata -c from tessdata_best; integerization was not rerun."
+      }
+    ],
+    "noticeFiles": [
+      {
+        "path": "third_party/source-evidence/tesseract-ocr_tessdata/277725be3b123d384af6f1ce237fc274421e502b/COPYING.txt",
+        "sourcePath": "COPYING",
+        "sha256": "85c31da65107d18490666cc8e3af6373b5303fb57f82b97119d47ad219896800",
+        "kind": "exact-upstream-notice",
+        "sourceCommit": "277725be3b123d384af6f1ce237fc274421e502b",
+        "sourceGitBlobSha": "11e05af425fc825e2c3dd6f27f61e89413257a4b",
+        "sourceUrl": "https://github.com/tesseract-ocr/tessdata/blob/277725be3b123d384af6f1ce237fc274421e502b/COPYING"
+      },
+      {
+        "path": "third_party/source-evidence/tesseract-ocr_tessdata_best/e9f15884bc503cf905c8a1dbbc9cb14458152628/LICENSE.txt",
+        "sourcePath": "LICENSE",
+        "sha256": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9",
+        "kind": "exact-upstream-notice",
+        "sourceCommit": "e9f15884bc503cf905c8a1dbbc9cb14458152628",
+        "sourceGitBlobSha": "d9a10c0d8e868ebf8da0b3dc95bb0be634c34bfe",
+        "sourceUrl": "https://github.com/tesseract-ocr/tessdata_best/blob/e9f15884bc503cf905c8a1dbbc9cb14458152628/LICENSE"
+      }
+    ],
+    "integerizationReproduction": "NOT_RUN; exact resulting compressed file Git blobs verified"
+  }
+}

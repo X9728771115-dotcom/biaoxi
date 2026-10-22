@@ -1,0 +1,70 @@
+{
+  "file": "assets/SourceHanSansSC-Regular.otf",
+  "sha256": "f1d8611151880c6c336aabeac4640ef434fa13cbfbf1ffe82d0a71b2a5637256",
+  "sfntNameRecords": [
+    {
+      "nameId": 0,
+      "value": "© 2014-2025 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'."
+    },
+    {
+      "nameId": 1,
+      "value": "Source Han Sans SC"
+    },
+    {
+      "nameId": 2,
+      "value": "Regular"
+    },
+    {
+      "nameId": 3,
+      "value": "2.005;ADBO;SourceHanSansSC-Regular;ADOBE"
+    },
+    {
+      "nameId": 4,
+      "value": "Source Han Sans SC"
+    },
+    {
+      "nameId": 5,
+      "value": "Version 2.005;addfeatures 5.0.0b21"
+    },
+    {
+      "nameId": 6,
+      "value": "SourceHanSansSC-Regular"
+    },
+    {
+      "nameId": 7,
+      "value": "Source is a trademark of Adobe in the United States and/or other countries."
+    },
+    {
+      "nameId": 8,
+      "value": "Adobe"
+    },
+    {
+      "nameId": 9,
+      "value": "Ryoko NISHIZUKA 西塚涼子 (kana, bopomofo & ideographs); Paul D. Hunt (Latin, Greek & Cyrillic); Sandoll Communications 산돌커뮤니케이션, Soo-young JANG 장수영 & Joo-yeon KANG 강주연 (hangul elements, letters & syllables)"
+    },
+    {
+      "nameId": 10,
+      "value": "Dr. Ken Lunde (project architect, glyph set definition & overall production); Masataka HATTORI 服部正貴 (production & ideograph elements); Zachary Quinn Scheuren (Variable font and overall production)"
+    },
+    {
+      "nameId": 11,
+      "value": "http://www.adobe.com/type/"
+    },
+    {
+      "nameId": 13,
+      "value": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This Font Software is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the SIL Open Font License for the specific language, permissions and limitations governing your use of this Font Software."
+    },
+    {
+      "nameId": 14,
+      "value": "http://scripts.sil.org/OFL"
+    },
+    {
+      "nameId": 1,
+      "value": "思源黑体"
+    },
+    {
+      "nameId": 4,
+      "value": "思源黑体"
+    }
+  ]
+}

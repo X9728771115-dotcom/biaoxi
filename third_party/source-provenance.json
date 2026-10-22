@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "kind": "SPDX-standard-template",
+      "spdx": "MIT",
+      "path": "third_party/license-templates/SPDX-MIT.txt",
+      "url": "https://github.com/spdx/license-list-data/blob/main/text/MIT.txt",
+      "gitBlobSha": "d817195dad53ec992418c28ffca5fbd1cd86502a",
+      "checkedAt": "2026-10-23",
+      "binding": "Supplemental standard text; placeholders are upstream SPDX template placeholders, not claims of package copyright ownership."
+    },
+    {
+      "kind": "SPDX-standard-template",
+      "spdx": "ISC",
+      "path": "third_party/license-templates/SPDX-ISC.txt",
+      "url": "https://github.com/spdx/license-list-data/blob/main/text/ISC.txt",
+      "gitBlobSha": "e80998f07690783bacce4ae55ff59c471d50cd75",
+      "checkedAt": "2026-10-23",
+      "binding": "Supplemental standard text; placeholders are upstream SPDX template placeholders, not claims of package copyright ownership."
+    },
+    {
+      "kind": "SPDX-standard-template",
+      "spdx": "BSD-2-Clause",
+      "path": "third_party/license-templates/SPDX-BSD-2-Clause.txt",
+      "url": "https://github.com/spdx/license-list-data/blob/main/text/BSD-2-Clause.txt",
+      "gitBlobSha": "5f662b354cd40cd5339d5aa05d74b15405138230",
+      "checkedAt": "2026-10-23",
+      "binding": "Supplemental standard text; placeholders are upstream SPDX template placeholders, not claims of package copyright ownership."
+    },
+    {
+      "kind": "SPDX-standard-template",
+      "spdx": "Apache-2.0",
+      "path": "third_party/license-templates/SPDX-Apache-2.0.txt",
+      "url": "https://github.com/spdx/license-list-data/blob/main/text/Apache-2.0.txt",
+      "gitBlobSha": "137069b823873b8bcf42979bcf8e9371052d26a2",
+      "checkedAt": "2026-10-23",
+      "binding": "Supplemental standard text; placeholders are upstream SPDX template placeholders, not claims of package copyright ownership."
+    },
+    {
+      "kind": "font-binary-source",
+      "path": "assets/SourceHanSansSC-Regular.otf",
+      "url": "https://github.com/adobe-fonts/source-han-sans/blob/release/OTF/SimplifiedChinese/SourceHanSansSC-Regular.otf",
+      "gitBlobSha": "8113ad53da18b6a08b133c6c460ae1d818a0f865",
+      "expectedSha256": "f1d8611151880c6c336aabeac4640ef434fa13cbfbf1ffe82d0a71b2a5637256",
+      "checkedAt": "2026-10-23",
+      "binding": "Git blob SHA matches local font bytes; internal version 2.005 and OFL-1.1 notice."
+    },
+    {
+      "kind": "font-license-source",
+      "path": "assets/FONT-LICENSE.txt",
+      "url": "https://github.com/adobe-fonts/source-han-sans/blob/release/LICENSE.txt",
+      "gitBlobSha": "3ff0ccaba06857bf292ade9a50f16a0f02b3b8d4",
+      "checkedAt": "2026-10-23",
+      "binding": "Compare source text with the retained local FONT-LICENSE.txt.",
+      "localTextMatchesUpstream": true,
+      "sha256": "fcac737e761ec63dbfbdce11030a1780161920d80315edba9c8beff1c2bac5a2"
+    },
+    {
+      "kind": "project-original-icon",
+      "path": "assets/icon.svg",
+      "output": "assets/icon.png",
+      "generator": "scripts/generate-icon.mjs",
+      "provenance": "assets/icon-provenance.json",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2026 Biaoxi contributors",
+      "checkedAt": "2026-10-23",
+      "svgSha256": "c45466a11b195f4d066d954b247de655dc759bed0dea06ec4a79a8dec3cb0b15",
+      "pngSha256": "877bcf6694f3eaa2759100456d6b5add632057078aa1f736bd77f1dd0a015901",
+      "binding": "Original hand-authored SVG geometry; no external artwork or fonts. PNG rendered by the pinned canvas package and checked against a second in-memory render."
+    }
+  ]
+}

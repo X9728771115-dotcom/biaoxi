@@ -1,0 +1,44 @@
+name: 缺陷报告 / Bug report
+description: 使用合成样本描述可复现的问题，请勿上传真实业务资料。
+title: '[Bug] '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请先阅读 CONTRIBUTING.md。安全漏洞不要公开细节，请阅读 SECURITY.md。
+        请勿上传真实招标文件、证照、合同、人员信息、账号、密钥、登录状态或业务报告。
+  - type: textarea
+    id: environment
+    attributes:
+      label: 环境 / Environment
+      description: 源码版本、系统版本、芯片架构、Node/npm 版本及浏览器版或桌面版。
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 最小复现 / Minimal reproduction
+      description: 用自行编写的合成文本或合成文件说明操作步骤。解析问题请给出预期条款和来源位置。
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: 预期与实际结果 / Expected and actual behavior
+      description: 分别说明预期行为、实际行为及可见错误，日志和截图必须检查敏感内容。
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: 已执行验证 / Checks run
+      description: 写明命令和结果；没有运行的检查写 NOT_RUN。
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 公开内容确认 / Public content check
+      options:
+        - label: 我已检查正文、附件、文件名、截图和日志，未包含真实业务资料、个人信息或凭据。
+          required: true
+        - label: 复现使用合成材料或我有权公开再分发且已经检查的测试资源。
+          required: true

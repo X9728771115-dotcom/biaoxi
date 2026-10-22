@@ -1,0 +1,811 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-23",
+  "packages": [
+    {
+      "name": "boolbase",
+      "version": "1.0.0",
+      "status": "MISSING_FULL_AUTHOR_GRANT",
+      "registryMetadata": {
+        "name": "boolbase",
+        "version": "1.0.0",
+        "gitHead": null,
+        "repository": {
+          "url": "https://github.com/fb55/boolbase",
+          "type": "git"
+        },
+        "license": "ISC",
+        "registryUrl": "https://registry.npmjs.org/boolbase/1.0.0"
+      },
+      "queryPassesThisTask": 2,
+      "fullLicenseTextRecovered": false,
+      "applicability": {},
+      "missingEvidence": "Official tags API failed (SSL EOF or rate limit); bounded v1.0.0 source tag archive returned 404. Exact-version immutable source linkage and full author license grant remain unverified.",
+      "noticeEvidence": [
+        {
+          "sourceKind": "local exact installed published package; not official-source recovery",
+          "sha256": "ca09c0dccbfc43be6be0ac89e9ffa19b64b30f9c74c64da27f719a7244a25e30",
+          "path": "third_party/declarations/boolbase@1.0.0/package.json"
+        }
+      ],
+      "queries": [
+        {
+          "queryUrl": "https://codeload.github.com/fb55/boolbase/tar.gz/v1.0.0",
+          "pass": "bounded-source-fallback",
+          "status": "fetch-failed",
+          "error": "curl: (56) The requested URL returned error: 404",
+          "ref": "v1.0.0"
+        },
+        {
+          "queryUrl": "https://api.github.com/repos/fb55/boolbase/git/refs/tags",
+          "pass": "tag-refs",
+          "error": "<urlopen error EOF occurred in violation of protocol (_ssl.c:1129)>"
+        }
+      ],
+      "currentSourceDelivery": "not-bundled-npm-reference",
+      "currentSourceImpact": "Reference-only: dependency code is not redistributed in this source candidate. The missing historical standalone notice is recorded for future binary redistribution, not asserted to be an existing authorization conflict."
+    },
+    {
+      "name": "chromium-pickle-js",
+      "version": "0.2.0",
+      "status": "MISSING_FULL_AUTHOR_GRANT",
+      "registryMetadata": {
+        "name": "chromium-pickle-js",
+        "version": "0.2.0",
+        "gitHead": "72ecd4d52d8e676a595636e1ec9ba74060344137",
+        "repository": {
+          "url": "git+https://github.com/electron/node-chromium-pickle-js.git",
+          "type": "git"
+        },
+        "license": "MIT",
+        "registryUrl": "https://registry.npmjs.org/chromium-pickle-js/0.2.0"
+      },
+      "queryPassesThisTask": 1,
+      "fullLicenseTextRecovered": false,
+      "applicability": {
+        "basis": "published npm registry gitHead",
+        "registryGitHead": "72ecd4d52d8e676a595636e1ec9ba74060344137",
+        "archiveComplete": true
+      },
+      "sourceRef": "72ecd4d52d8e676a595636e1ec9ba74060344137",
+      "sourceRepository": "electron/node-chromium-pickle-js",
+      "sourcePackageVersion": "0.2.0",
+      "sourcePackageLicense": "MIT",
+      "missingEvidence": "Complete source archive contains no LICENSE/COPYING/NOTICE file or full MIT/BSD grant; package.json and optional README declaration do not provide full copyright and grant text.",
+      "noticeEvidence": [
+        {
+          "sourceUrl": "https://github.com/electron/node-chromium-pickle-js/blob/72ecd4d52d8e676a595636e1ec9ba74060344137/package.json",
+          "sha256": "e2d1d0be67ba92d392c9d171f9ddf5b8832d1ef0710a3e7927bd02d2ad9b13cf",
+          "gitBlobSha1": "b6f00c3f0e6f4d3880d9ffa6b8fa7821050183d4",
+          "licenseMentions": [
+            {
+              "line": 6,
+              "text": "  \"license\": \"MIT\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/electron/node-chromium-pickle-js.git\""
+            }
+          ],
+          "path": "third_party/declarations/chromium-pickle-js@0.2.0/package.json"
+        }
+      ],
+      "queries": [
+        {
+          "queryUrl": "https://codeload.github.com/electron/node-chromium-pickle-js/tar.gz/72ecd4d52d8e676a595636e1ec9ba74060344137",
+          "pass": "exact-commit-archive",
+          "status": "archive-inspected",
+          "http": 200,
+          "archiveSha256": "acf6d4fda429e62e89ac0b3cda1866aa7678aac41f37fc7646e67adf60ca3fa2",
+          "gitHead": "72ecd4d52d8e676a595636e1ec9ba74060344137"
+        }
+      ],
+      "currentSourceDelivery": "not-bundled-npm-reference",
+      "currentSourceImpact": "Reference-only: dependency code is not redistributed in this source candidate. The missing historical standalone notice is recorded for future binary redistribution, not asserted to be an existing authorization conflict."
+    },
+    {
+      "name": "cross-dirname",
+      "version": "0.1.0",
+      "status": "MISSING_FULL_AUTHOR_GRANT",
+      "registryMetadata": {
+        "name": "cross-dirname",
+        "version": "0.1.0",
+        "gitHead": "cf2a0674f338e21e53d752933e748849399cd104",
+        "repository": {
+          "url": "git+https://github.com/JumpLink/cross-dirname.git",
+          "type": "git"
+        },
+        "license": "MIT",
+        "registryUrl": "https://registry.npmjs.org/cross-dirname/0.1.0"
+      },
+      "queryPassesThisTask": 1,
+      "fullLicenseTextRecovered": false,
+      "applicability": {
+        "basis": "published npm registry gitHead",
+        "registryGitHead": "cf2a0674f338e21e53d752933e748849399cd104",
+        "archiveComplete": true
+      },
+      "sourceRef": "cf2a0674f338e21e53d752933e748849399cd104",
+      "sourceRepository": "JumpLink/cross-dirname",
+      "sourcePackageVersion": "0.1.0",
+      "sourcePackageLicense": "MIT",
+      "missingEvidence": "Complete source archive contains no LICENSE/COPYING/NOTICE file or full MIT/BSD grant; package.json and optional README declaration do not provide full copyright and grant text.",
+      "noticeEvidence": [
+        {
+          "sourceUrl": "https://github.com/JumpLink/cross-dirname/blob/cf2a0674f338e21e53d752933e748849399cd104/package.json",
+          "sha256": "5949f6cab465c633493e1de63c484be7516d9f945d3803c2db6d0e5ba442005c",
+          "gitBlobSha1": "10c36b3678b8deceaee88226633196b7118d8797",
+          "licenseMentions": [
+            {
+              "line": 41,
+              "text": "  \"license\": \"MIT\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/JumpLink/cross-dirname.git\""
+            }
+          ],
+          "path": "third_party/declarations/cross-dirname@0.1.0/package.json"
+        }
+      ],
+      "queries": [
+        {
+          "queryUrl": "https://codeload.github.com/JumpLink/cross-dirname/tar.gz/cf2a0674f338e21e53d752933e748849399cd104",
+          "pass": "exact-commit-archive",
+          "status": "archive-inspected",
+          "http": 200,
+          "archiveSha256": "fb483feb4a9814ee64f78700b12e039a6fa01c4f64d2b4713dc18908a7f8d6ec",
+          "gitHead": "cf2a0674f338e21e53d752933e748849399cd104"
+        }
+      ],
+      "currentSourceDelivery": "not-bundled-npm-reference",
+      "currentSourceImpact": "Reference-only: dependency code is not redistributed in this source candidate. The missing historical standalone notice is recorded for future binary redistribution, not asserted to be an existing authorization conflict."
+    },
+    {
+      "name": "dfa",
+      "version": "1.2.0",
+      "status": "MISSING_FULL_AUTHOR_GRANT",
+      "registryMetadata": {
+        "name": "dfa",
+        "version": "1.2.0",
+        "gitHead": "3f5e603e5082caedabefefdf53e8a6ca3111e966",
+        "repository": {
+          "url": "git+ssh://git@github.com/devongovett/dfa.git",
+          "type": "git"
+        },
+        "license": "MIT",
+        "registryUrl": "https://registry.npmjs.org/dfa/1.2.0"
+      },
+      "queryPassesThisTask": 1,
+      "fullLicenseTextRecovered": false,
+      "applicability": {
+        "basis": "published npm registry gitHead",
+        "registryGitHead": "3f5e603e5082caedabefefdf53e8a6ca3111e966",
+        "archiveComplete": true
+      },
+      "sourceRef": "3f5e603e5082caedabefefdf53e8a6ca3111e966",
+      "sourceRepository": "foliojs/dfa",
+      "sourcePackageVersion": "1.2.0",
+      "sourcePackageLicense": "MIT",
+      "missingEvidence": "Complete source archive contains no LICENSE/COPYING/NOTICE file or full MIT/BSD grant; package.json and optional README declaration do not provide full copyright and grant text.",
+      "noticeEvidence": [
+        {
+          "sourceUrl": "https://github.com/foliojs/dfa/blob/3f5e603e5082caedabefefdf53e8a6ca3111e966/README.md",
+          "sourceKind": "exact upstream README",
+          "sourceFileSha256": "30bd445925aa53205ff7f9afa6a43e21358fab656e471df6e028431aefc426c7",
+          "sourceFileGitBlobSha1": "5e4338f93d1ea5a9dfd02c4c34284614270ac057",
+          "path": "third_party/declarations/dfa@1.2.0/README-license-excerpt.txt",
+          "sha256": "daf005969aac8cb4283b3777361f0244f4cce898b9a983a60b7f0d9e96f559bf",
+          "isExcerpt": true,
+          "excerptScope": "Exact original license section only; functional examples and unrelated documentation are not copied."
+        },
+        {
+          "sourceUrl": "https://github.com/foliojs/dfa/blob/3f5e603e5082caedabefefdf53e8a6ca3111e966/package.json",
+          "sha256": "96c0ce3cc17b34aabd58fd442157766d9e244cba735e54ee4fe10d7841f0460c",
+          "gitBlobSha1": "a9b6b10884fe1519fb3001ed12f2f114ed9bba52",
+          "licenseMentions": [
+            {
+              "line": 31,
+              "text": "  \"license\": \"MIT\",\n  \"bugs\": {\n    \"url\": \"https://github.com/devongovett/dfa/issues\"\n  },"
+            }
+          ],
+          "path": "third_party/declarations/dfa@1.2.0/package.json"
+        }
+      ],
+      "queries": [
+        {
+          "queryUrl": "https://codeload.github.com/foliojs/dfa/tar.gz/3f5e603e5082caedabefefdf53e8a6ca3111e966",
+          "pass": "exact-commit-archive",
+          "status": "archive-inspected",
+          "http": 200,
+          "archiveSha256": "067e69434e7205c6d8489cd6260b103d085bdcb415528abe01c66151e663e503",
+          "gitHead": "3f5e603e5082caedabefefdf53e8a6ca3111e966"
+        }
+      ],
+      "currentSourceDelivery": "not-bundled-npm-reference",
+      "currentSourceImpact": "Reference-only: dependency code is not redistributed in this source candidate. The missing historical standalone notice is recorded for future binary redistribution, not asserted to be an existing authorization conflict."
+    },
+    {
+      "name": "err-code",
+      "version": "2.0.3",
+      "status": "MISSING_FULL_AUTHOR_GRANT",
+      "registryMetadata": {
+        "name": "err-code",
+        "version": "2.0.3",
+        "gitHead": "92511d41a6a926c94c9d11493404867b1e92a77a",
+        "repository": {
+          "url": "git://github.com/IndigoUnited/js-err-code.git",
+          "type": "git"
+        },
+        "license": "MIT",
+        "registryUrl": "https://registry.npmjs.org/err-code/2.0.3"
+      },
+      "queryPassesThisTask": 1,
+      "fullLicenseTextRecovered": false,
+      "applicability": {
+        "basis": "published npm registry gitHead",
+        "registryGitHead": "92511d41a6a926c94c9d11493404867b1e92a77a",
+        "archiveComplete": true
+      },
+      "sourceRef": "92511d41a6a926c94c9d11493404867b1e92a77a",
+      "sourceRepository": "IndigoUnited/js-err-code",
+      "sourcePackageVersion": "2.0.3",
+      "sourcePackageLicense": "MIT",
+      "missingEvidence": "Complete source archive contains no LICENSE/COPYING/NOTICE file or full MIT/BSD grant; package.json and optional README declaration do not provide full copyright and grant text.",
+      "noticeEvidence": [
+        {
+          "sourceUrl": "https://github.com/IndigoUnited/js-err-code/blob/92511d41a6a926c94c9d11493404867b1e92a77a/README.md",
+          "sourceKind": "exact upstream README",
+          "sourceFileSha256": "2d89bcf41bb06b2eddbe129a75abd418ef92a5f633accec609fd22a4843a5a93",
+          "sourceFileGitBlobSha1": "5afdab00c93482e513bb53ea363995816723f3d3",
+          "path": "third_party/declarations/err-code@2.0.3/README-license-excerpt.txt",
+          "sha256": "5fb141b3454c428633675f8522e86fd53a6119b94df824fb7c0f613e590caa8e",
+          "isExcerpt": true,
+          "excerptScope": "Exact original license section only; functional examples and unrelated documentation are not copied."
+        },
+        {
+          "sourceUrl": "https://github.com/IndigoUnited/js-err-code/blob/92511d41a6a926c94c9d11493404867b1e92a77a/package.json",
+          "sha256": "ff5360c17c3e197fc4a4a4fa0d07640292556d585a49c8651fd198e926d47bcc",
+          "gitBlobSha1": "8c6007b394559ae43b05191ce45f9d57223bfc7b",
+          "licenseMentions": [
+            {
+              "line": 26,
+              "text": "  \"license\": \"MIT\",\n  \"devDependencies\": {\n    \"@satazor/eslint-config\": \"^3.0.0\",\n    \"browserify\": \"^16.5.1\","
+            }
+          ],
+          "path": "third_party/declarations/err-code@2.0.3/package.json"
+        }
+      ],
+      "queries": [
+        {
+          "queryUrl": "https://codeload.github.com/IndigoUnited/js-err-code/tar.gz/92511d41a6a926c94c9d11493404867b1e92a77a",
+          "pass": "exact-commit-archive",
+          "status": "archive-inspected",
+          "http": 200,
+          "archiveSha256": "be37b86e0e29f3bd3d32b41e28ca9e83e246fc4c983c94ebce34d61e1ff65f82",
+          "gitHead": "92511d41a6a926c94c9d11493404867b1e92a77a"
+        }
+      ],
+      "currentSourceDelivery": "not-bundled-npm-reference",
+      "currentSourceImpact": "Reference-only: dependency code is not redistributed in this source candidate. The missing historical standalone notice is recorded for future binary redistribution, not asserted to be an existing authorization conflict."
+    },
+    {
+      "name": "fontkit",
+      "version": "2.0.4",
+      "status": "MISSING_FULL_AUTHOR_GRANT",
+      "registryMetadata": {
+        "name": "fontkit",
+        "version": "2.0.4",
+        "gitHead": "fbf3b9ef21eebd219eb73e666faed573af0fba09",
+        "repository": {
+          "url": "git://github.com/foliojs/fontkit.git",
+          "type": "git"
+        },
+        "license": "MIT",
+        "registryUrl": "https://registry.npmjs.org/fontkit/2.0.4"
+      },
+      "queryPassesThisTask": 2,
+      "fullLicenseTextRecovered": false,
+      "applicability": {
+        "basis": "published npm registry gitHead",
+        "registryGitHead": "fbf3b9ef21eebd219eb73e666faed573af0fba09",
+        "archiveComplete": false
+      },
+      "sourceRef": "fbf3b9ef21eebd219eb73e666faed573af0fba09",
+      "sourceRepository": "foliojs/fontkit",
+      "sourcePackageVersion": "2.0.4",
+      "sourcePackageLicense": "MIT",
+      "missingEvidence": "Exact gitHead package.json and README recovered completely from partial archive; project README only states MIT. Complete project archive inspection NOT_RUN due bounded download timeout. Recovered font-test OFL notices apply to test fonts, not a fontkit grant.",
+      "excludedThirdPartyNotices": [
+        "test/data/FiraSans/OFL.txt",
+        "test/data/Khmer/OFL.txt",
+        "test/data/Mada/OFL.txt"
+      ],
+      "noticeEvidence": [
+        {
+          "sourceUrl": "https://github.com/foliojs/fontkit/blob/fbf3b9ef21eebd219eb73e666faed573af0fba09/README.md",
+          "sourceKind": "exact upstream README",
+          "sourceFileSha256": "8a1cf12d8ae7277f047c3000af7677927f2da9243627223ba5715d40df4979d6",
+          "sourceFileGitBlobSha1": "027b61ce4e1f2e3aa97474c028dcec821475b769",
+          "path": "third_party/declarations/fontkit@2.0.4/README-license-excerpt.txt",
+          "sha256": "daf005969aac8cb4283b3777361f0244f4cce898b9a983a60b7f0d9e96f559bf",
+          "isExcerpt": true,
+          "excerptScope": "Exact original license section only; functional examples and unrelated documentation are not copied."
+        },
+        {
+          "sourceUrl": "https://github.com/foliojs/fontkit/blob/fbf3b9ef21eebd219eb73e666faed573af0fba09/package.json",
+          "sha256": "49c60605b92316a5d5fe57b9a3bca8950ad9a8beab1cb633d6f29862d1bd163d",
+          "gitBlobSha1": "dff6f0f847f299c3be576644b4339d2220a31885",
+          "licenseMentions": [
+            {
+              "line": 73,
+              "text": "  \"license\": \"MIT\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git://github.com/foliojs/fontkit.git\""
+            }
+          ],
+          "path": "third_party/declarations/fontkit@2.0.4/package.json"
+        }
+      ],
+      "queries": [
+        {
+          "queryUrl": "https://codeload.github.com/foliojs/fontkit/tar.gz/fbf3b9ef21eebd219eb73e666faed573af0fba09",
+          "pass": "bounded-source-fallback",
+          "status": "fetch-failed",
+          "error": "curl: (28) Operation timed out after 40005 milliseconds with 2849493 bytes received",
+          "partialArchiveSha256": "13d2632f2ff42de3a9606d5be9400651d6339460b42b4cb997ed9263a5650b2f",
+          "ref": "fbf3b9ef21eebd219eb73e666faed573af0fba09"
+        },
+        {
+          "queryUrl": "https://codeload.github.com/foliojs/fontkit/tar.gz/fbf3b9ef21eebd219eb73e666faed573af0fba09",
+          "pass": "exact-commit-archive",
+          "status": "fetch-failed",
+          "error": "<urlopen error EOF occurred in violation of protocol (_ssl.c:1129)>",
+          "gitHead": "fbf3b9ef21eebd219eb73e666faed573af0fba09"
+        }
+      ],
+      "currentSourceDelivery": "not-bundled-npm-reference",
+      "currentSourceImpact": "Reference-only: dependency code is not redistributed in this source candidate. The missing historical standalone notice is recorded for future binary redistribution, not asserted to be an existing authorization conflict."
+    },
+    {
+      "name": "lazy-val",
+      "version": "1.0.5",
+      "status": "MISSING_FULL_AUTHOR_GRANT",
+      "registryMetadata": {
+        "name": "lazy-val",
+        "version": "1.0.5",
+        "gitHead": "b69ad4119f1b19bdab13c61ee2fcc88d46b89071",
+        "repository": {
+          "url": "git+https://github.com/develar/lazy-val.git",
+          "type": "git"
+        },
+        "license": "MIT",
+        "registryUrl": "https://registry.npmjs.org/lazy-val/1.0.5"
+      },
+      "queryPassesThisTask": 1,
+      "fullLicenseTextRecovered": false,
+      "applicability": {
+        "basis": "published npm registry gitHead",
+        "registryGitHead": "b69ad4119f1b19bdab13c61ee2fcc88d46b89071",
+        "archiveComplete": true
+      },
+      "sourceRef": "b69ad4119f1b19bdab13c61ee2fcc88d46b89071",
+      "sourceRepository": "develar/lazy-val",
+      "sourcePackageVersion": "1.0.5",
+      "sourcePackageLicense": "MIT",
+      "missingEvidence": "Complete source archive contains no LICENSE/COPYING/NOTICE file or full MIT/BSD grant; package.json and optional README declaration do not provide full copyright and grant text.",
+      "noticeEvidence": [
+        {
+          "sourceUrl": "https://github.com/develar/lazy-val/blob/b69ad4119f1b19bdab13c61ee2fcc88d46b89071/package.json",
+          "sha256": "a642078ae0684963e5747e9499487a4c649c150bbddbfdfd8eb357bfcbf9c1c2",
+          "gitBlobSha1": "aec80f9a751750c78b247ed86d84c43eb8756b54",
+          "licenseMentions": [
+            {
+              "line": 6,
+              "text": "  \"license\": \"MIT\",\n  \"repository\": \"develar/lazy-val\",\n  \"bugs\": \"https://github.com/develar/lazy-val/issues\",\n  \"homepage\": \"https://github.com/develar/lazy-val\","
+            }
+          ],
+          "path": "third_party/declarations/lazy-val@1.0.5/package.json"
+        }
+      ],
+      "queries": [
+        {
+          "queryUrl": "https://codeload.github.com/develar/lazy-val/tar.gz/b69ad4119f1b19bdab13c61ee2fcc88d46b89071",
+          "pass": "exact-commit-archive",
+          "status": "archive-inspected",
+          "http": 200,
+          "archiveSha256": "74a0570ef04860e20b2068db1087968ea6d4d9f596d68bbe9936960958f832a1",
+          "gitHead": "b69ad4119f1b19bdab13c61ee2fcc88d46b89071"
+        }
+      ],
+      "currentSourceDelivery": "not-bundled-npm-reference",
+      "currentSourceImpact": "Reference-only: dependency code is not redistributed in this source candidate. The missing historical standalone notice is recorded for future binary redistribution, not asserted to be an existing authorization conflict."
+    },
+    {
+      "name": "node-api-version",
+      "version": "0.2.1",
+      "status": "MISSING_FULL_AUTHOR_GRANT",
+      "registryMetadata": {
+        "name": "node-api-version",
+        "version": "0.2.1",
+        "gitHead": null,
+        "repository": {
+          "url": "https://github.com/timfish/node-api-version",
+          "type": "git"
+        },
+        "license": "MIT",
+        "registryUrl": "https://registry.npmjs.org/node-api-version/0.2.1"
+      },
+      "queryPassesThisTask": 2,
+      "fullLicenseTextRecovered": false,
+      "applicability": {},
+      "missingEvidence": "Official tags API failed (SSL EOF or rate limit); bounded v0.2.1 source tag archive returned 404. Exact-version immutable source linkage and full author license grant remain unverified.",
+      "noticeEvidence": [
+        {
+          "sourceKind": "local exact installed published package; not official-source recovery",
+          "sha256": "22b8f138e9eff852a031161a351e8973d2abb4cd8813a9939d79fcc3746f7677",
+          "path": "third_party/declarations/node-api-version@0.2.1/package.json"
+        }
+      ],
+      "queries": [
+        {
+          "queryUrl": "https://codeload.github.com/timfish/node-api-version/tar.gz/v0.2.1",
+          "pass": "bounded-source-fallback",
+          "status": "fetch-failed",
+          "error": "curl: (56) The requested URL returned error: 404",
+          "ref": "v0.2.1"
+        },
+        {
+          "queryUrl": "https://api.github.com/repos/timfish/node-api-version/git/refs/tags",
+          "pass": "tag-refs",
+          "error": "HTTP Error 403: rate limit exceeded"
+        }
+      ],
+      "currentSourceDelivery": "not-bundled-npm-reference",
+      "currentSourceImpact": "Reference-only: dependency code is not redistributed in this source candidate. The missing historical standalone notice is recorded for future binary redistribution, not asserted to be an existing authorization conflict."
+    },
+    {
+      "name": "read-binary-file-arch",
+      "version": "1.0.6",
+      "status": "MISSING_FULL_AUTHOR_GRANT",
+      "registryMetadata": {
+        "name": "read-binary-file-arch",
+        "version": "1.0.6",
+        "gitHead": null,
+        "repository": {
+          "url": "git+ssh://git@github.com/samuelmaddock/read-binary-file-arch.git",
+          "type": "git"
+        },
+        "license": "MIT",
+        "registryUrl": "https://registry.npmjs.org/read-binary-file-arch/1.0.6"
+      },
+      "queryPassesThisTask": 2,
+      "fullLicenseTextRecovered": false,
+      "applicability": {
+        "basis": "version tag plus byte-identical published candidate files",
+        "registryGitHead": null,
+        "archiveComplete": true,
+        "publishedCandidateComparison": [
+          {
+            "path": "index.js",
+            "identical": true,
+            "sha256": "56873325212a3f37c47a67dd379f4c73b9a945ce7646fd7e38e6990435823b40"
+          },
+          {
+            "path": "cli.js",
+            "identical": true,
+            "sha256": "cfe943fcd87b88aa351ef12c476a7ea64243e2c2d8f52e5514797bcf3dd80139"
+          },
+          {
+            "path": "index.d.ts",
+            "identical": true,
+            "sha256": "6ba1e30ed1c4d8f4b57c0454432897308ed01e554a2df2534bb0d71148adf727"
+          },
+          {
+            "path": "README.md",
+            "identical": true,
+            "sha256": "808d9f0de3e55fb234ddb2edf35227e5d6834e658cca28d9a67d191f04961a96"
+          },
+          {
+            "path": "package.json",
+            "identical": true,
+            "sha256": "5cda10e2f5841c971884218c1f7023e4461571edbd3de941bfc72b8eadb357ed"
+          }
+        ]
+      },
+      "sourceRef": "v1.0.6",
+      "sourceRepository": "samuelmaddock/read-binary-file-arch",
+      "sourcePackageVersion": "1.0.6",
+      "sourcePackageLicense": "MIT",
+      "missingEvidence": "Complete source archive contains no LICENSE/COPYING/NOTICE file or full MIT/BSD grant; package.json and optional README declaration do not provide full copyright and grant text.",
+      "noticeEvidence": [
+        {
+          "sourceUrl": "https://github.com/samuelmaddock/read-binary-file-arch/blob/v1.0.6/README.md",
+          "sourceKind": "exact upstream README",
+          "sourceFileSha256": "808d9f0de3e55fb234ddb2edf35227e5d6834e658cca28d9a67d191f04961a96",
+          "sourceFileGitBlobSha1": "814c0c9eecf8ba4c46e1c64db889920bbe3bb837",
+          "path": "third_party/declarations/read-binary-file-arch@1.0.6/README-license-excerpt.txt",
+          "sha256": "daf005969aac8cb4283b3777361f0244f4cce898b9a983a60b7f0d9e96f559bf",
+          "isExcerpt": true,
+          "excerptScope": "Exact original license section only; functional examples and unrelated documentation are not copied."
+        },
+        {
+          "sourceUrl": "https://github.com/samuelmaddock/read-binary-file-arch/blob/v1.0.6/package.json",
+          "sha256": "5cda10e2f5841c971884218c1f7023e4461571edbd3de941bfc72b8eadb357ed",
+          "gitBlobSha1": "614cdcd2feb2ddfc04bac13129d61b3f50bc646f",
+          "licenseMentions": [
+            {
+              "line": 24,
+              "text": "  \"license\": \"MIT\",\n  \"bugs\": {\n    \"url\": \"https://github.com/samuelmaddock/read-binary-file-arch/issues\"\n  },"
+            }
+          ],
+          "path": "third_party/declarations/read-binary-file-arch@1.0.6/package.json"
+        }
+      ],
+      "queries": [
+        {
+          "queryUrl": "https://codeload.github.com/samuelmaddock/read-binary-file-arch/tar.gz/v1.0.6",
+          "pass": "bounded-source-fallback",
+          "status": "archive-inspected",
+          "archiveSha256": "0b0ecda2fa620a8035d28bf8dcc624ebe390524a6263a2ef0d5f735658611fa3",
+          "ref": "v1.0.6"
+        },
+        {
+          "queryUrl": "https://api.github.com/repos/samuelmaddock/read-binary-file-arch/git/refs/tags",
+          "pass": "tag-refs",
+          "error": "HTTP Error 403: rate limit exceeded"
+        }
+      ],
+      "currentSourceDelivery": "not-bundled-npm-reference",
+      "currentSourceImpact": "Reference-only: dependency code is not redistributed in this source candidate. The missing historical standalone notice is recorded for future binary redistribution, not asserted to be an existing authorization conflict."
+    },
+    {
+      "name": "temp-file",
+      "version": "3.4.0",
+      "status": "MISSING_FULL_AUTHOR_GRANT",
+      "registryMetadata": {
+        "name": "temp-file",
+        "version": "3.4.0",
+        "gitHead": "3534650dce58cb671fe3b4655e5eeeb036ff1839",
+        "repository": {
+          "url": "git+https://github.com/develar/temp-file.git",
+          "type": "git"
+        },
+        "license": "MIT",
+        "registryUrl": "https://registry.npmjs.org/temp-file/3.4.0"
+      },
+      "queryPassesThisTask": 1,
+      "fullLicenseTextRecovered": false,
+      "applicability": {
+        "basis": "published npm registry gitHead",
+        "registryGitHead": "3534650dce58cb671fe3b4655e5eeeb036ff1839",
+        "archiveComplete": true
+      },
+      "sourceRef": "3534650dce58cb671fe3b4655e5eeeb036ff1839",
+      "sourceRepository": "develar/temp-file",
+      "sourcePackageVersion": "3.4.0",
+      "sourcePackageLicense": "MIT",
+      "missingEvidence": "Complete source archive contains no LICENSE/COPYING/NOTICE file or full MIT/BSD grant; package.json and optional README declaration do not provide full copyright and grant text.",
+      "noticeEvidence": [
+        {
+          "sourceUrl": "https://github.com/develar/temp-file/blob/3534650dce58cb671fe3b4655e5eeeb036ff1839/package.json",
+          "sha256": "8c7d3661d611965e51bf7bf0ddee60955e0c44a3f6bd511b28b532b8b365136d",
+          "gitBlobSha1": "297e26884db112f84afd5dc9f46bf076942d546d",
+          "licenseMentions": [
+            {
+              "line": 6,
+              "text": "  \"license\": \"MIT\",\n  \"repository\": \"develar/temp-file\",\n  \"bugs\": \"https://github.com/develar/temp-file/issues\",\n  \"homepage\": \"https://github.com/develar/temp-file\","
+            }
+          ],
+          "path": "third_party/declarations/temp-file@3.4.0/package.json"
+        }
+      ],
+      "queries": [
+        {
+          "queryUrl": "https://codeload.github.com/develar/temp-file/tar.gz/3534650dce58cb671fe3b4655e5eeeb036ff1839",
+          "pass": "exact-commit-archive",
+          "status": "archive-inspected",
+          "http": 200,
+          "archiveSha256": "2e702042e47720398cb785a5fa7dc73630e85e5a781b9803855b6ccd3a497672",
+          "gitHead": "3534650dce58cb671fe3b4655e5eeeb036ff1839"
+        }
+      ],
+      "currentSourceDelivery": "not-bundled-npm-reference",
+      "currentSourceImpact": "Reference-only: dependency code is not redistributed in this source candidate. The missing historical standalone notice is recorded for future binary redistribution, not asserted to be an existing authorization conflict."
+    },
+    {
+      "name": "tmp-promise",
+      "version": "3.0.3",
+      "status": "MISSING_FULL_AUTHOR_GRANT",
+      "registryMetadata": {
+        "name": "tmp-promise",
+        "version": "3.0.3",
+        "registryUrl": "https://registry.npmjs.org/tmp-promise/3.0.3",
+        "gitHead": "7a9d92612d24791664669596c2705313d459ce7f",
+        "repository": {
+          "url": "git://github.com/benjamingr/tmp-promise.git",
+          "type": "git"
+        },
+        "license": "MIT",
+        "dist": {
+          "shasum": "60a1a1cc98c988674fcbfd23b6e3367bdeac4ce7",
+          "tarball": "https://registry.npmjs.org/tmp-promise/-/tmp-promise-3.0.3.tgz",
+          "fileCount": 9,
+          "integrity": "sha512-RwM7MoPojPxsOBYnyd2hy0bxtIlVrihNs9pj5SUvY8Zz1sQcQG2tG1hSr8PDxfgEB8RNKDhqbIlroIarSNDNsQ==",
+          "signatures": [
+            {
+              "sig": "MEYCIQDFi07xBvGNzFgQQuj7zXqrHAYRl7M6J7mufh8h4iPXyAIhAI49uvTdLkevkoC0JxSVjjZawGdmoQaws1Oed5cPblHN",
+              "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+            }
+          ],
+          "unpackedSize": 17628,
+          "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJh2+A7CRA9TVsSAnZWagAA1eMP+wW8iK25LJ+YrOjToB/w\nL5BdciZlvjtmfsqmFtddZliExdKGq2Sqdd0OCueZBaLftZgfpGyCfKwGce2Y\nwkZ9F7OkMX767HxCzarzjlhcsXyo48Jo5wHTtWxmtwnXS7atV1QwmOzIREPB\nY72k3YT82gl04dG3GSO87TJoKdueYHkcqrBRKwWWe05/8EGWzNnIwhmSn3kU\naVSOatd+/ZmBYCmGcKBy9maBF8STJYHsDyPfwqvyWcsttcCm/1EUbe8dA/jY\nj7DFzyIfvDdRHm5tX7s9jFH3PZx245GOs0PXVh4AB2k2QJdl2K3HBHi3VLxL\n/C3mnQAEUfxVflwB+247OVWLz1a1JThIK3mHxd+RczlGFANB900D7mTaPUOZ\nhSq5w3y2tokwrukvq9r+sZTAwngpV9+kAW9hA/wV7lPPAZ3Nf1Ghv34HYJ67\nggKZIGZN+6GX/oOAvjFGHS4W7GIrh37tMjyNB/REuktzkay/LyPyWOGKnGpi\nQTDbip3oLr/CZRsg9SQwx9mdtYDZ1tv+Dk6ReTnEGmPxHhlrxfFYlrUp8oHH\nXpBfzEBIHYBUxkQnRb0sJdX4lX9dpZz1jqtZ5ioo1TelOZJz6ZN64I7mbebI\nMrDh3zEyLFLGfqpYMutt85j1iVihy+QiKqiqcwkFB3yO5F1+0fYYIvTc7xYg\ng/wC\r\n=bS92\r\n-----END PGP SIGNATURE-----\r\n"
+        }
+      },
+      "queryPassesThisTask": 1,
+      "fullLicenseTextRecovered": false,
+      "applicability": {
+        "basis": "published npm registry gitHead",
+        "registryGitHead": "7a9d92612d24791664669596c2705313d459ce7f",
+        "archiveComplete": true
+      },
+      "sourceRef": "7a9d92612d24791664669596c2705313d459ce7f",
+      "sourceRepository": "benjamingr/tmp-promise",
+      "sourcePackageVersion": "3.0.3",
+      "sourcePackageLicense": "MIT",
+      "missingEvidence": "Complete source archive contains no LICENSE/COPYING/NOTICE file or full MIT/BSD grant; package.json and optional README declaration do not provide full copyright and grant text.",
+      "noticeEvidence": [
+        {
+          "sourceUrl": "https://github.com/benjamingr/tmp-promise/blob/7a9d92612d24791664669596c2705313d459ce7f/package.json",
+          "sha256": "dad8968b995df651f91060c2c0874c81ded4d6b2657c4bc00352b57683a113d4",
+          "gitBlobSha1": "029a1f972201b6066765e38841169605b16eb457",
+          "licenseMentions": [
+            {
+              "line": 21,
+              "text": "  \"license\": \"MIT\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git://github.com/benjamingr/tmp-promise.git\""
+            }
+          ],
+          "path": "third_party/declarations/tmp-promise@3.0.3/package.json"
+        }
+      ],
+      "queries": [
+        {
+          "queryUrl": "https://codeload.github.com/benjamingr/tmp-promise/tar.gz/7a9d92612d24791664669596c2705313d459ce7f",
+          "pass": "exact-commit-archive",
+          "status": "archive-inspected",
+          "http": 200,
+          "archiveSha256": "ef2fa710a83b71fdfae33a789f5850e703368a1eb3d616d607e540ddeaaaebea",
+          "gitHead": "7a9d92612d24791664669596c2705313d459ce7f"
+        }
+      ],
+      "currentSourceDelivery": "not-bundled-npm-reference",
+      "currentSourceImpact": "Reference-only: dependency code is not redistributed in this source candidate. The missing historical standalone notice is recorded for future binary redistribution, not asserted to be an existing authorization conflict."
+    },
+    {
+      "name": "tr46",
+      "version": "0.0.3",
+      "status": "MISSING_FULL_AUTHOR_GRANT",
+      "registryMetadata": {
+        "name": "tr46",
+        "version": "0.0.3",
+        "registryUrl": "https://registry.npmjs.org/tr46/0.0.3",
+        "gitHead": "a8009f9ce80ff5dbe71dd71e203afe4e4c878d28",
+        "repository": {
+          "url": "git+https://github.com/Sebmaster/tr46.js.git",
+          "type": "git"
+        },
+        "license": "MIT",
+        "dist": {
+          "shasum": "8184fd347dac9cdc185992f3a6622e14b9d9ab6a",
+          "tarball": "https://registry.npmjs.org/tr46/-/tr46-0.0.3.tgz",
+          "integrity": "sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==",
+          "signatures": [
+            {
+              "sig": "MEYCIQCUrUj2itfC5h6uLF7nT69DcaiOyeOICexYW6ev9JGRQAIhAN/aPMT9PK0tD0xWc3TobFmgoP+XPw2e49OIWLB8ZjHB",
+              "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+            }
+          ]
+        }
+      },
+      "queryPassesThisTask": 1,
+      "fullLicenseTextRecovered": false,
+      "applicability": {
+        "basis": "published npm registry gitHead",
+        "registryGitHead": "a8009f9ce80ff5dbe71dd71e203afe4e4c878d28",
+        "archiveComplete": true
+      },
+      "sourceRef": "a8009f9ce80ff5dbe71dd71e203afe4e4c878d28",
+      "sourceRepository": "jsdom/tr46",
+      "sourcePackageVersion": "0.0.3",
+      "sourcePackageLicense": "MIT",
+      "missingEvidence": "Complete source archive contains no LICENSE/COPYING/NOTICE file or full MIT/BSD grant; package.json and optional README declaration do not provide full copyright and grant text.",
+      "noticeEvidence": [
+        {
+          "sourceUrl": "https://github.com/jsdom/tr46/blob/a8009f9ce80ff5dbe71dd71e203afe4e4c878d28/package.json",
+          "sha256": "615087f58ee138fd35c2b414c355b72e36e5919725b8aecc1c34f6a5585b9779",
+          "gitBlobSha1": "b6826da1f7817f97ad6d307d698ad2004807c40a",
+          "licenseMentions": [
+            {
+              "line": 22,
+              "text": "  \"license\": \"MIT\",\n  \"bugs\": {\n    \"url\": \"https://github.com/Sebmaster/tr46.js/issues\"\n  },"
+            }
+          ],
+          "path": "third_party/declarations/tr46@0.0.3/package.json"
+        }
+      ],
+      "queries": [
+        {
+          "queryUrl": "https://codeload.github.com/jsdom/tr46/tar.gz/a8009f9ce80ff5dbe71dd71e203afe4e4c878d28",
+          "pass": "exact-commit-archive",
+          "status": "archive-inspected",
+          "http": 200,
+          "archiveSha256": "a8b64c5ed56450b6a6d3e0032112e7c79205feb34cc3696ed9502005750e76a7",
+          "gitHead": "a8009f9ce80ff5dbe71dd71e203afe4e4c878d28"
+        }
+      ],
+      "currentSourceDelivery": "not-bundled-npm-reference",
+      "currentSourceImpact": "Reference-only: dependency code is not redistributed in this source candidate. The missing historical standalone notice is recorded for future binary redistribution, not asserted to be an existing authorization conflict."
+    },
+    {
+      "name": "@electron-internal/extract-zip",
+      "version": "1.0.5",
+      "status": "MISSING_FULL_AUTHOR_GRANT",
+      "registryMetadata": {
+        "name": "@electron-internal/extract-zip",
+        "version": "1.0.5",
+        "gitHead": "b83e459fd04c53b0a1c8438a6792df8f64be47fc",
+        "repository": {
+          "url": "git+https://github.com/electron/extract-zip.git"
+        },
+        "license": "BSD-2-Clause",
+        "registryUrl": "https://registry.npmjs.org/@electron-internal%2Fextract-zip/1.0.5"
+      },
+      "queryPassesThisTask": 2,
+      "fullLicenseTextRecovered": false,
+      "applicability": {
+        "basis": "published npm registry gitHead",
+        "registryGitHead": "b83e459fd04c53b0a1c8438a6792df8f64be47fc",
+        "archiveComplete": true,
+        "caveat": "Exact registry gitHead points to source package.json version 0.0.0-development. Applicability rests on registry gitHead, not source version string."
+      },
+      "sourceRef": "b83e459fd04c53b0a1c8438a6792df8f64be47fc",
+      "sourceRepository": "electron/extract-zip",
+      "sourcePackageVersion": "0.0.0-development",
+      "sourcePackageLicense": "BSD-2-Clause",
+      "missingEvidence": "Complete source archive contains no LICENSE/COPYING/NOTICE file or full MIT/BSD grant; package.json and optional README declaration do not provide full copyright and grant text.",
+      "noticeEvidence": [
+        {
+          "sourceUrl": "https://github.com/electron/extract-zip/blob/b83e459fd04c53b0a1c8438a6792df8f64be47fc/README.md",
+          "sourceKind": "exact upstream README",
+          "sourceFileSha256": "61090965f7edb896c4492e9a090bec14e8e6abe2322480e4d2acde2a478c7500",
+          "sourceFileGitBlobSha1": "c7ce85663e95050403c42013f2548de0e31ab3c6",
+          "path": "third_party/declarations/_electron-internal_extract-zip@1.0.5/README-license-excerpt.txt",
+          "sha256": "f64eca06693734626fe5c515ef365ef2e55aedb204c4dfd672a4832f9d8a4fc1",
+          "isExcerpt": true,
+          "excerptScope": "Exact original license section only; functional examples and unrelated documentation are not copied."
+        },
+        {
+          "sourceUrl": "https://github.com/electron/extract-zip/blob/b83e459fd04c53b0a1c8438a6792df8f64be47fc/package.json",
+          "sha256": "3325e1bd93641aadde1d2d1ad8bde9b40ec952a50a8e68ccc8a61331d8cc5cf4",
+          "gitBlobSha1": "ad0bdabafdb9256cefb366e9db931601c3f2eb81",
+          "licenseMentions": [
+            {
+              "line": 52,
+              "text": "  \"license\": \"BSD-2-Clause\",\n  \"packageManager\": \"yarn@4.10.3+sha512.c38cafb5c7bb273f3926d04e55e1d8c9dfa7d9c3ea1f36a4868fa028b9e5f72298f0b7f401ad5eb921749eb012eb1c3bb74bf7503df3ee43fd600d14a018266f\",\n  \"engines\": {\n    \"node\": \">=22.12.0\""
+            }
+          ],
+          "path": "third_party/declarations/_electron-internal_extract-zip@1.0.5/package.json"
+        }
+      ],
+      "queries": [
+        {
+          "queryUrl": "https://codeload.github.com/electron/extract-zip/tar.gz/b83e459fd04c53b0a1c8438a6792df8f64be47fc",
+          "pass": "bounded-source-fallback",
+          "status": "archive-inspected",
+          "archiveSha256": "8ff19ec9c11eff4a3b1bdc3a9cd099cb2e636b6d1d0ced8d817e9eaa6083d658",
+          "ref": "b83e459fd04c53b0a1c8438a6792df8f64be47fc"
+        },
+        {
+          "queryUrl": "https://codeload.github.com/electron/extract-zip/tar.gz/b83e459fd04c53b0a1c8438a6792df8f64be47fc",
+          "pass": "exact-commit-archive",
+          "status": "fetch-failed",
+          "error": "<urlopen error EOF occurred in violation of protocol (_ssl.c:1129)>",
+          "gitHead": "b83e459fd04c53b0a1c8438a6792df8f64be47fc"
+        }
+      ],
+      "currentSourceDelivery": "not-bundled-npm-reference",
+      "currentSourceImpact": "Reference-only: dependency code is not redistributed in this source candidate. The missing historical standalone notice is recorded for future binary redistribution, not asserted to be an existing authorization conflict."
+    }
+  ],
+  "scope": "Original exact-version license declarations and bounded missing-body facts. No synthesized author grant. npm package code is not bundled in this source delivery."
+}

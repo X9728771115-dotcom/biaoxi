@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="标析，本地招标文件分析助手。整理招标条款、核对原文并形成独立报告。">
+  <title>标析 · 招标文件分析助手</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"><defs><!-- Official Tabler Icons outline SVG symbols; @tabler/icons 3.49.0.
+Source: https://github.com/tabler/tabler-icons
+
+MIT License
+
+Copyright (c) 2020-2026 Paweł Kuna
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+<symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2" />
+  <path d="M9 17h6" />
+  <path d="M9 13h6" />
+</symbol>
+<symbol id="i-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+  <path d="M7 9l5 -5l5 5" />
+  <path d="M12 4l0 12" />
+</symbol>
+<symbol id="i-local" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10" />
+  <path d="M7 20h10" />
+  <path d="M9 16v4" />
+  <path d="M15 16v4" />
+</symbol>
+<symbol id="i-ai" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6" />
+</symbol>
+<symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+  <path d="M21 21l-6 -6" />
+</symbol>
+<symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+  <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
+</symbol>
+<symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M5 12l5 5l10 -10" />
+</symbol>
+<symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M12 9v4" />
+  <path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0" />
+  <path d="M12 16h.01" />
+</symbol>
+<symbol id="i-score" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M3 13a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -6" />
+  <path d="M15 9a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -10" />
+  <path d="M9 5a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -14" />
+  <path d="M4 20h14" />
+</symbol>
+<symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M9 15l6 -6" />
+  <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464" />
+  <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463" />
+</symbol>
+<symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+  <path d="M7 11l5 5l5 -5" />
+  <path d="M12 4l0 12" />
+</symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M9 6l6 6l-6 6" />
+</symbol>
+<symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M12 5l0 14" />
+  <path d="M5 12l14 0" />
+</symbol>
+</defs></svg>
+<a class="skip-link" href="#main-content">跳到正文</a>
+<header class="app-header">
+  <a class="brand" href="#" data-view="upload" aria-label="标析，返回上传"><svg aria-hidden="true"><use href="#i-file"/></svg><strong>标析</strong><span>招标文件分析助手</span></a>
+  <nav aria-label="主导航"><button type="button" data-view="analysis" class="top-nav" aria-current="page">分析台</button><button type="button" data-view="records" class="top-nav">报告记录</button><button type="button" data-view="companies" class="top-nav">企业资料库</button><button type="button" data-view="settings" class="top-nav">AI 接口设置</button></nav>
+  <button type="button" class="btn mobile-upload" data-view="upload">上传文件</button>
+</header>
+<div class="app-layout">
+  <aside class="sidebar" aria-label="分析导航">
+    <button type="button" class="btn primary upload-entry" data-view="upload"><svg aria-hidden="true"><use href="#i-upload"/></svg>上传招标文件</button>
+    <div class="sidebar-scroll">
+      <h2>重点报告</h2><nav id="output-nav" aria-label="四项重点报告"></nav>
+      <details class="category-directory"><summary>14类详细分析</summary><nav id="category-nav" aria-label="14类分析目录"></nav></details>
+    </div>
+    <p class="sidebar-note">本地保存报告<br><span id="app-version">正在连接服务</span></p>
+  </aside>
+  <main id="main-content" tabindex="-1">
+    <div id="app-error" class="message error" role="alert" hidden></div>
+    <div id="boot-status" class="boot-status" role="status">正在连接本地分析服务…</div>
+    <section id="upload-view" class="view" hidden>
+      <div class="page-heading"><div><h1>上传招标文件</h1><p>逐项整理要求，对照原文，每个主文件生成一份独立报告。</p></div></div>
+      <div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="选择招标文件，也可拖入文件">
+        <svg aria-hidden="true"><use href="#i-file"/></svg><strong>点击选择文件，或拖到这里</strong><span>支持 PDF、Word（DOC/DOCX）、Excel清单、评分表、图片和 TXT；Excel上限20MB，其他文件100MB，可一次选择多份</span>
+      </div>
+      <input id="tender-input" type="file" accept=".pdf,.doc,.docx,.xlsx,.xls,.png,.jpg,.jpeg,.txt" multiple hidden>
+      <div class="file-section"><div class="section-heading"><h2>主招标文件</h2><span id="upload-status" role="status"></span></div><ul id="tender-list" class="file-list"></ul></div>
+      <div class="upload-option"><div><h2>关联附件 <span class="optional">可选</span></h2><p>支持Excel清单、评分表等附件，保留工作表和真实行号；Excel上限20MB。</p></div><div><button type="button" class="btn" data-pick-role="attachment">选择附件</button><input id="attachment-input" type="file" accept=".pdf,.doc,.docx,.xlsx,.xls,.png,.jpg,.jpeg,.txt" multiple hidden><ul id="attachment-list" class="file-list compact"></ul></div></div>
+      <fieldset class="upload-option mode-option"><legend class="sr-only">分析方式</legend><div><h2>分析方式</h2><p>离线无需接口或本地模型。</p></div><div><div class="radio-options"><label><input type="radio" name="analysis-mode" value="offline" checked>离线分析</label><label><input type="radio" name="analysis-mode" value="online">联网 AI（API）</label></div><p id="mode-help">本地文字识别与规则整理；复杂语义及依据不足的内容保留待核验。</p><button type="button" class="btn" id="configure-online-ai" data-configure-ai hidden>去配置 AI</button></div></fieldset>
+      <div class="upload-option company-selection"><div><h2>选择企业 <span class="optional">可选</span></h2><p>复用本地企业资料，无需每次重新上传证照。</p></div><div><label for="analysis-company-select" class="sr-only">选择企业（可选）</label><select id="analysis-company-select"><option value="">不选择企业，仅分析文件</option></select><p id="analysis-company-summary" class="muted">可不选择企业；企业匹配与预计分保留待核验。</p><button type="button" class="btn link" data-manage-selected-company>管理企业资料</button></div></div>
+      <div class="upload-option"><div><h2>本次证照补充 <span class="optional">可选</span></h2><p>仅供本次对照，也可在企业资料库保存后复用。</p></div><div><button type="button" class="btn" data-pick-role="evidence">选择营业执照或资质证书</button><input id="evidence-input" type="file" accept=".pdf,.doc,.docx,.xlsx,.xls,.png,.jpg,.jpeg,.txt" multiple hidden><ul id="evidence-list" class="file-list compact"></ul></div></div>
+      <div class="upload-footer"><button type="button" class="btn primary large" id="start-analysis" disabled>开始分析</button><span class="muted">报告和上传原件保存于本机。</span></div>
+    </section>
+    <section id="job-panel" class="job-panel" aria-label="分析进度" hidden><div class="section-heading"><strong id="job-title">正在分析</strong><button type="button" class="btn" id="cancel-job">取消分析</button></div><progress id="job-progress" max="100" aria-label="实际分析进度"></progress><p id="job-message" role="status"></p><div id="job-actions" class="actions"></div></section>
+    <section id="analysis-view" class="view" hidden>
+      <div class="page-heading"><div><h1 id="result-title">分析结果</h1><div class="report-context"><label for="report-select" class="sr-only">切换文件报告</label><select id="report-select"></select><span id="report-mode" class="muted"></span></div></div><div class="actions report-actions"><button type="button" class="btn primary" id="report-ai-analysis" aria-describedby="report-ai-status">AI 深度分析 · 需配置 API</button><label class="web-chat-platform"><span class="sr-only">网页 AI 平台</span><select id="web-chat-provider" aria-label="网页 AI 平台"><option value="doubao">豆包网页</option><option value="deepseek">DeepSeek 网页</option></select></label><button type="button" class="btn" id="open-web-chat" aria-describedby="web-chat-report-help">桌面版免费网页 · 豆包 / DeepSeek 分析</button><button type="button" class="btn" data-overview>项目总览</button><button type="button" class="btn" data-export-current>导出报告</button></div></div>
+      <p id="report-ai-status" class="api-analysis-status" role="status">当前浏览器的 AI 深度分析需配置 API；点击上方按钮查看具体缺项。</p>
+      <p id="web-chat-report-help" class="muted" role="note">免费网页自动分析需在标析桌面版使用：打开离线报告 → 选择平台 → 点击分析按钮 → 登录并开始。DeepSeek 当前仍有环境限制，请先用豆包。</p>
+      <div id="report-loading" class="loading-line" role="status" hidden>正在读取报告…</div>
+      <div id="report-notice"></div>
+      <div class="analysis-workbench">
+        <aside id="source-pane" class="source-pane" aria-label="招标文件原文">
+          <div class="reader-heading"><h2>招标文件原文</h2><span id="reader-file" class="muted"></span></div>
+          <div class="reader-controls"><button type="button" class="btn" id="reader-prev" aria-label="上一页">上一页</button><label>第 <input id="reader-page" type="number" min="1" value="1" aria-label="原文页码"> 页</label><span id="reader-total" class="muted"></span><button type="button" class="btn" id="reader-next" aria-label="下一页">下一页</button></div>
+          <label class="reader-search search"><input id="reader-query" type="search" placeholder="在原文件中查找" aria-label="搜索原文件"><button type="button" class="btn link" id="reader-search">查找</button></label>
+          <select id="reader-reference" aria-label="选择关联出处" hidden></select><p id="reader-location" class="muted"></p>
+          <div id="reader-content" class="reader-content"><p class="muted">选择结果中的出处，即可对照原文件。</p></div>
+        </aside>
+        <div class="analysis-results">
+      <div class="result-toolbar"><label class="search"><svg aria-hidden="true"><use href="#i-search"/></svg><input id="finding-search" type="search" placeholder="搜索当前文件条款" aria-label="搜索当前文件条款"></label><label class="filter-label"><input id="risk-filter" type="checkbox">仅看风险与待核验</label><label class="mobile-category"><span class="sr-only">选择报告内容</span><select id="mobile-section"></select></label></div>
+      <div id="report-content"></div>
+        </div>
+      </div>
+    </section>
+    <section id="records-view" class="view" hidden>
+      <div class="page-heading"><div><h1>报告记录</h1><p>每份主招标文件对应独立报告，按文件查看与导出。</p></div><label class="search history-search"><svg aria-hidden="true"><use href="#i-search"/></svg><input id="record-search" type="search" placeholder="搜索报告" aria-label="搜索报告记录"></label></div>
+      <div class="history-tools"><button type="button" class="btn" id="refresh-records">刷新记录</button><span id="records-status" class="muted" role="status"></span></div>
+      <div id="records-content"></div>
+    </section>
+    <section id="companies-view" class="view" hidden>
+      <div class="page-heading"><div><h1>企业资料库</h1><p>资料与原件在本机保存，用于企业匹配和透明得分测算。</p></div><button type="button" class="btn" id="refresh-companies">刷新资料</button></div>
+      <div class="company-toolbar"><label>查看企业<select id="company-list-select" aria-label="查看本地企业"></select></label><span id="company-status" class="muted" role="status"></span></div>
+      <details class="new-company"><summary>新增企业</summary><form id="new-company-form"><label>企业名称<input type="text" name="companyName" required maxlength="200" placeholder="填写企业名称"></label><button type="submit" class="btn primary">保存企业</button></form></details>
+      <p id="company-notice" class="company-notice" role="status"></p>
+      <div id="company-undo" class="company-undo" hidden><span>资料记录已删除，原件仍保留。</span><button type="button" class="btn link" data-undo-record>撤销删除</button></div>
+      <div id="company-content"></div>
+    </section>
+    <section id="settings-view" class="view" hidden>
+      <div class="page-heading"><div><h1>AI 接口设置</h1><p>联网分析为可选项，离线使用无需安装本地模型。</p></div></div>
+      <p id="ai-configuration-notice" class="message warning" role="status" hidden></p>
+      <section class="web-chat-settings"><div><h2>豆包 / DeepSeek 网页分析</h2><p>桌面版可在标析内部登录，无需 API 密钥；从离线报告右上角进入本次分析。</p></div><div class="actions"><label><span class="sr-only">登录的网页平台</span><select id="web-chat-login-provider" aria-label="登录的网页平台"><option value="doubao">豆包</option><option value="deepseek">DeepSeek</option></select></label><button type="button" class="btn" id="open-web-chat-login">打开内置登录窗口</button></div><p id="web-chat-login-status" class="muted" role="status">免费网页自动分析需要标析桌面版；下方为可选 API 接口设置。</p></section>
+      <form id="settings-form" class="settings-form">
+        <div class="settings-intro"><h2>API 接口分析（可选）</h2><label class="switch-label"><input id="ai-enabled" type="checkbox" role="switch"><span>启用 API 联网分析</span></label></div>
+        <div class="setting-row"><label for="ai-provider">选择平台</label><select id="ai-provider"><option value="doubao">豆包</option><option value="deepseek">DeepSeek</option><option value="custom">自定义兼容接口</option></select></div>
+        <div class="setting-row"><label for="ai-base-url">接口地址</label><div><input id="ai-base-url" type="url" autocomplete="off" placeholder="填写服务平台提供的接口地址"><p>使用所选服务商提供的兼容接口地址。</p></div></div>
+        <div class="setting-row"><label for="ai-key">API 密钥</label><div><input id="ai-key" type="password" autocomplete="new-password" spellcheck="false" placeholder="填写 API 密钥"><p id="key-state">尚未保存密钥。</p></div></div>
+        <div class="setting-row"><label for="ai-model">模型或接入点</label><div><input id="ai-model" type="text" autocomplete="off" placeholder="填写平台提供的模型或接入点名称"></div></div>
+        <div class="settings-actions"><button type="button" class="btn" id="test-settings">测试连接</button><button type="submit" class="btn primary" id="save-settings">保存设置</button><span id="settings-status" role="status"></span></div>
+      </form>
+      <section class="settings-explanation"><h2>联网时的处理方式</h2><p>仅主动选择联网分析时，本次主文件、关联附件及证照的提取内容才发送给所选服务商。企业资料库在本机保存，离线分析不发送数据。模型返回后按14类归纳、提取字段并校核原文，生成本地报告。</p><p>联网失败保留离线结果，可重试或返回离线方式。测试连接只发送一个不含招标内容的小请求。</p><p id="key-storage-note" class="muted">桌面版使用系统安全存储；浏览器开发模式仅在服务会话内保存密钥。</p></section>
+    </section>
+    <footer class="app-footer">标析 · 招标文件分析助手<span>复杂条款与企业条件仍需人工核验</span></footer>
+  </main>
+</div>
+<dialog id="source-dialog" class="source-drawer source-workbench-dialog" aria-labelledby="source-title" data-source-tab="original">
+  <div class="drawer-header"><h2 id="source-title">原文依据</h2><div class="actions"><button type="button" class="btn" data-source-expand aria-pressed="false">全屏</button><button type="button" class="icon-btn" data-close-dialog="source-dialog" aria-label="关闭原文">×</button></div></div>
+  <div class="drawer-body">
+    <div id="source-compare-tabs" class="source-compare-tabs" role="group" aria-label="原件与识别字段切换" hidden><button type="button" class="btn" data-source-tab="original" aria-controls="source-preview-column" aria-pressed="true">查看原件</button><button type="button" class="btn" data-source-tab="fields" aria-controls="source-comparison" aria-pressed="false">识别字段</button></div>
+    <div class="source-workbench">
+      <section id="source-preview-column" class="source-preview-column" aria-label="原件预览">
+        <div id="source-page-controls" class="reader-controls source-page-controls" hidden><button type="button" class="btn" id="source-prev" aria-label="原件预览上一页">上一页</button><label>第 <input id="source-page" type="number" min="1" value="1" aria-label="原件预览页码"> 页</label><span id="source-total" class="muted"></span><button type="button" class="btn" id="source-next" aria-label="原件预览下一页">下一页</button></div>
+        <label for="source-reference" class="sr-only">选择原文出处</label><select id="source-reference" hidden></select><p id="source-location" class="muted"></p><div id="source-content"></div>
+      </section>
+      <aside id="source-comparison" class="source-comparison-panel" aria-label="企业资料识别字段对照" hidden></aside>
+    </div>
+  </div>
+</dialog>
+<dialog id="confirm-dialog" class="confirm-dialog" aria-labelledby="confirm-title"><div class="dialog-body"><h2 id="confirm-title"></h2><p id="confirm-message"></p><div class="actions"><button type="button" class="btn" data-close-dialog="confirm-dialog">取消</button><button type="button" class="btn primary" id="confirm-action">确认</button></div></div></dialog>
+<dialog id="export-dialog" class="confirm-dialog" aria-labelledby="export-title"><div class="dialog-body"><h2 id="export-title">导出当前报告</h2><p id="export-file-name"></p><p class="muted">默认导出所选文件的精炼报告，包含原文出处、复核备注及待核事项。</p><label class="check-label export-details-option"><input id="export-details" type="checkbox">附原始条款和AI原答复（完整核查版）</label><div class="actions"><button type="button" class="btn" data-close-dialog="export-dialog">取消</button><button type="button" class="btn" data-export-format="pdf">PDF 报告</button><button type="button" class="btn primary" data-export-format="docx">Word 报告</button></div><p id="export-status" role="status"></p></div></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

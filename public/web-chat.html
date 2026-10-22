@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>标析 · 网页 AI 试验</title><link rel="stylesheet" href="/web-chat.css"><script type="module" src="/web-chat.js"></script></head>
+<body>
+ <header class="chat-tools">
+  <div class="chat-heading"><div><h1>网页 AI 试验 <span id="chat-provider">网页 AI</span></h1><p id="chat-url" class="platform-url">正在打开平台…</p></div><span id="chat-stage" class="stage" role="status">正在打开</span></div>
+  <div class="chat-materials"><strong id="chat-report">正在读取本次报告…</strong><ul id="chat-files" aria-label="本次发送材料"></ul></div>
+  <div class="chat-actions"><button id="chat-start" type="button" class="primary" disabled>开始网页分析</button><button id="chat-inspect" type="button" disabled>检查登录</button><button id="chat-reload" type="button" disabled>重新加载</button><button id="chat-cancel" type="button" disabled>取消本次任务</button><p id="chat-status" role="status" aria-live="polite">等待平台页面…</p></div>
+  <p id="chat-note" class="chat-note">平台页面载入后自动检查可用状态；未点击开始分析前，不发送本次材料。</p>
+  <p id="chat-source-warning" class="chat-note source-warning" hidden></p>
+  <p id="chat-diagnostics" class="chat-note" aria-live="polite" hidden></p>
+  <p id="chat-return" class="return-note" hidden>回答已保存到本地。请回标析主界面查看刷新后的当前报告；网页 AI 的结论仍需复核。</p>
+ </header>
+ <main id="chat-viewport" aria-label="真实平台网页"><p>下方由标析桌面版显示平台真实网页。浏览器开发版请使用标析桌面版打开。</p></main>
+</body>
+</html>

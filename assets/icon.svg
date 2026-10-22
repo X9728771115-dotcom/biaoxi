@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-License-Identifier: MIT; Copyright (c) 2026 Biaoxi contributors. -->
+<!-- Original geometric artwork for Biaoxi. No fonts or external resources. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <rect width="1024" height="1024" rx="224" fill="#173E49"/>
+  <path d="M302 182H610L774 346V776Q774 828 722 828H302Q250 828 250 776V234Q250 182 302 182Z" fill="#F8F6ED"/>
+  <path d="M610 182V308Q610 346 648 346H774Z" fill="#B9D3CF"/>
+  <rect x="340" y="402" width="206" height="30" rx="15" fill="#2C5863"/>
+  <rect x="340" y="640" width="70" height="108" rx="14" fill="#C58C33"/>
+  <rect x="448" y="566" width="70" height="182" rx="14" fill="#C58C33"/>
+  <rect x="556" y="492" width="70" height="256" rx="14" fill="#C58C33"/>
+</svg>
