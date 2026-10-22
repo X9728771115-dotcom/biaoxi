@@ -1,14 +1,12 @@
 # 安全说明
 
-当前 0.5.6 是本地开源候选，尚未公开发布，也尚未配置专门的私密漏洞报告渠道或安全响应时限。
+当前公开源码试用版本为 `v0.5.6-alpha.1`（源码版本 0.5.6）。项目由个人维护，尚不承诺固定的安全响应时限。
 
 ## 报告漏洞
 
 不要将漏洞利用细节、密钥、真实招标文件、企业原件、人员信息或用户数据目录放入公开 Issue、Pull Request 或日志附件。
 
-本候选没有可用的专用安全邮箱或私密报告链接。若你与维护者已有可信的私密联系方式，可先发送不含敏感材料的问题概述并约定后续方式；否则请等私密渠道启用后再发送漏洞细节。这里不承诺尚未建立的报告受理或响应服务。
-
-正式公开仓库前，维护者应启用 GitHub 私密漏洞报告，并将实际可用入口补充到此文件。配置方法见 [GitHub 官方私密漏洞报告说明](https://docs.github.com/en/code-security/how-tos/report-and-fix-vulnerabilities/configure-vulnerability-reporting/configure-for-a-repository)。
+请从 [GitHub 私密漏洞报告入口](https://github.com/X9728771115-dotcom/biaoxi/security/advisories/new) 提交报告。该入口应显示 **Report a vulnerability**；如果入口不可用，请先不要在公开位置发送漏洞细节。项目没有另设专用安全邮箱。
 
 建议的最小报告内容：受影响版本与系统、影响描述、使用合成数据的复现步骤、预期行为、实际行为，以及不含凭据的必要日志。
 

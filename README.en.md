@@ -4,7 +4,9 @@
 
 Biaoxi reads tender documents and attachments, preserves source references, and prepares 14 analysis categories plus four review outputs: rejection risks, scoring requirements, mandatory commitments, and a bidding feasibility assessment. Its interface and procurement rules primarily target Chinese documents.
 
-**Source version: 0.5.6. This is a local open-source candidate, not a published release. No new installers are included.** Automated checks do not establish accuracy on real tenders, company eligibility, or production readiness.
+**Source version: 0.5.6. The first public alpha, `v0.5.6-alpha.1`, is prepared from open-source candidate 2 and includes source code only.** A development environment is required; no installers are included. Automated checks do not establish accuracy on real tenders, company eligibility, or production readiness.
+
+Repository: [X9728771115-dotcom/biaoxi](https://github.com/X9728771115-dotcom/biaoxi). Use [Issues](https://github.com/X9728771115-dotcom/biaoxi/issues) for ordinary feedback and follow [SECURITY.md](SECURITY.md) for private vulnerability reporting.
 
 Candidate 2 fixes multiple scoring rules within a paragraph, repeated performance scores and shared-cap boundaries, and replaces two vulnerable dependency chains with scoped overrides. Raw policy originals and QA images are excluded from source distribution; the offline catalog remains available. See the [policy provenance and explicit caching guide](assets/policies/README.md).
 
@@ -12,7 +14,12 @@ Candidate 2 fixes multiple scoring rules within a paragraph, repeated performanc
 
 Use Node.js 22, at least 22.13, with npm 10.9.8 and the Git CLI for source checks and regression tests. The candidate preparation environment used Node.js 22.23.2 and npm 10.9.8; other versions require separate verification.
 
-Run from the source directory:
+Clone the repository (or choose **Code → Download ZIP** on GitHub and extract it), then run from the source directory:
+
+```sh
+git clone https://github.com/X9728771115-dotcom/biaoxi.git
+cd biaoxi
+```
 
 ```sh
 npm ci
