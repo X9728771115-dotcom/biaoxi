@@ -1,0 +1,3 @@
+# Preserve original file bytes across platforms, including notice provenance hashes.
+# Do not apply checkout/checkin line-ending conversions on Windows.
+* -text

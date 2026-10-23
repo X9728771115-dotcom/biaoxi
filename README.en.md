@@ -28,9 +28,10 @@ npm ci
 npm run dev:safe
 ```
 
-Open [http://127.0.0.1:43221](http://127.0.0.1:43221); confirm the actual URL printed by the process. For the Electron development app:
+Open [http://127.0.0.1:43221](http://127.0.0.1:43221); confirm the actual URL printed by the process. For the Electron development app, explicitly install the Electron 44 runtime after installing dependencies:
 
 ```sh
+node node_modules/electron/install.js
 npm run start:safe
 ```
 

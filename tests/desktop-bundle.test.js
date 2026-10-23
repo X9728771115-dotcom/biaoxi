@@ -162,6 +162,32 @@ test('native build check rejects an installed Electron version outside the retai
  assert.throws(()=>verifyRuntimeNoticeSources(verifyDesktopBundle(bundle.root,bundle),options),/Source Electron version/);
 });
 
+test('native Electron installation replaces inherited target overrides only in its child environment',async()=>{
+ const {createNativeBuildEnvironment}=await import('../scripts/build-desktop.mjs');
+ const inherited={ELECTRON_INSTALL_PLATFORM:'win32',ELECTRON_INSTALL_ARCH:'x64',npm_config_platform:'win32',npm_config_arch:'x64',NPM_CONFIG_ARCH:'x64',npm_config_target_platform:'win32',npm_config_target_arch:'x64',npm_config_target:'43.0.0',ELECTRON_OVERRIDE_DIST_PATH:'external-runtime',ELECTRON_SKIP_BINARY_DOWNLOAD:'1',electron_use_remote_checksums:'1',npm_config_electron_use_remote_checksums:'1',HTTPS_PROXY:'https://proxy.example',electron_config_cache:'download-cache'};
+ const original={...inherited},environment=createNativeBuildEnvironment('darwin','arm64',inherited);
+ assert.equal(environment.ELECTRON_INSTALL_PLATFORM,'darwin');assert.equal(environment.ELECTRON_INSTALL_ARCH,'arm64');
+ assert.equal(environment.npm_config_platform,'darwin');assert.equal(environment.npm_config_arch,'arm64');
+ for(const key of ['NPM_CONFIG_ARCH','npm_config_target_platform','npm_config_target_arch','npm_config_target','ELECTRON_OVERRIDE_DIST_PATH','ELECTRON_SKIP_BINARY_DOWNLOAD','electron_use_remote_checksums','npm_config_electron_use_remote_checksums'])assert.equal(environment[key],undefined,key);
+ assert.equal(environment.HTTPS_PROXY,'https://proxy.example');assert.equal(environment.electron_config_cache,'download-cache');assert.deepEqual(inherited,original);
+});
+
+test('pre-builder source check accepts an installed version with both runtime notices',async t=>{
+ const {verifyInstalledElectronSource}=await import('../scripts/build-desktop.mjs');
+ const bundle=fixture(t),options=runtimeSource(bundle);assert.doesNotThrow(()=>verifyInstalledElectronSource(options));
+});
+
+for(const name of ['LICENSE','LICENSES.chromium.html'])test(`pre-builder source check rejects an absent installed runtime ${name}`,async t=>{
+ const {verifyInstalledElectronSource}=await import('../scripts/build-desktop.mjs');
+ const bundle=fixture(t),options=runtimeSource(bundle);rmSync(join(bundle.sourceRoot,'node_modules/electron/dist',name));
+ assert.throws(()=>verifyInstalledElectronSource(options),/Missing installed Electron runtime notice/);
+});
+
+test('pre-builder source check rejects an unexpected installed Electron version',async t=>{
+ const {verifyInstalledElectronSource}=await import('../scripts/build-desktop.mjs');
+ const bundle=fixture(t),options=runtimeSource(bundle,'44.7.1');assert.throws(()=>verifyInstalledElectronSource(options),/Source Electron version/);
+});
+
 test('build preflight fails before building when target differs from host or native resource is absent',async t=>{
  const {prepareDesktopBuild}=await import('../scripts/build-desktop.mjs');
  const bundle=fixture(t),options={root:bundle.root,hostPlatform:'darwin',hostArch:'arm64'};

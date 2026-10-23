@@ -40,9 +40,10 @@ npm ci
 npm run dev:safe
 ```
 
-浏览器默认地址为 [http://127.0.0.1:43221](http://127.0.0.1:43221)，以终端打印的实际地址为准。启动 Electron 桌面开发版：
+浏览器默认地址为 [http://127.0.0.1:43221](http://127.0.0.1:43221)，以终端打印的实际地址为准。启动 Electron 桌面开发版（Electron 44 需要显式下载运行时；首次安装或重装依赖后执行第一行）：
 
 ```sh
+node node_modules/electron/install.js
 npm run start:safe
 ```
 
