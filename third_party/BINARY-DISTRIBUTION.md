@@ -93,6 +93,11 @@ the evidence bundle.
 desktop application. Keep its [LICENSE](runtime/electron-44.7.0/LICENSE) and
 full [Chromium notices](runtime/electron-44.7.0/LICENSES.chromium.html), and
 reconcile them against the notices supplied by each actual target runtime.
+The native build also copies its actual downloaded Electron `LICENSE` and
+`LICENSES.chromium.html` into `runtime-notices/electron-44.7.0/`, relative to
+the application Resources directory. The manifest records these separate
+`runtimeNotices` paths and hashes, and the build compares them with that
+native runner's actual source files; historical notice hashes are preserved.
 An npm dev flag alone is not evidence that a component is absent.
 
 ## Minimum target manifest and checks

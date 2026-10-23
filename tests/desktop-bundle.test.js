@@ -16,7 +16,8 @@ function put(root,path,value='synthetic resource'){
  writeFileSync(destination,typeof value==='object'&&!Buffer.isBuffer(value)?JSON.stringify(value):value);
 }
 function fixture(t,{platform='darwin',arch='arm64'}={}){
- const root=mkdtempSync(join(tmpdir(),'biaoxi-bundle-test-'));t.after(()=>rmSync(root,{recursive:true,force:true}));
+ const temporary=mkdtempSync(join(tmpdir(),'biaoxi-bundle-test-')),resources=join(temporary,'Resources'),root=join(resources,'app');
+ mkdirSync(root,{recursive:true});t.after(()=>rmSync(temporary,{recursive:true,force:true}));
  put(root,'package.json',{name:'biaoxi-oss-trial',version:'0.5.6-alpha.2',license:'MIT',main:'src/desktop/main.cjs',dependencies:Object.fromEntries(dependencies.map(name=>[name,name==='@napi-rs/canvas'?'1.0.10':'1.0.0']))});
  put(root,'src/desktop/main.cjs',"const {app}=require('electron');app.setName('标析开源试用版');app.setPath('userData',require('node:path').join(app.getPath('appData'),'标析开源试用版'));app.requestSingleInstanceLock();");
  for(const path of ['LICENSE','THIRD_PARTY_NOTICES.md','assets/FONT-LICENSE.txt','assets/SourceHanSansSC-Regular.otf','public/index.html','src/desktop/preload.cjs','src/desktop/web-chat.cjs','src/desktop/web-chat-dom.cjs','src/server/service.js','src/server/export.js','src/core/extractor.js','src/core/analyzer.js'])put(root,path);
@@ -33,8 +34,9 @@ function fixture(t,{platform='darwin',arch='arm64'}={}){
  for(const path of binaryEvidence)put(root,path,path.endsWith('.json')?{schemaVersion:1}:'synthetic notice evidence');
  const notices=['LICENSE','LICENSES.chromium.html'].map(name=>({path:`third_party/runtime/electron-44.7.0/${name}`,sha256:sha('synthetic Electron notice')}));
  for(const notice of notices)put(root,notice.path,'synthetic Electron notice');
+ for(const name of ['LICENSE','LICENSES.chromium.html'])put(resources,`runtime-notices/electron-44.7.0/${name}`,`synthetic target ${name} notice`);
  put(root,'third_party/dependency-inventory.json',{packages:[{name:'electron',version:'44.7.0',noticeFiles:notices}]});
- return {root,binary,platform,arch};
+ return {root,resources,sourceRoot:join(temporary,'native-build-source'),binary,platform,arch};
 }
 function run({root,platform,arch},output=join(root,'manifest.json')){
  return spawnSync(process.execPath,[verifier,root,platform,arch,output],{encoding:'utf8'});
@@ -114,6 +116,50 @@ test('bundle verifier rejects mismatched native versions and architecture',t=>{
 test('bundle verifier rejects changed Electron notices against their source record',t=>{
  const bundle=fixture(t);put(bundle.root,'third_party/runtime/electron-44.7.0/LICENSE','changed notice');
  const result=run(bundle);assert.equal(result.status,1);assert.match(result.stderr,/Electron notice hash/);
+});
+
+test('bundle verifier records actual target runtime notices separately from historical notices',t=>{
+ const bundle=fixture(t),result=run(bundle);assert.equal(result.status,0,result.stderr);
+ const manifest=JSON.parse(readFileSync(join(bundle.root,'manifest.json'),'utf8'));
+ assert.equal(manifest.runtimeVersion,'44.7.0');
+ assert.deepEqual(manifest.runtimeNotices.map(item=>item.path),['runtime-notices/electron-44.7.0/LICENSE','runtime-notices/electron-44.7.0/LICENSES.chromium.html']);
+ for(const notice of manifest.runtimeNotices){
+  const bytes=readFileSync(join(bundle.resources,notice.path));assert.equal(notice.bytes,bytes.length);assert.equal(notice.sha256,sha(bytes));
+  assert.notEqual(notice.sha256,sha('synthetic Electron notice'));
+ }
+ assert.equal(JSON.stringify(manifest).includes(bundle.resources),false);
+});
+
+for(const name of ['LICENSE','LICENSES.chromium.html'])test(`bundle verifier rejects a missing actual target Electron ${name}`,t=>{
+ const bundle=fixture(t),path=`runtime-notices/electron-44.7.0/${name}`;rmSync(join(bundle.resources,path));
+ const result=run(bundle);assert.equal(result.status,1);assert.ok(result.stderr.includes(path),result.stderr);
+});
+
+function runtimeSource(bundle,version='44.7.0'){
+ put(bundle.sourceRoot,'node_modules/electron/package.json',{name:'electron',version});
+ for(const name of ['LICENSE','LICENSES.chromium.html'])put(bundle.sourceRoot,'node_modules/electron/dist/'+name,`synthetic target ${name} notice`);
+ return {root:bundle.sourceRoot};
+}
+
+test('native build check accepts notices matching its installed Electron runtime',async t=>{
+ const {verifyDesktopBundle}=await import('../scripts/verify-desktop-bundle.mjs');
+ const {verifyRuntimeNoticeSources}=await import('../scripts/build-desktop.mjs');
+ const bundle=fixture(t),options=runtimeSource(bundle);
+ assert.doesNotThrow(()=>verifyRuntimeNoticeSources(verifyDesktopBundle(bundle.root,bundle),options));
+});
+
+test('native build check rejects target notices copied from a different runtime source',async t=>{
+ const {verifyDesktopBundle}=await import('../scripts/verify-desktop-bundle.mjs');
+ const {verifyRuntimeNoticeSources}=await import('../scripts/build-desktop.mjs');
+ const bundle=fixture(t),options=runtimeSource(bundle);put(bundle.sourceRoot,'node_modules/electron/dist/LICENSE','different runtime source notice');
+ assert.throws(()=>verifyRuntimeNoticeSources(verifyDesktopBundle(bundle.root,bundle),options),/Target Electron notice differs from source/);
+});
+
+test('native build check rejects an installed Electron version outside the retained runtime version',async t=>{
+ const {verifyDesktopBundle}=await import('../scripts/verify-desktop-bundle.mjs');
+ const {verifyRuntimeNoticeSources}=await import('../scripts/build-desktop.mjs');
+ const bundle=fixture(t),options=runtimeSource(bundle,'44.7.1');
+ assert.throws(()=>verifyRuntimeNoticeSources(verifyDesktopBundle(bundle.root,bundle),options),/Source Electron version/);
 });
 
 test('build preflight fails before building when target differs from host or native resource is absent',async t=>{

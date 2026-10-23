@@ -202,7 +202,8 @@ jobs:
           const commit = process.env.GITHUB_SHA, repository = process.env.GITHUB_REPOSITORY;
           assert.match(version, /^\d+\.\d+\.\d+-alpha\.\d+$/);
           assert.equal(tag, `v${version}`);
-          assert.equal(JSON.parse(readFileSync('package.json', 'utf8')).version, version);
+          const pkg = JSON.parse(readFileSync('package.json', 'utf8'));
+          assert.equal(pkg.version, version);
           assert.match(commit, /^[a-f0-9]{40}$/);
           assert.match(repository, /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/);
 
@@ -233,6 +234,14 @@ jobs:
             assert.equal(manifest.sourceCommit, commit);
             assert.equal(manifest.platform, platform);
             assert.equal(manifest.arch, arch);
+            assert.equal(manifest.runtimeVersion, pkg.devDependencies.electron);
+            const runtimeNoticePaths = ['LICENSE', 'LICENSES.chromium.html'].map(name => `runtime-notices/electron-${pkg.devDependencies.electron}/${name}`).sort();
+            assert.ok(Array.isArray(manifest.runtimeNotices));
+            assert.deepEqual(manifest.runtimeNotices.map(notice => notice.path).sort(), runtimeNoticePaths, 'The two Electron runtime notices must be present at the exact relative resource paths');
+            for (const notice of manifest.runtimeNotices) {
+              assert.match(notice.sha256, /^[a-f0-9]{64}$/);
+              assert.ok(Number.isInteger(notice.bytes) && notice.bytes > 0);
+            }
             assert.ok(Array.isArray(manifest.files) && manifest.files.length > 0);
             for (const file of manifest.files) {
               assert.equal(typeof file.path, 'string');
@@ -294,7 +303,7 @@ jobs:
             '',
             '提供 Windows x64 安装版/便携版、Mac Apple 芯片和 Intel 两套 DMG/ZIP。首次使用请下载 desktop-install.md。各文件的内容校验值见 SHA256SUMS.txt。',
             '',
-            '三组组件 manifest 的路径相对于包内 app 资源目录，记录包内文件 SHA-256；core-smoke 记录包内离线 OCR、14 类分析与 PDF/DOCX 导出；startup-smoke 记录从最终 DMG/Windows 安装器启动、API 首启及进程重启持久化检查。',
+            '三组组件 manifest 的 files 路径相对于包内 app 资源目录，runtimeNotices 路径相对于 Resources 资源目录，记录包内文件 SHA-256；core-smoke 记录包内离线 OCR、14 类分析与 PDF/DOCX 导出；startup-smoke 记录从最终 DMG/Windows 安装器启动、API 首启及进程重启持久化检查。',
             '',
             '自动化检查使用 GitHub 原生架构 runner 和合成样本，不代表真实设备 GUI 点击、业务准确性或招投标项目验收。',
             '',

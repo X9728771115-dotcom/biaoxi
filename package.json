@@ -55,6 +55,16 @@
       "vendor/README.md",
       "scripts/generate-icon.mjs"
     ],
+    "extraResources": [
+      {
+        "from": "node_modules/electron/dist/LICENSE",
+        "to": "runtime-notices/electron-44.7.0/LICENSE"
+      },
+      {
+        "from": "node_modules/electron/dist/LICENSES.chromium.html",
+        "to": "runtime-notices/electron-44.7.0/LICENSES.chromium.html"
+      }
+    ],
     "mac": {
       "category": "public.app-category.productivity",
       "identity": "-",

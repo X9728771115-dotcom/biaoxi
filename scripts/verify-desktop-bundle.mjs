@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {readFileSync,readdirSync,lstatSync,existsSync,writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
-import {resolve,join,isAbsolute,sep} from 'node:path';
+import {resolve,join,dirname,isAbsolute,sep} from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {Script} from 'node:vm';
 
@@ -79,6 +79,11 @@ export function verifyDesktopBundle(appDir,{platform,arch}){
   const path=`third_party/runtime/electron-${electron.version}/${name}`,notice=electron.noticeFiles?.find(item=>item.path===path);
   assert.ok(notice,'Electron notice provenance missing: '+path);assert.equal(digest(file(root,path)),notice.sha256,'Electron notice hash mismatch: '+path);required.add(path);
  }
+ const runtimeVersion='44.7.0';assert.equal(electron.version,runtimeVersion,'Historical Electron runtime version mismatch');
+ const runtimeNotices=['LICENSE','LICENSES.chromium.html'].map(name=>{
+  const path=`runtime-notices/electron-${runtimeVersion}/${name}`,bytes=file(dirname(root),path);
+  return {path,bytes:bytes.length,sha256:digest(bytes)};
+ });
  const packages=[];
  for(const path of all){
   if(path.startsWith('third_party/')||path.endsWith('.traineddata.gz'))required.add(path);
@@ -88,7 +93,7 @@ export function verifyDesktopBundle(appDir,{platform,arch}){
   }
  }
  const files=[...required].sort().map(path=>{const bytes=file(root,path);return {path:path.split(sep).join('/'),bytes:bytes.length,sha256:digest(bytes)};});
- return {schemaVersion:1,version:pkg.version,application:{name:pkg.name,version:pkg.version},platform,arch,sourceCommit:/^[a-f0-9]{40}$/i.test(process.env.GITHUB_SHA||'')?process.env.GITHUB_SHA:null,scope:'Static bundled-resource checks only; target execution and final linkage are not verified. Hashes describe final bundled bytes, including any signing changes, not original npm binary bytes.',packages:packages.sort((a,b)=>a.path.localeCompare(b.path)),files};
+ return {schemaVersion:1,version:pkg.version,application:{name:pkg.name,version:pkg.version},platform,arch,runtimeVersion,runtimeNotices,sourceCommit:/^[a-f0-9]{40}$/i.test(process.env.GITHUB_SHA||'')?process.env.GITHUB_SHA:null,scope:'Static bundled-resource checks only; target execution and final linkage are not verified. Hashes describe final bundled bytes, including any signing changes, not original npm binary bytes.',packages:packages.sort((a,b)=>a.path.localeCompare(b.path)),files};
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href){
  try{
