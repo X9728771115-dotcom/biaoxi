@@ -2,13 +2,15 @@
 
 面向版本：`v0.5.6-alpha.1`（源码试用版）。标析帮助整理招标要求、评分与风险，并把结果连回原文，供人工核对。
 
-[返回演示与试用入口](README.md) · [可转发版本页](https://github.com/X9728771115-dotcom/biaoxi/releases/tag/v0.5.6-alpha.1) · [下载演示与试用资料包](https://github.com/X9728771115-dotcom/biaoxi/releases/download/v0.5.6-alpha.1/biaoxi-trial-v0.5.6-alpha.1.zip)
+[返回演示与试用入口](README.md) · [可转发版本页](https://github.com/X9728771115-dotcom/biaoxi/releases/tag/v0.5.6-alpha.1) · [下载演示与试用资料包](https://github.com/X9728771115-dotcom/biaoxi/raw/refs/heads/main/docs/trial/downloads/biaoxi-trial-v0.5.6-alpha.1.zip)
+
+下载后可用[SHA-256 校验文件（SHA256SUMS.txt）](https://github.com/X9728771115-dotcom/biaoxi/raw/refs/heads/main/docs/trial/downloads/SHA256SUMS.txt)核对资料包、视频和纯文本说明。
 
 **第一次接触 GitHub，建议先走路线一。当前只提供源码，没有可双击安装的程序。** 两条路线都可以反馈，不需要公司文件、模型 API、密钥或平台账号。
 
 ## 路线一：先看演示，不安装
 
-1. [打开演示视频（MP4，2 分 40 秒）](https://github.com/X9728771115-dotcom/biaoxi/releases/download/v0.5.6-alpha.1/biaoxi-demo-v0.5.6-alpha.1.mp4)，或查看[在线图解](README.md#先看四个关键画面)。视频由实际界面截图配字幕编排，不是连续录屏，无配音。下载并完整解压[资料包](https://github.com/X9728771115-dotcom/biaoxi/releases/download/v0.5.6-alpha.1/biaoxi-trial-v0.5.6-alpha.1.zip)后，也可直接播放其中的 `演示视频.mp4`，或用浏览器打开 `00-开始这里.html`。
+1. [打开演示视频（MP4，2 分 40 秒）](https://github.com/X9728771115-dotcom/biaoxi/raw/refs/heads/main/docs/trial/downloads/biaoxi-demo-v0.5.6-alpha.1.mp4)，或查看[在线图解](README.md#先看四个关键画面)。视频由实际界面截图配字幕编排，不是连续录屏，无配音。下载并完整解压[资料包](https://github.com/X9728771115-dotcom/biaoxi/raw/refs/heads/main/docs/trial/downloads/biaoxi-trial-v0.5.6-alpha.1.zip)后，也可直接播放其中的 `演示视频.mp4`，或用浏览器打开 `00-开始这里.html`。
 2. 重点看四件事：上传文件 → 离线分析 → 查看评分和风险 → 回到原文核验。
 3. 复制[试用反馈模板](feedback-template.md)填写，选择“仅看演示”，写下看不懂、操作不顺或希望改进的地方。资料包中另有 TXT、HTML 和 Markdown 三种格式，选一种即可。
 

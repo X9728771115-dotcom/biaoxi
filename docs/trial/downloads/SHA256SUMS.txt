@@ -1,0 +1,3 @@
+c4205a005459e49ca67223dc98b04499937cea0b12146fbdeb5c9fa0b1014923  biaoxi-trial-v0.5.6-alpha.1.zip
+8c822f102a7c28196394c9208c06295c3f2842d33336f43b2f5dcea4bdab6c23  biaoxi-demo-v0.5.6-alpha.1.mp4
+649d53df8df73352ff5bc89e3cf2b90c4220ffdcd6fd9a6e63c62329deaab398  biaoxi-trial-guide-v0.5.6-alpha.1.txt

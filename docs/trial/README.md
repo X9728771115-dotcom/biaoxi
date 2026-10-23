@@ -6,13 +6,15 @@
 
 | 你想做什么 | 直接打开 |
 | --- | --- |
-| **1. 先看演示，不安装** | [下载演示视频（MP4，2 分 40 秒）](https://github.com/X9728771115-dotcom/biaoxi/releases/download/v0.5.6-alpha.1/biaoxi-demo-v0.5.6-alpha.1.mp4) |
-| **2. 下载演示与试用资料** | [下载资料包（ZIP）](https://github.com/X9728771115-dotcom/biaoxi/releases/download/v0.5.6-alpha.1/biaoxi-trial-v0.5.6-alpha.1.zip)，完整解压后打开 `00-开始这里.html` |
-| **3. 按步骤亲自操作** | [阅读完整试用指南](guide.md)，需要时[下载纯文本说明](https://github.com/X9728771115-dotcom/biaoxi/releases/download/v0.5.6-alpha.1/biaoxi-trial-guide-v0.5.6-alpha.1.txt) |
+| **1. 先看演示，不安装** | [下载演示视频（MP4，2 分 40 秒）](https://github.com/X9728771115-dotcom/biaoxi/raw/refs/heads/main/docs/trial/downloads/biaoxi-demo-v0.5.6-alpha.1.mp4) |
+| **2. 下载演示与试用资料** | [下载资料包（ZIP）](https://github.com/X9728771115-dotcom/biaoxi/raw/refs/heads/main/docs/trial/downloads/biaoxi-trial-v0.5.6-alpha.1.zip)，完整解压后打开 `00-开始这里.html` |
+| **3. 按步骤亲自操作** | [阅读完整试用指南](guide.md)，需要时[下载纯文本说明](https://github.com/X9728771115-dotcom/biaoxi/raw/refs/heads/main/docs/trial/downloads/biaoxi-trial-guide-v0.5.6-alpha.1.txt) |
 
-[![标析演示封面：先看要求，再对照原文](assets/demo-cover.png)](https://github.com/X9728771115-dotcom/biaoxi/releases/download/v0.5.6-alpha.1/biaoxi-demo-v0.5.6-alpha.1.mp4)
+[![标析演示封面：先看要求，再对照原文](assets/demo-cover.png)](https://github.com/X9728771115-dotcom/biaoxi/raw/refs/heads/main/docs/trial/downloads/biaoxi-demo-v0.5.6-alpha.1.mp4)
 
 视频由**实际界面截图配字幕编排，不是连续录屏，无配音**。下载到本机后即可播放。资料包包含视频、图解、说明、反馈模板和合成 TXT / PDF；不包含安装程序、模型或 npm 依赖。
+
+下载后可用[SHA-256 校验文件（SHA256SUMS.txt）](https://github.com/X9728771115-dotcom/biaoxi/raw/refs/heads/main/docs/trial/downloads/SHA256SUMS.txt)核对资料包、视频和纯文本说明。
 
 ## 当前适合怎样试用
 
