@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-23",
+  "scope": "Bounded official exact-version and later-upstream inspection; absence of a standalone file is not a demonstrated authorization conflict.",
+  "fontkit": {
+    "exactCommit": "fbf3b9ef21eebd219eb73e666faed573af0fba09",
+    "sourceUrl": "https://codeload.github.com/foliojs/fontkit/tar.gz/fbf3b9ef21eebd219eb73e666faed573af0fba09",
+    "archiveSha256": "da64e8a7ebd35162dbed4bff6dc2eeedb91d4fe3058428d09577d2715ed253c2",
+    "archiveBytes": 18224180,
+    "archiveComplete": true,
+    "archiveMembers": 218,
+    "fileMembers": 194,
+    "overlappingPublishedFilesCompared": 118,
+    "allOverlappingComparedFilesMatch": true,
+    "standaloneProjectLicenseBodyRecovered": false,
+    "separateTestFontNotices": [
+      "test/data/NotoSans/LICENSE.txt",
+      "test/data/OpenSans/LICENSE.txt",
+      "test/data/fonttest/LICENSE.txt"
+    ],
+    "readmeStatement": "MIT",
+    "laterInspectedCommit": "d86591208f08c1b3b0a31898f2f80a6939c665c7",
+    "laterStandaloneProjectBodyRecovered": false
+  },
+  "dfa": {
+    "exactCommit": "3f5e603e5082caedabefefdf53e8a6ca3111e966",
+    "sourceUrl": "https://github.com/foliojs/dfa/tree/3f5e603e5082caedabefefdf53e8a6ca3111e966",
+    "laterHeadWasExactCommit": true,
+    "treeComplete": true,
+    "standaloneBodyRecovered": false,
+    "readmeStatement": "MIT"
+  },
+  "brotli": {
+    "exactCommit": "e36051345f6d27a56e5f39ea70d2f789b8574046",
+    "sourceUrl": "https://github.com/foliojs/brotli.js/tree/e36051345f6d27a56e5f39ea70d2f789b8574046",
+    "laterInspectedCommit": "4011e59a5c35bb602f3e97f114727aa662f795f7",
+    "exactAndLaterTreesComplete": true,
+    "overlappingPublishedFilesCompared": 17,
+    "allOverlappingComparedFilesMatch": true,
+    "standaloneMITBodyRecovered": false,
+    "readmeStatement": "MIT",
+    "decoderApacheSourceHeaderPreserved": true
+  }
+}

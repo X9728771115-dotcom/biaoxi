@@ -4,7 +4,7 @@
 
 Biaoxi reads tender documents and attachments, preserves source references, and prepares 14 analysis categories plus four review outputs: rejection risks, scoring requirements, mandatory commitments, and a bidding feasibility assessment. Its interface and procurement rules primarily target Chinese documents.
 
-**Source version: 0.5.6. The first public alpha, `v0.5.6-alpha.1`, is prepared from open-source candidate 2 and includes source code only.** A development environment is required; no installers are included. Automated checks do not establish accuracy on real tenders, company eligibility, or production readiness.
+**Desktop trial version: `v0.5.6-alpha.2`, prepared from open-source candidate 2.** Download Windows x64, Mac Apple silicon or Mac Intel packages from the [installer release](https://github.com/X9728771115-dotcom/biaoxi/releases/tag/v0.5.6-alpha.2) when its assets are visible. End users do not need Node.js or development tools. Read the [installation and signing notes](docs/desktop-install.md) first. Automated checks do not establish accuracy on real tenders, company eligibility, or production readiness.
 
 Start with the [demo and trial release page (shareable link)](https://github.com/X9728771115-dotcom/biaoxi/releases/tag/v0.5.6-alpha.1), or read the [illustrated demo and full trial guide (Chinese)](docs/trial/README.md). Watching needs no installation; the synthetic offline trial needs no model API or company records.
 
@@ -54,6 +54,6 @@ npm test
 npm run test:ocr
 ```
 
-CI uses local and synthetic fixtures, without model keys or platform accounts. Real APIs, live website workflows, packaged builds, and device-specific acceptance are separate checks. See the [validation record](docs/validation.md), [contribution guide](CONTRIBUTING.md), and [security policy](SECURITY.md). Never include confidential tenders, company records, credentials, or personal data in contributions.
+CI uses local and synthetic fixtures, without model keys or platform accounts. A separate native desktop workflow builds and checks three platform/architecture targets before creating a draft release for maintainer review. Version-specific evidence is attached to each release. Real APIs, live website workflows and interactive physical-device acceptance remain separate checks. See the [validation record](docs/validation.md), [contribution guide](CONTRIBUTING.md), and [security policy](SECURITY.md). Never include confidential tenders, company records, credentials, or personal data in contributions.
 
 Original project code is licensed under [MIT](LICENSE). Dependencies and resources retain their own licenses; see [third-party notices](THIRD_PARTY_NOTICES.md). This license does not grant trademark rights or rights to third-party documents and provider content.

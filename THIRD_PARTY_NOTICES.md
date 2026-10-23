@@ -4,19 +4,31 @@ Biaoxi project source is offered under the root [MIT license](LICENSE).
 Third-party materials retain their own rights and terms. Project MIT does not
 relicense dependencies, fonts, policy source material or other third-party work.
 
-## Current source delivery
+## Source checkout scope and desktop binary scope
 
-This is a source-only candidate. Except for the SheetJS vendor archive listed
-below, locked npm dependencies, Electron, native Canvas
-addons, OCR WASM and traineddata are installation references; their package code
-and binary payloads are **not bundled**. The legal/source evidence retained under
-`third_party/` is documentation, not an installed dependency tree.
+The versioned source checkout includes the explicitly listed assets below.
+Except for the SheetJS vendor archive, locked npm packages, Electron, native
+Canvas addons, OCR WASM and traineddata are installation references in that
+source checkout scope; the installed dependency tree is not part of the
+versioned source delivery. The legal/source evidence under `third_party/`
+documents those materials.
 
-The [431-entry inventory](third_party/DEPENDENCIES.md) records 185 production and
-246 development references according to the final lockfile dev flag. Optional
+The **0.5.6-alpha.2 desktop binary delivery** for Windows x64 and macOS arm64/x64
+has a different scope: it carries production runtime packages, the target
+Electron runtime, native Canvas addon, OCR WASM/model resources and applicable
+notices, with a component manifest for each target. See
+[binary distribution scope and evidence](third_party/BINARY-DISTRIBUTION.md).
+Final target manifest and extracted-package verification evidence is initially
+pending in [target validation](third_party/binary-distribution/TARGET-VALIDATION.json).
+
+The preserved [431-entry source inventory](third_party/DEPENDENCIES.md) records
+185 production and 246 development references according to lockfile dev flags. Optional
 platform entries are included whether installed or not. The [JSON inventory](third_party/dependency-inventory.json)
 separates evidence, SPDX declarations, selected alternatives, delivery scope and
-future binary responsibilities.
+historical source-delivery responsibilities. Its `not-bundled` statements apply
+to source checkout delivery, not to assembled desktop payloads. The per-target
+binary manifest records the actual distributed components. Electron supplies a
+distributed runtime despite its npm `devDependency` classification.
 
 | Material retained with source | Terms and evidence |
 | --- | --- |
@@ -44,15 +56,25 @@ filelist and Jake, plus app-builder-lib's embedded Yarn BSD notice. The exact
 published Compare-version and Keyv README sections state MIT and name their
 copyright holders.
 
-Thirteen historical packages have exact-version declarations but no recovered
-complete standalone author notice/grant body. Two OCR wrappers and Brotli have
-separately documented body/attribution gaps. [Declaration evidence](third_party/declaration-evidence.json)
-retains the original statements, authors, inspected source references and
-precise limitations. These packages are not bundled in this source candidate.
-The missing-body facts are future binary redistribution responsibilities; they
-are not thirteen proven authorization conflicts or a blanket conclusion that
-this source candidate cannot be shared. Official SPDX text is retained only as
-labelled terms reference, never as a fabricated upstream author grant.
+The preserved [historical declaration evidence](third_party/declaration-evidence.json)
+records thirteen exact-version declarations without a recovered complete
+standalone author notice/grant body. Two OCR wrappers and Brotli have separately
+recorded body/attribution gaps. These historical records remain unchanged.
+
+The [binary supplement](third_party/BINARY-DISTRIBUTION.md) separates nine
+build/install tools whose code must be absent from final application payloads
+from seven production dependency entries. Genuine later-upstream ISC and MIT
+notices were recovered for boolbase and tr46, with bounded identical-code and
+commit-parent evidence. They are labelled as later upstream notices, not as
+files recovered from the original npm release archives. The remaining complete
+independent bodies for fontkit, dfa, Brotli's MIT scope and the two MIT OCR
+wrappers were not recovered; their original published declarations and authors
+are retained. The OCR models have separate original Apache-2.0 notices.
+
+A missing standalone file is not automatically an incompatible license.
+Official SPDX text is retained only as a labelled standard-terms reference,
+never as a fabricated upstream author grant. These records do not assert
+`BINARY_CLEARED` or a complete legal guarantee.
 
 ## Native and OCR provenance
 
@@ -82,11 +104,12 @@ The full Electron 44.7.0 Chromium notice is retained as version-matched referenc
 under `third_party/runtime/electron-44.7.0/`. It does not prove final target
 packaging or identical components across platforms.
 
-## Future binary delivery
+## Binary delivery verification
 
-Before distributing an application binary, reconcile the actual target component
-manifest and final linkage, retain applicable runtime/native/model notices, and
-address the precise missing upstream standalone notices in [future binary responsibilities](third_party/REVIEW-ITEMS.md).
-Native build reproduction and final macOS/Windows package notice validation
-remain **NOT_RUN**. This collection records evidence and scope; it does not
-assert complete legal clearance or invent rights absent from upstream materials.
+Each target must reconcile its actual component manifest, native/runtime/model
+files and applicable notice paths/hashes. The [binary distribution record](third_party/BINARY-DISTRIBUTION.md)
+states the minimum checks and retained evidence; [review items](third_party/REVIEW-ITEMS.md)
+record the bounded outstanding facts. Final macOS/Windows package notice and
+development-tool absence checks remain **NOT_RUN** until release assembly adds
+the actual target evidence. Native source rebuilds also remain **NOT_RUN**;
+that limitation alone is not a demonstrated runtime license conflict.

@@ -1,0 +1,319 @@
+name: Desktop trial packages (draft release)
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*-alpha.*'
+
+permissions:
+  contents: read
+
+# A manual run and a tag run can target the same package version.
+concurrency:
+  group: desktop-release-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  source:
+    name: Source, regression and offline OCR checks
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    permissions:
+      contents: read
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      tag: ${{ steps.version.outputs.tag }}
+    steps:
+      - name: Check out the exact source commit
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '22.23.2'
+          package-manager-cache: false
+      - name: Validate the alpha version and tag
+        id: version
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import {readFileSync, appendFileSync} from 'node:fs';
+          const {version} = JSON.parse(readFileSync('package.json', 'utf8'));
+          assert.match(version, /^\d+\.\d+\.\d+-alpha\.\d+$/);
+          const tag = `v${version}`;
+          if (process.env.GITHUB_REF_TYPE === 'tag') {
+            assert.equal(process.env.GITHUB_REF_NAME, tag, 'The tag must match package.json');
+          }
+          assert.match(process.env.GITHUB_SHA, /^[a-f0-9]{40}$/);
+          appendFileSync(process.env.GITHUB_OUTPUT, `version=${version}\ntag=${tag}\n`);
+          console.log(`Version: ${tag}; source commit: ${process.env.GITHUB_SHA}`);
+          NODE
+      - name: Use the validated npm version
+        run: npm install --global npm@10.9.8
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Check public source boundaries
+        run: npm run check:source
+      - name: Run regression tests
+        run: npm test
+      - name: Run synthetic offline OCR tests
+        run: npm run test:ocr
+
+  build:
+    name: Native ${{ matrix.platform }} ${{ matrix.arch }} package
+    needs: source
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 75
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: windows-2022
+            platform: win32
+            arch: x64
+            binary1: windows-x64-setup.exe
+            binary2: windows-x64-portable.exe
+          - runner: macos-15
+            platform: darwin
+            arch: arm64
+            binary1: arm64-mac.dmg
+            binary2: arm64-mac.zip
+          - runner: macos-15-intel
+            platform: darwin
+            arch: x64
+            binary1: x64-mac.dmg
+            binary2: x64-mac.zip
+    env:
+      TARGET_PLATFORM: ${{ matrix.platform }}
+      TARGET_ARCH: ${{ matrix.arch }}
+      RELEASE_VERSION: ${{ needs.source.outputs.version }}
+      CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+    steps:
+      - name: Check out the exact source commit
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Set up native Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '22.23.2'
+          package-manager-cache: false
+      - name: Require a native runner and the checked version
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import {readFileSync} from 'node:fs';
+          assert.equal(process.platform, process.env.TARGET_PLATFORM);
+          assert.equal(process.arch, process.env.TARGET_ARCH);
+          assert.equal(JSON.parse(readFileSync('package.json', 'utf8')).version, process.env.RELEASE_VERSION);
+          NODE
+      - name: Use the validated npm version
+        run: npm install --global npm@10.9.8
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Build the native desktop packages
+        shell: bash
+        run: node scripts/build-desktop.mjs "$TARGET_PLATFORM" "$TARGET_ARCH"
+      - name: Exercise offline OCR, 14 categories and PDF / DOCX from bundled resources
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import {readFileSync, writeFileSync} from 'node:fs';
+          import {join} from 'node:path';
+          import {spawnSync} from 'node:child_process';
+          const platform = process.env.TARGET_PLATFORM, arch = process.env.TARGET_ARCH;
+          const pkg = JSON.parse(readFileSync('package.json', 'utf8'));
+          const bundle = platform === 'darwin'
+            ? join('dist', arch === 'arm64' ? 'mac-arm64' : 'mac', `${pkg.build.productName}.app`, 'Contents', 'Resources', 'app')
+            : join('dist', 'win-unpacked', 'resources', 'app');
+          const result = spawnSync(process.execPath, ['scripts/package-smoke.mjs', bundle, 'tests/fixtures'], {encoding: 'utf8', maxBuffer: 16 * 1024 * 1024});
+          process.stdout.write(result.stdout || '');
+          process.stderr.write(result.stderr || '');
+          assert.equal(result.status, 0, 'Bundled-resource smoke failed');
+          const smoke = JSON.parse(result.stdout.trim());
+          assert.equal(smoke.pass, true);
+          assert.equal(smoke.platform, platform);
+          assert.equal(smoke.arch, arch);
+          assert.equal(smoke.categories, 14);
+          const evidence = {...smoke, version: pkg.version, sourceCommit: process.env.GITHUB_SHA};
+          writeFileSync(`dist/core-smoke-${platform}-${arch}.json`, JSON.stringify(evidence, null, 2) + '\n');
+          NODE
+      - name: Install or mount the final artifact and exercise first launch and restart
+        shell: bash
+        run: node scripts/smoke-desktop-startup.mjs "$TARGET_PLATFORM" "$TARGET_ARCH"
+      - name: Keep only the named packages and evidence
+        uses: actions/upload-artifact@v7
+        with:
+          name: desktop-${{ matrix.platform }}-${{ matrix.arch }}
+          if-no-files-found: error
+          retention-days: 14
+          path: |
+            dist/biaoxi-oss-${{ needs.source.outputs.version }}-${{ matrix.binary1 }}
+            dist/biaoxi-oss-${{ needs.source.outputs.version }}-${{ matrix.binary2 }}
+            dist/desktop-manifest-${{ matrix.platform }}-${{ matrix.arch }}.json
+            dist/core-smoke-${{ matrix.platform }}-${{ matrix.arch }}.json
+            dist/startup-smoke-${{ matrix.platform }}-${{ matrix.arch }}.json
+
+  draft-release:
+    name: Create a draft prerelease for review
+    needs: [source, build]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    env:
+      RELEASE_VERSION: ${{ needs.source.outputs.version }}
+      RELEASE_TAG: ${{ needs.source.outputs.tag }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Check out the exact source commit
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '22.23.2'
+          package-manager-cache: false
+      - name: Download all three successful native builds
+        uses: actions/download-artifact@v8
+        with:
+          pattern: desktop-*
+          merge-multiple: true
+          path: release-assets
+      - name: Validate evidence, hash the named assets and create a draft only
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import {readFileSync, writeFileSync, readdirSync, lstatSync} from 'node:fs';
+          import {join} from 'node:path';
+          import {createHash} from 'node:crypto';
+          import {spawnSync} from 'node:child_process';
+
+          const version = process.env.RELEASE_VERSION, tag = process.env.RELEASE_TAG;
+          const commit = process.env.GITHUB_SHA, repository = process.env.GITHUB_REPOSITORY;
+          assert.match(version, /^\d+\.\d+\.\d+-alpha\.\d+$/);
+          assert.equal(tag, `v${version}`);
+          assert.equal(JSON.parse(readFileSync('package.json', 'utf8')).version, version);
+          assert.match(commit, /^[a-f0-9]{40}$/);
+          assert.match(repository, /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/);
+
+          const targets = [['darwin', 'arm64'], ['darwin', 'x64'], ['win32', 'x64']];
+          const binaries = [
+            `biaoxi-oss-${version}-arm64-mac.dmg`,
+            `biaoxi-oss-${version}-arm64-mac.zip`,
+            `biaoxi-oss-${version}-x64-mac.dmg`,
+            `biaoxi-oss-${version}-x64-mac.zip`,
+            `biaoxi-oss-${version}-windows-x64-setup.exe`,
+            `biaoxi-oss-${version}-windows-x64-portable.exe`,
+          ];
+          const evidence = targets.flatMap(([platform, arch]) => [
+            `desktop-manifest-${platform}-${arch}.json`,
+            `core-smoke-${platform}-${arch}.json`,
+            `startup-smoke-${platform}-${arch}.json`,
+          ]);
+          const expectedDownloads = [...binaries, ...evidence].sort();
+          assert.deepEqual(readdirSync('release-assets').sort(), expectedDownloads, 'Missing or unexpected downloaded assets');
+          for (const name of expectedDownloads) {
+            const stat = lstatSync(join('release-assets', name));
+            assert.ok(stat.isFile() && !stat.isSymbolicLink() && stat.size > 0, `Invalid asset: ${name}`);
+          }
+          for (const [platform, arch] of targets) {
+            const json = kind => JSON.parse(readFileSync(join('release-assets', `${kind}-${platform}-${arch}.json`), 'utf8'));
+            const manifest = json('desktop-manifest');
+            assert.equal(manifest.application.version, version);
+            assert.equal(manifest.sourceCommit, commit);
+            assert.equal(manifest.platform, platform);
+            assert.equal(manifest.arch, arch);
+            assert.ok(Array.isArray(manifest.files) && manifest.files.length > 0);
+            for (const file of manifest.files) {
+              assert.equal(typeof file.path, 'string');
+              assert.ok(file.path.length > 0 && !file.path.startsWith('/') && !file.path.includes('\\') && !file.path.includes(':') && !file.path.split('/').some(part => part === '..' || part === ''), 'Manifest paths must be relative component paths');
+              assert.match(file.sha256, /^[a-f0-9]{64}$/);
+              assert.ok(Number.isInteger(file.bytes) && file.bytes > 0);
+            }
+            for (const kind of ['core-smoke', 'startup-smoke']) {
+              const smoke = json(kind);
+              assert.equal(smoke.pass, true, `${kind} failed`);
+              assert.equal(smoke.version, version);
+              assert.equal(smoke.sourceCommit, commit);
+              assert.equal(smoke.platform, platform);
+              assert.equal(smoke.arch, arch);
+            }
+            const startup = json('startup-smoke');
+            assert.equal(startup.fromFinalArtifact, platform === 'darwin' ? 'dmg' : 'nsis-setup');
+            for (const key of ['bootstrapDesktop', 'reportPersistsAfterProcessRestart', 'dataProfileIsolated']) {
+              assert.equal(startup[key], true, `Startup evidence missing: ${key}`);
+            }
+          }
+
+          const runUrl = `https://github.com/${repository}/actions/runs/${process.env.GITHUB_RUN_ID}`;
+          const instructions = readFileSync('docs/desktop-install.md', 'utf8') + `\n---\n\n本次构建版本：\`${tag}\`。源码提交：\`${commit}\`。\n\n构建记录：[GitHub Actions](${runUrl})。本文件和以下校验值对应本次构建产物。\n`;
+          writeFileSync('release-assets/desktop-install.md', instructions);
+          const assets = [...expectedDownloads, 'desktop-install.md'].sort();
+          const sums = assets.map(name => `${createHash('sha256').update(readFileSync(join('release-assets', name))).digest('hex')}  ${name}`).join('\n') + '\n';
+          writeFileSync('release-assets/SHA256SUMS.txt', sums);
+          assets.push('SHA256SUMS.txt');
+          assert.deepEqual(readdirSync('release-assets').sort(), assets.toSorted());
+
+          // Read checks fail closed. Never overwrite an existing release or asset.
+          function api(endpoint) {
+            const result = spawnSync('gh', ['api', endpoint], {encoding: 'utf8', maxBuffer: 4 * 1024 * 1024});
+            if (result.status === 0) return JSON.parse(result.stdout);
+            if (/HTTP 404/.test(result.stderr || '')) return null;
+            throw new Error(`GitHub read check failed: ${result.stderr || result.error?.message || result.status}`);
+          }
+          assert.equal(api(`repos/${repository}/releases/tags/${tag}`), null, 'A release already exists for this version; inspect it manually instead of overwriting');
+          const ref = api(`repos/${repository}/git/ref/tags/${tag}`);
+          if (ref) {
+            let object = ref.object;
+            for (let depth = 0; object.type === 'tag' && depth < 5; depth++) {
+              assert.match(object.sha, /^[a-f0-9]{40}$/);
+              const annotated = api(`repos/${repository}/git/tags/${object.sha}`);
+              assert.ok(annotated, 'Cannot resolve existing annotated tag');
+              object = annotated.object;
+            }
+            assert.equal(object.type, 'commit');
+            assert.equal(object.sha, commit, 'The existing version tag points at another commit');
+          }
+          const notes = [
+            `# 标析开源试用版 ${tag}`,
+            '',
+            '这是供发布者复核的草稿预发布。工作流不会自动公开。',
+            '',
+            `版本：\`${tag}\`；来源提交：\`${commit}\`。`,
+            `构建记录：${runUrl}`,
+            '',
+            '提供 Windows x64 安装版/便携版、Mac Apple 芯片和 Intel 两套 DMG/ZIP。首次使用请下载 desktop-install.md。各文件的内容校验值见 SHA256SUMS.txt。',
+            '',
+            '三组组件 manifest 的路径相对于包内 app 资源目录，记录包内文件 SHA-256；core-smoke 记录包内离线 OCR、14 类分析与 PDF/DOCX 导出；startup-smoke 记录从最终 DMG/Windows 安装器启动、API 首启及进程重启持久化检查。',
+            '',
+            '自动化检查使用 GitHub 原生架构 runner 和合成样本，不代表真实设备 GUI 点击、业务准确性或招投标项目验收。',
+            '',
+            '当前没有开发者签名或 Apple 公证。macOS 包的本地 ad-hoc 签名不等于开发者签名。系统首次打开可能拦截，只能由使用者核对来源后手动确认。',
+            '',
+            '程序使用独立的“标析开源试用版”数据目录，不自动导入或改动原标析程序及其数据。离线试用不需要配置模型密钥。',
+            '',
+            '请发布者复核资产、安装说明和验证证据后，再决定是否公开此草稿。',
+            '',
+          ].join('\n');
+          writeFileSync('release-notes.md', notes);
+          const result = spawnSync('gh', [
+            'release', 'create', tag,
+            '--repo', repository,
+            '--target', commit,
+            '--title', `标析开源试用版 ${tag}`,
+            '--notes-file', 'release-notes.md',
+            '--draft', '--prerelease',
+            ...assets.map(name => join('release-assets', name)),
+          ], {stdio: 'inherit'});
+          assert.equal(result.status, 0, 'Draft creation failed; inspect any partial draft manually before retrying');
+          NODE

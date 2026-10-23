@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-23",
+  "pathsRelativeTo": "this file directory",
+  "comparisons": [
+    {
+      "package": "boolbase",
+      "packagePath": "index.js",
+      "localPublishedPath": "../../node_modules/boolbase/index.js",
+      "sha256": "c62510fca8738c7444cdf5012bdd0ce214a1b6f7eaff7facb3a919e4656d7341",
+      "sourceGitBlobSha": "8799fd95dbe31a85c48b956eb19f3625da9f8fb1",
+      "sourceRef": "be0bcd8a4e917a0a5895e95b523fbbed05a64871",
+      "sourceUrl": "https://github.com/fb55/boolbase/blob/be0bcd8a4e917a0a5895e95b523fbbed05a64871/index.js",
+      "sameBytes": true
+    },
+    {
+      "package": "tr46",
+      "packagePath": "index.js",
+      "localPublishedPath": "../../node_modules/tr46/index.js",
+      "sha256": "8194f9425ce9ab06ea9aebcd64a85ec064d95d61bb349f8f1c98762ad256638e",
+      "sourceGitBlobSha": "9ce12ca2d026fa202f7a0d32e0a7c8526660ed78",
+      "sourceRef": "a8009f9ce80ff5dbe71dd71e203afe4e4c878d28",
+      "sourceUrl": "https://github.com/jsdom/tr46/blob/a8009f9ce80ff5dbe71dd71e203afe4e4c878d28/index.js",
+      "sameBytes": true
+    },
+    {
+      "package": "tr46",
+      "packagePath": "package.json",
+      "localPublishedPath": "../../node_modules/tr46/package.json",
+      "sha256": "615087f58ee138fd35c2b414c355b72e36e5919725b8aecc1c34f6a5585b9779",
+      "sourceGitBlobSha": "b6826da1f7817f97ad6d307d698ad2004807c40a",
+      "sourceRef": "a8009f9ce80ff5dbe71dd71e203afe4e4c878d28",
+      "sourceUrl": "https://github.com/jsdom/tr46/blob/a8009f9ce80ff5dbe71dd71e203afe4e4c878d28/package.json",
+      "sameBytes": true
+    }
+  ],
+  "commitRelationships": [
+    {
+      "package": "boolbase",
+      "laterNoticeCommit": "be0bcd8a4e917a0a5895e95b523fbbed05a64871",
+      "parent": "19c780781b1b7aa006a27f39561b29ff96198e82",
+      "changedFiles": [
+        {
+          "path": "LICENSE",
+          "status": "added"
+        }
+      ],
+      "sourceUrl": "https://github.com/fb55/boolbase/commit/be0bcd8a4e917a0a5895e95b523fbbed05a64871",
+      "packageVersionAtNoticeCommit": "1.0.0",
+      "metadataDifferenceFromPublishedPackage": "Only scripts.test differs; no runtime-code difference was found in index.js."
+    },
+    {
+      "package": "tr46",
+      "exactNpmGitHead": "a8009f9ce80ff5dbe71dd71e203afe4e4c878d28",
+      "laterNoticeCommit": "3a6f29721e7063b9ffd421e461a54beae6170001",
+      "parent": "a8009f9ce80ff5dbe71dd71e203afe4e4c878d28",
+      "changedFiles": [
+        {
+          "path": "LICENSE.md",
+          "status": "added"
+        }
+      ],
+      "sourceUrl": "https://github.com/jsdom/tr46/commit/3a6f29721e7063b9ffd421e461a54beae6170001",
+      "limit": "Generated lib/mappingTable.json is absent from the Git tree; this is not a regeneration claim."
+    },
+    {
+      "package": "@tesseract.js-data wrappers",
+      "exactNpmGitHead": "b86746569320a6103cea84cc2b8d9ee74f0f45d3",
+      "laterNoticeCommit": "9c2fee3df42e6cdc19ebc1e4fb05a5bafa48dab0",
+      "parent": "b86746569320a6103cea84cc2b8d9ee74f0f45d3",
+      "changedFiles": [
+        {
+          "path": "LICENSE",
+          "status": "added"
+        }
+      ],
+      "sourceUrl": "https://github.com/naptha/tessdata/commit/9c2fee3df42e6cdc19ebc1e4fb05a5bafa48dab0",
+      "limit": "Later root notice is Apache-2.0, not a recovered MIT wrapper body; exact source generator output differs from the published v1 wrapper."
+    }
+  ]
+}

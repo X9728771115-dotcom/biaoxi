@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-23",
+  "pathsRelativeTo": "this file directory",
+  "scope": "Public upstream declarations and author metadata are reproduced without inventing copyright years or grants. Missing standalone bodies do not themselves establish an incompatible license.",
+  "packages": [
+    {
+      "name": "boolbase",
+      "version": "1.0.0",
+      "publishedMetadata": {
+        "license": "ISC",
+        "author": "Felix Boehm <me@feedic.com>",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/fb55/boolbase"
+        }
+      },
+      "packageJsonEvidence": {
+        "path": "../../node_modules/boolbase/package.json",
+        "sha256": "ca09c0dccbfc43be6be0ac89e9ffa19b64b30f9c74c64da27f719a7244a25e30",
+        "scope": "Exact installed published package metadata inspected for this record; final payload presence is verified separately."
+      },
+      "standardTermsReference": {
+        "path": "../license-templates/SPDX-ISC.txt",
+        "kind": "standard-terms-reference-not-recovered-upstream-package-notice",
+        "sha256": "521c6f0ed8e64736684f89843d16a4df6b4b7449acbcfc6ca6630a3037ca8c53"
+      },
+      "standaloneOriginalNpmLicenseBodyRecovered": false,
+      "readmeEvidence": {
+        "path": "../../node_modules/boolbase/README.md",
+        "sha256": "9cac5bfc290d30ccd13fa833923cb545584481e8ced66380bf758f1053f9d81d",
+        "licenseStatement": null
+      },
+      "currentEvidenceStatus": "LATER_UPSTREAM_IDENTICAL_RUNTIME_CODE_NOTICE",
+      "laterOriginalNotice": "notices/boolbase/LICENSE"
+    },
+    {
+      "name": "fontkit",
+      "version": "2.0.4",
+      "publishedMetadata": {
+        "license": "MIT",
+        "author": "Devon Govett <devongovett@gmail.com>",
+        "repository": {
+          "type": "git",
+          "url": "git://github.com/foliojs/fontkit.git"
+        }
+      },
+      "packageJsonEvidence": {
+        "path": "../../node_modules/fontkit/package.json",
+        "sha256": "49c60605b92316a5d5fe57b9a3bca8950ad9a8beab1cb633d6f29862d1bd163d",
+        "scope": "Exact installed published package metadata inspected for this record; final payload presence is verified separately."
+      },
+      "standardTermsReference": {
+        "path": "../license-templates/SPDX-MIT.txt",
+        "kind": "standard-terms-reference-not-recovered-upstream-package-notice",
+        "sha256": "b05785f9f18e6716bab63424b11454513b9943a222595b70411009202fc592b5"
+      },
+      "standaloneOriginalNpmLicenseBodyRecovered": false,
+      "readmeEvidence": {
+        "path": "../../node_modules/fontkit/README.md",
+        "sha256": "8a1cf12d8ae7277f047c3000af7677927f2da9243627223ba5715d40df4979d6",
+        "licenseStatement": "MIT"
+      },
+      "currentEvidenceStatus": "EXACT_DECLARATION_ONLY_FULL_ARCHIVE_INSPECTED",
+      "remainingFact": "Complete exact source archive and later source tree have no project standalone license body; test-font licenses have separate scope."
+    },
+    {
+      "name": "dfa",
+      "version": "1.2.0",
+      "publishedMetadata": {
+        "license": "MIT",
+        "author": "Devon Govett <devongovett@gmail.com>",
+        "repository": {
+          "type": "git",
+          "url": "git+ssh://git@github.com/devongovett/dfa.git"
+        }
+      },
+      "packageJsonEvidence": {
+        "path": "../../node_modules/dfa/package.json",
+        "sha256": "96c0ce3cc17b34aabd58fd442157766d9e244cba735e54ee4fe10d7841f0460c",
+        "scope": "Exact installed published package metadata inspected for this record; final payload presence is verified separately."
+      },
+      "standardTermsReference": {
+        "path": "../license-templates/SPDX-MIT.txt",
+        "kind": "standard-terms-reference-not-recovered-upstream-package-notice",
+        "sha256": "b05785f9f18e6716bab63424b11454513b9943a222595b70411009202fc592b5"
+      },
+      "standaloneOriginalNpmLicenseBodyRecovered": false,
+      "readmeEvidence": {
+        "path": "../../node_modules/dfa/README.md",
+        "sha256": "30bd445925aa53205ff7f9afa6a43e21358fab656e471df6e028431aefc426c7",
+        "licenseStatement": "MIT"
+      },
+      "currentEvidenceStatus": "EXACT_DECLARATION_ONLY",
+      "remainingFact": "Exact README and package metadata declare MIT; no standalone author notice body recovered."
+    },
+    {
+      "name": "brotli",
+      "version": "1.3.3",
+      "publishedMetadata": {
+        "license": "MIT",
+        "author": "Devon Govett <devongovett@gmail.com>",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/devongovett/brotli.js.git"
+        }
+      },
+      "packageJsonEvidence": {
+        "path": "../../node_modules/brotli/package.json",
+        "sha256": "387b47d00ea96cab9b4c521629fbcdc7621053ac061812526f3c69700924cef5",
+        "scope": "Exact installed published package metadata inspected for this record; final payload presence is verified separately."
+      },
+      "standardTermsReference": {
+        "path": "../license-templates/SPDX-MIT.txt",
+        "kind": "standard-terms-reference-not-recovered-upstream-package-notice",
+        "sha256": "b05785f9f18e6716bab63424b11454513b9943a222595b70411009202fc592b5"
+      },
+      "standaloneOriginalNpmLicenseBodyRecovered": false,
+      "readmeEvidence": {
+        "path": "../../node_modules/brotli/README.md",
+        "sha256": "8a8bac543fccf52a64708ff3315ca2be90e3e4c270634df1e4e4b51f0ee9c5d7",
+        "licenseStatement": "MIT"
+      },
+      "currentEvidenceStatus": "EXACT_DECODER_APACHE_NOTICE_AND_MIT_DECLARATION",
+      "remainingFact": "Independent package-level MIT author notice body not recovered; original Google Apache decoder source header retained.",
+      "decoderNotice": {
+        "path": "../licenses/brotli@1.3.3--ddb9b3df/APACHE-decoder-source-notice.txt",
+        "sha256": "bc670957aaf188b069c48d4afe455bf0c276ec0f37994bdf435e3ad89e22a8a8"
+      }
+    },
+    {
+      "name": "tr46",
+      "version": "0.0.3",
+      "publishedMetadata": {
+        "license": "MIT",
+        "author": "Sebastian Mayr <npm@smayr.name>",
+        "repository": {
+          "type": "git",
+          "url": "git+https://github.com/Sebmaster/tr46.js.git"
+        }
+      },
+      "packageJsonEvidence": {
+        "path": "../../node_modules/tr46/package.json",
+        "sha256": "615087f58ee138fd35c2b414c355b72e36e5919725b8aecc1c34f6a5585b9779",
+        "scope": "Exact installed published package metadata inspected for this record; final payload presence is verified separately."
+      },
+      "standardTermsReference": {
+        "path": "../license-templates/SPDX-MIT.txt",
+        "kind": "standard-terms-reference-not-recovered-upstream-package-notice",
+        "sha256": "b05785f9f18e6716bab63424b11454513b9943a222595b70411009202fc592b5"
+      },
+      "standaloneOriginalNpmLicenseBodyRecovered": false,
+      "currentEvidenceStatus": "LATER_UPSTREAM_IDENTICAL_SOURCE_TREE_NOTICE",
+      "laterOriginalNotice": "notices/tr46/LICENSE.md"
+    },
+    {
+      "name": "@tesseract.js-data/chi_sim",
+      "version": "1.0.0",
+      "publishedMetadata": {
+        "license": "MIT",
+        "author": "Balearica <admin@scribeocr.com>",
+        "contributors": [
+          {
+            "name": "Balearica"
+          },
+          {
+            "name": "jeromewu"
+          }
+        ],
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/naptha/tessdata.git"
+        }
+      },
+      "packageJsonEvidence": {
+        "path": "../../node_modules/@tesseract.js-data/chi_sim/package.json",
+        "sha256": "cc520ba9b3ced7b1fb69d7d4c0cea43b3dc9eb5e0814662e9be028c8a5cc36c6",
+        "scope": "Exact installed published package metadata inspected for this record; final payload presence is verified separately."
+      },
+      "standardTermsReference": {
+        "path": "../license-templates/SPDX-MIT.txt",
+        "kind": "standard-terms-reference-not-recovered-upstream-package-notice",
+        "sha256": "b05785f9f18e6716bab63424b11454513b9943a222595b70411009202fc592b5"
+      },
+      "standaloneOriginalNpmLicenseBodyRecovered": false,
+      "readmeEvidence": {
+        "path": "../../node_modules/@tesseract.js-data/chi_sim/README.md",
+        "sha256": "4a1d299c5f5713bb5e80159782b63835289ca4ca8adbfaa9164f28945d732dc5",
+        "licenseStatement": null
+      },
+      "currentEvidenceStatus": "EXACT_MIT_WRAPPER_DECLARATION_WITH_LATER_ROOT_APACHE_SUPPLEMENT",
+      "remainingFact": "Independent MIT wrapper author notice body not recovered. Later Apache root file is supplementary; source generator differs from the published v1 wrapper and is not a byte-identity applicability proof.",
+      "laterRootSupplement": "notices/tessdata-later-root/LICENSE",
+      "modelLicense": "Apache-2.0",
+      "modelOriginalNotice": {
+        "path": "../source-evidence/tesseract-ocr_tessdata/277725be3b123d384af6f1ce237fc274421e502b/COPYING.txt",
+        "sha256": "85c31da65107d18490666cc8e3af6373b5303fb57f82b97119d47ad219896800"
+      }
+    },
+    {
+      "name": "@tesseract.js-data/eng",
+      "version": "1.0.0",
+      "publishedMetadata": {
+        "license": "MIT",
+        "author": "Balearica <admin@scribeocr.com>",
+        "contributors": [
+          {
+            "name": "Balearica"
+          },
+          {
+            "name": "jeromewu"
+          }
+        ],
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/naptha/tessdata.git"
+        }
+      },
+      "packageJsonEvidence": {
+        "path": "../../node_modules/@tesseract.js-data/eng/package.json",
+        "sha256": "b603509212196b5d09e10519bf252c1e344b79704d065e0d62886846f8554c80",
+        "scope": "Exact installed published package metadata inspected for this record; final payload presence is verified separately."
+      },
+      "standardTermsReference": {
+        "path": "../license-templates/SPDX-MIT.txt",
+        "kind": "standard-terms-reference-not-recovered-upstream-package-notice",
+        "sha256": "b05785f9f18e6716bab63424b11454513b9943a222595b70411009202fc592b5"
+      },
+      "standaloneOriginalNpmLicenseBodyRecovered": false,
+      "readmeEvidence": {
+        "path": "../../node_modules/@tesseract.js-data/eng/README.md",
+        "sha256": "adcb325473fe124291951a0a3d29fcb54b341828881570e45c42dc2a3a61a45d",
+        "licenseStatement": null
+      },
+      "currentEvidenceStatus": "EXACT_MIT_WRAPPER_DECLARATION_WITH_LATER_ROOT_APACHE_SUPPLEMENT",
+      "remainingFact": "Independent MIT wrapper author notice body not recovered. Later Apache root file is supplementary; source generator differs from the published v1 wrapper and is not a byte-identity applicability proof.",
+      "laterRootSupplement": "notices/tessdata-later-root/LICENSE",
+      "modelLicense": "Apache-2.0",
+      "modelOriginalNotice": {
+        "path": "../source-evidence/tesseract-ocr_tessdata/277725be3b123d384af6f1ce237fc274421e502b/COPYING.txt",
+        "sha256": "85c31da65107d18490666cc8e3af6373b5303fb57f82b97119d47ad219896800"
+      }
+    }
+  ]
+}

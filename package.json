@@ -1,6 +1,6 @@
 {
-  "name": "biaoxi",
-  "version": "0.5.6",
+  "name": "biaoxi-oss-trial",
+  "version": "0.5.6-alpha.2",
   "description": "标析 — 本地招标文件分析助手",
   "private": true,
   "type": "module",
@@ -9,8 +9,8 @@
     "start": "node scripts/dev-isolated.mjs desktop",
     "dev": "node scripts/dev-isolated.mjs web",
     "test": "node scripts/run-tests.mjs",
-    "build:mac": "electron-builder --mac zip --arm64 --x64 && node scripts/fix-mac-zip.mjs",
-    "build:win": "electron-builder --win portable --x64 && node scripts/verify-windows-launcher.mjs",
+    "build:mac": "node scripts/build-desktop.mjs darwin",
+    "build:win": "node scripts/build-desktop.mjs win32 x64",
     "verify": "npm test",
     "verify:win-launcher": "node scripts/verify-windows-launcher.mjs",
     "start:safe": "node scripts/dev-isolated.mjs desktop",
@@ -39,8 +39,8 @@
     "electron-builder": "26.15.3"
   },
   "build": {
-    "appId": "cn.biaoxi.desktop",
-    "productName": "标析",
+    "appId": "cn.biaoxi.oss.trial",
+    "productName": "标析开源试用版",
     "directories": {
       "output": "dist"
     },
@@ -59,19 +59,22 @@
       "category": "public.app-category.productivity",
       "identity": "-",
       "target": [
+        "dmg",
         "zip"
       ],
       "extraResources": [
         {
-          "from": "node_modules/@napi-rs/canvas-darwin-x64",
-          "to": "app/node_modules/@napi-rs/canvas-darwin-x64"
+          "from": "node_modules/@napi-rs/canvas-darwin-${arch}",
+          "to": "app/node_modules/@napi-rs/canvas-darwin-${arch}"
         }
       ],
       "entitlements": "assets/entitlements.mac.plist",
-      "entitlementsInherit": "assets/entitlements.mac.plist"
+      "entitlementsInherit": "assets/entitlements.mac.plist",
+      "artifactName": "biaoxi-oss-${version}-${arch}-mac.${ext}"
     },
     "win": {
       "target": [
+        "nsis",
         "portable"
       ],
       "signAndEditExecutable": false,
@@ -86,7 +89,22 @@
     "npmRebuild": false,
     "icon": "assets/icon.png",
     "portable": {
-      "unpackDirName": true
+      "unpackDirName": true,
+      "artifactName": "biaoxi-oss-${version}-windows-${arch}-portable.${ext}"
+    },
+    "nsis": {
+      "artifactName": "biaoxi-oss-${version}-windows-${arch}-setup.${ext}",
+      "oneClick": true,
+      "perMachine": false,
+      "deleteAppDataOnUninstall": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "标析开源试用版",
+      "uninstallDisplayName": "标析开源试用版",
+      "unicode": true
+    },
+    "dmg": {
+      "title": "标析开源试用版 ${version}"
     }
   },
   "optionalDependencies": {

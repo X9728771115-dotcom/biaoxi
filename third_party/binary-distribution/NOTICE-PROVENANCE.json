@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-23",
+  "pathsRelativeTo": "this file directory",
+  "scope": "Original later-upstream files, not files recovered from the exact original npm tarballs.",
+  "notices": [
+    {
+      "path": "notices/boolbase/LICENSE",
+      "license": "ISC",
+      "evidenceClass": "later-upstream-identical-runtime-code-not-exact-npm-release-file",
+      "sourceRepository": "fb55/boolbase",
+      "sourceCommit": "be0bcd8a4e917a0a5895e95b523fbbed05a64871",
+      "sourcePath": "LICENSE",
+      "sourceUrl": "https://github.com/fb55/boolbase/blob/be0bcd8a4e917a0a5895e95b523fbbed05a64871/LICENSE",
+      "sourceGitBlobSha": "a689aae96e8957e4ab7a3a7449fe5271a6516e4b",
+      "sha256": "cdf4d87ae0a6c160227263bf4e39a0a10e30e89ae7256e0f7ac7bde0836552c6",
+      "size": 751,
+      "gitBlobVerified": true
+    },
+    {
+      "path": "notices/tr46/LICENSE.md",
+      "license": "MIT",
+      "evidenceClass": "later-upstream-identical-source-tree-not-exact-npm-release-file",
+      "sourceRepository": "jsdom/tr46",
+      "sourceCommit": "3a6f29721e7063b9ffd421e461a54beae6170001",
+      "sourcePath": "LICENSE.md",
+      "sourceUrl": "https://github.com/jsdom/tr46/blob/3a6f29721e7063b9ffd421e461a54beae6170001/LICENSE.md",
+      "sourceGitBlobSha": "e90f20a5cc7763e1ad07e5c15c193c51cdf3182b",
+      "sha256": "eeed1ca176eebad5c73870e233cfff03981fecd319c969475dfa3633036c336b",
+      "size": 1081,
+      "gitBlobVerified": true
+    },
+    {
+      "path": "notices/tessdata-later-root/LICENSE",
+      "license": "Apache-2.0",
+      "evidenceClass": "supplementary-later-upstream-root-apache-not-a-recovered-MIT-wrapper-notice",
+      "sourceRepository": "naptha/tessdata",
+      "sourceCommit": "9c2fee3df42e6cdc19ebc1e4fb05a5bafa48dab0",
+      "sourcePath": "LICENSE",
+      "sourceUrl": "https://github.com/naptha/tessdata/blob/9c2fee3df42e6cdc19ebc1e4fb05a5bafa48dab0/LICENSE",
+      "sourceGitBlobSha": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "size": 11357,
+      "gitBlobVerified": true
+    }
+  ]
+}

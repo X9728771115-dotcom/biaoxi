@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "release": "0.5.6-alpha.2",
+  "status": "NOT_RUN",
+  "statusMeaning": "Source pre-assembly validation-plan snapshot. Original NOT_RUN/null values are preserved and do not report later execution status. Consult matching external Release Assets for actual results; absent evidence is not a passing result. No legal guarantee or BINARY_CLEARED status is asserted.",
+  "recordType": "pre-assembly-validation-plan-snapshot",
+  "executionEvidence": {
+    "releaseUrl": "https://github.com/X9728771115-dotcom/biaoxi/releases/tag/v0.5.6-alpha.2",
+    "assetNames": [
+      "desktop-manifest-<platform>-<arch>.json",
+      "core-smoke-<platform>-<arch>.json",
+      "startup-smoke-<platform>-<arch>.json",
+      "SHA256SUMS.txt"
+    ],
+    "packageLifecycle": "Publish execution evidence separately. Do not rewrite sealed or signed package contents to insert artifact hashes or later results, which would invalidate the artifact and create circular self-verification."
+  },
+  "targets": [
+    {
+      "platform": "win32",
+      "arch": "x64",
+      "formats": [
+        "nsis",
+        "portable"
+      ],
+      "expectedNativePackage": "@napi-rs/canvas-win32-x64-msvc",
+      "componentManifest": null,
+      "artifactSha256": null,
+      "finalPackageCheck": "NOT_RUN",
+      "developmentToolCodeAbsence": "NOT_RUN",
+      "noticePathsAndHashes": "NOT_RUN"
+    },
+    {
+      "platform": "darwin",
+      "arch": "arm64",
+      "formats": [
+        "dmg",
+        "zip"
+      ],
+      "expectedNativePackage": "@napi-rs/canvas-darwin-arm64",
+      "componentManifest": null,
+      "artifactSha256": null,
+      "finalPackageCheck": "NOT_RUN",
+      "developmentToolCodeAbsence": "NOT_RUN",
+      "noticePathsAndHashes": "NOT_RUN"
+    },
+    {
+      "platform": "darwin",
+      "arch": "x64",
+      "formats": [
+        "dmg",
+        "zip"
+      ],
+      "expectedNativePackage": "@napi-rs/canvas-darwin-x64",
+      "componentManifest": null,
+      "artifactSha256": null,
+      "finalPackageCheck": "NOT_RUN",
+      "developmentToolCodeAbsence": "NOT_RUN",
+      "noticePathsAndHashes": "NOT_RUN"
+    }
+  ],
+  "developmentToolsWhoseCodeMustBeAbsent": [
+    "@electron-internal/extract-zip",
+    "chromium-pickle-js",
+    "cross-dirname",
+    "err-code",
+    "lazy-val",
+    "node-api-version",
+    "read-binary-file-arch",
+    "temp-file",
+    "tmp-promise"
+  ],
+  "runtimeException": "Electron 44.7.0 is a devDependency that supplies the distributed application runtime; retain Electron and target-supplied Chromium notices."
+}
