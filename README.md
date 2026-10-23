@@ -6,6 +6,8 @@
 
 **当前源码版本为 0.5.6，首个公开试用版本标记为 `v0.5.6-alpha.1`，基于开源候选版 2 整理，仅提供源码。** 使用前需要安装开发环境；本次不提供可双击运行的安装包。自动化检查与真实项目验收分别记录，不能据测试通过认定分析内容准确或企业可以投标。
 
+第一次了解标析，可以先打开[演示与试用版本页（可直接转发）](https://github.com/X9728771115-dotcom/biaoxi/releases/tag/v0.5.6-alpha.1)，或阅读[在线演示图解与完整试用指南](docs/trial/README.md)。看演示无需安装；本轮合成样本的离线试用无需模型 API 或企业资料。
+
 项目主页：[X9728771115-dotcom/biaoxi](https://github.com/X9728771115-dotcom/biaoxi)。普通问题与建议请使用 [Issues](https://github.com/X9728771115-dotcom/biaoxi/issues)；安全漏洞按 [安全说明](SECURITY.md) 私密报告。
 
 ## 可以做什么

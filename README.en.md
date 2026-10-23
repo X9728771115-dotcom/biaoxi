@@ -6,6 +6,8 @@ Biaoxi reads tender documents and attachments, preserves source references, and 
 
 **Source version: 0.5.6. The first public alpha, `v0.5.6-alpha.1`, is prepared from open-source candidate 2 and includes source code only.** A development environment is required; no installers are included. Automated checks do not establish accuracy on real tenders, company eligibility, or production readiness.
 
+Start with the [demo and trial release page (shareable link)](https://github.com/X9728771115-dotcom/biaoxi/releases/tag/v0.5.6-alpha.1), or read the [illustrated demo and full trial guide (Chinese)](docs/trial/README.md). Watching needs no installation; the synthetic offline trial needs no model API or company records.
+
 Repository: [X9728771115-dotcom/biaoxi](https://github.com/X9728771115-dotcom/biaoxi). Use [Issues](https://github.com/X9728771115-dotcom/biaoxi/issues) for ordinary feedback and follow [SECURITY.md](SECURITY.md) for private vulnerability reporting.
 
 Candidate 2 fixes multiple scoring rules within a paragraph, repeated performance scores and shared-cap boundaries, and replaces two vulnerable dependency chains with scoped overrides. Raw policy originals and QA images are excluded from source distribution; the offline catalog remains available. See the [policy provenance and explicit caching guide](assets/policies/README.md).
